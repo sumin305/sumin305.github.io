@@ -24,9 +24,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Welcome to SOOMlog
-email: leesumin305@gmail.com
-author: sumin305
+title: Your awesome title
+email: your-email@domain.com
+author: GitHub User
 
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
@@ -37,17 +37,17 @@ author: sumin305
 # * sound recording copyright: (p) - ℗
 #
 # For example:
-#   "Copyright (c) 2022-{currentYear} <a href="https://sumin305.github.io">{author}</a>"
-#   "Copyright © 2022-2022 Foobar"
+#   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
+#   "Copyright © 2017-2021 Foobar"
 #
-copyright: "Unpublished Work (cleft) 2022-{currentYear} {author}"
+copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
-baseurl: https://sumin305.github.io
+baseurl: "" # the subpath of your site, e.g. /blog
 url: https://sumin305.github.io
 favicon: "" # the favicon for your site
 
