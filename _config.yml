@@ -155,10 +155,15 @@ yat:
 
 # Page default value
 # defaults:
-#   home:
-#     heading: "SOOM.log"
+#     heading: "Welcome to Soom.log!"
 #     subheading: "iOS developer"
-#     banner: "///Users/soom/Desktop/ZANMANG%20LOOPY.png"
+#     banner: image : https://bit.ly/3xTmdUP
+#             opacity: 0.618
+#             background: "#000"
+#             height: "100vh"
+#             min_height: "38vh"
+#             heading_style: "font-size: 4.25em; font-weight: bold; text-decoration: underline"
+#             subheading_style: "color: gold"
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
@@ -188,9 +193,9 @@ yat:
 
 # Gitment comments
 # gitment:
-#   username: "Your GitHub username"
+#   username: "sumin305"
 #   repo: "The repo to store comments"
-#   client_id: "Your client ID"
+#   client_id: "sumin305"
 #   client_secret: "Your client secret"
 #   redirect_uri: "Your redirect url"   # If you use a custom domain name
 
