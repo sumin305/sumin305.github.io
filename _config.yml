@@ -24,7 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: SOOM.log
+title: Welcome to SOOMlog
 email: leesumin305@gmail.com
 author: sumin305
 
@@ -37,8 +37,8 @@ author: sumin305
 # * sound recording copyright: (p) - ℗
 #
 # For example:
-#   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
-#   "Copyright © 2017-2021 Foobar"
+#   "Copyright (c) 2022-{currentYear} <a href="https://sumin305.github.io">{author}</a>"
+#   "Copyright © 2022-2022 Foobar"
 #
 copyright: "Unpublished Work (cleft) 2022-{currentYear} {author}"
 
@@ -47,7 +47,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: https://sumin305.github.io
 url: https://sumin305.github.io
 favicon: "" # the favicon for your site
 
@@ -155,15 +155,10 @@ yat:
 
 # Page default value
 # defaults:
-#     heading: "Welcome to Soom.log!"
-#     subheading: "iOS developer"
-#     banner: image : https://bit.ly/3xTmdUP
-#             opacity: 0.618
-#             background: "#000"
-#             height: "100vh"
-#             min_height: "38vh"
-#             heading_style: "font-size: 4.25em; font-weight: bold; text-decoration: underline"
-#             subheading_style: "color: gold"
+#   home:
+#     heading: "Your awesome heading"
+#     subheading: "Your awesome subheading"
+#     banner: "Your image url"
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
@@ -173,7 +168,7 @@ yat:
 #   loop: true              # Video loop
 #   volume: 0               # Video volume (100% is 1.0)
 #   start_at: 0             # Video start time
-#   image: file:///Users/soom/Desktop/ZANMANG%20LOOPY.png            # Image banner source
+#   image: null             # Image banner source
 #   opacity: 1.0            # Banner opacity (100% is 1.0)
 #   background: "rgba(0, 0, 0, 0.8)"  # Banner background (Could be a image)
 #   height: "640px"         # Banner default height
@@ -193,9 +188,9 @@ yat:
 
 # Gitment comments
 # gitment:
-#   username: "sumin305"
+#   username: "Your GitHub username"
 #   repo: "The repo to store comments"
-#   client_id: "sumin305"
+#   client_id: "Your client ID"
 #   client_secret: "Your client secret"
 #   redirect_uri: "Your redirect url"   # If you use a custom domain name
 
