@@ -27,7 +27,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: SOOM.log
+title: soom.log
 email: leesumin305@gmail.com
 author: Lee su-min
 
