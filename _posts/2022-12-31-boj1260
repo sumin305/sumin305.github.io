@@ -1,10 +1,8 @@
 ---
 layout: post
 title:  "[백준/Python] 1260번 DFS와 BFS 풀이"
-excerpt: "파이썬를 이용한 백준 온라인저지 문제풀이"
 
-categories:
-  - 문제풀이
+categories : 문제풀이
   
 tags:
   - 백준
