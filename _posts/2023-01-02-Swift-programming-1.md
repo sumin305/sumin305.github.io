@@ -71,6 +71,7 @@ let double = anything //컴파일 에러
 ```
 
 6. AnyObject : 모든 클래스 타입을 지칭하는 프로토콜
+7. 
 ```swift
 class SomeClass{}
 var someAnyObject : AnyObject = SomeClass()
@@ -78,6 +79,7 @@ var someAnyObject : AnyObject = SomeClass()
 //AnyObject는 클래스의 인스턴스만 수용 가능함
 someAnyObject = 123.5 //컴파일 에러
 ```
+
 7. nil : Swift에서 '없음'을 의미하는 키워드이다.   
     
     
@@ -92,7 +94,7 @@ for i in 1...4{
 }
 ```
 <p align="left">
-  <img width="25" alt="스크린샷 2023-01-03 오전 9 28 56" src="https://user-images.githubusercontent.com/110437548/210287119-d07468bd-0225-46be-a46a-     b687950ddc8c.png">
+  <img width="25" alt="실행결과1" src="https://user-images.githubusercontent.com/110437548/210287119-d07468bd-0225-46be-a46a-     b687950ddc8c.png">
 </p>
 
 -stride를 사용하여 범위 지정도 가능하다
@@ -102,7 +104,7 @@ for i in stride(from:10, to:0, by:-2){
 }
 ```
 <p align="left">
-  <img width="34" alt="스크린샷 2023-01-03 오전 9 27 39" src="https://user-images.githubusercontent.com/110437548/210287068-2c133e86-0998-495a-a7b9- 84bf83dcafab.png">
+  <img width="34" alt="실행결과2" src="https://user-images.githubusercontent.com/110437548/210287068-2c133e86-0998-495a-a7b9- 84bf83dcafab.png">
 </p>
    
 #### while문
@@ -118,7 +120,7 @@ while true{
 }
 ```
 <p align="left">
-  <img width="25" alt="스크린샷 2023-01-03 오전 9 28 18" src="https://user-images.githubusercontent.com/110437548/210287096-360c5d71-20eb-458d-aa50-4dd666394cba.png">
+  <img width="25" alt="실행결과3" src="https://user-images.githubusercontent.com/110437548/210287096-360c5d71-20eb-458d-aa50-4dd666394cba.png">
 </p>
 
 #### repeat - while문
@@ -131,12 +133,12 @@ repeat {
 }while i<110
 ```
 <p align="left">
-  <img width="29" alt="스크린샷 2023-01-03 오전 9 28 39" src="https://user-images.githubusercontent.com/110437548/210287108-b6c0235c-70a6-4b08-a1c7-969e9f8972ed.png">
+  <img width="29" alt="실행결과4" src="https://user-images.githubusercontent.com/110437548/210287108-b6c0235c-70a6-4b08-a1c7-969e9f8972ed.png">
 </p>
    
 ### 마무리
  Swift 문법을 배우면서 점점 느끼는 바로는 정말 매력적인 언어라고 생각한다.    
  이렇게 생각한 이유는 다음과 같다
- > java와 python 과의 장점의 합친 빠르고 정확한 언어
-이라고 생각한다. 
+ > java와 python 과의 장점을 합친 빠르고 정확한 언어   
+라고 생각한다. 
 앞으로 이렇게 문법을 더 정리해 Swift를 정복해보겠다.
