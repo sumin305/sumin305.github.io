@@ -2,7 +2,7 @@
 layout: post
 title:  "[Data Analysis] 데이터분석 - 개요"
 
-categories : Data Analysis
+categories : DataAnalysis
   
 tags:
   - Data Analysis
