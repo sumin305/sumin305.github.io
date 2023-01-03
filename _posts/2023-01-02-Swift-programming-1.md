@@ -40,7 +40,7 @@ var anyDic : Dictionary<String, Any> = [String : Any]()
 var integerSet : Set<Int> = Set<Int>()
 ```
 #### 기본 데이터 타입
-- Swift는 데이터 타입에 엄격한 언어이다.    
+> Swift는 데이터 타입에 엄격한 언어이다.    
     
     
 
@@ -80,10 +80,22 @@ var someAnyObject : AnyObject = SomeClass()
 someAnyObject = 123.5 //컴파일 에러
 ```
 
-7. nil : Swift에서 '없음'을 의미하는 키워드이다. 
-  
-    
-    
+7. nil : Swift에서 '없음'을 의미하는 키워드이다.    
+  0이 아니라 정말 값이 없음을 의미한다.   
+ - NULL과의 차이점
+   - NULL : 포인터가 기리키는 객체가 존재하지 않음
+   - nil : 특정 타입에 대한 값의 부재를 나타냄
+
+```swift 
+let str1 = "hello486"
+let str2 = "1234"
+
+print(Int(str1) == nil ? 0 : 1 ) //0 출력
+print(Int(str2) == nil ? 0 : 1 ) //1 출력
+```
+
+- str1를 Int형으로 변환할 때 Int형으로 변환할 수 없는 문자열 부분이 있음으로 nil을 반환한다.    
+
 
 ### 반복문
 - for문과 while문은 파이썬과 매우 유사하다.   
@@ -95,17 +107,17 @@ for i in 1...4{
 }
 ```
 <p align="left">
-  <img width="25" alt="실행결과1" src="https://user-images.githubusercontent.com/110437548/210287119-d07468bd-0225-46be-a46a-     b687950ddc8c.png">
+  <img width="25" alt="실행결과1" src="https://user-images.githubusercontent.com/110437548/210287119-d07468bd-0225-46be-a46a-b687950ddc8c.png">
 </p>
 
--stride를 사용하여 범위 지정도 가능하다
+- stride를 사용하여 범위 지정도 가능하다
 ```swift
 for i in stride(from:10, to:0, by:-2){
     print("\(i)")
 }
 ```
 <p align="left">
-  <img width="34" alt="실행결과2" src="https://user-images.githubusercontent.com/110437548/210287068-2c133e86-0998-495a-a7b9- 84bf83dcafab.png">
+  <img width="34" alt="실행결과2" src="https://user-images.githubusercontent.com/110437548/210287068-2c133e86-0998-495a-a7b9-84bf83dcafab.png">
 </p>
    
 #### while문
@@ -140,6 +152,7 @@ repeat {
 ### 마무리
  Swift 문법을 배우면서 점점 느끼는 바로는 정말 매력적인 언어라고 생각한다.    
  이렇게 생각한 이유는 다음과 같다
- > java와 python 과의 장점을 합친 빠르고 정확한 언어   
-라고 생각한다. 
+ > java와 python 과의 장점을 합친 빠르고 정확한 언어    
+
+라고 생각한다.    
 앞으로 이렇게 문법을 더 정리해 Swift를 정복해보겠다.
