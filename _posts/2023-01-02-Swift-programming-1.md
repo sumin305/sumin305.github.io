@@ -58,7 +58,9 @@ var integerSet : Set<Int> = Set<Int>()
 
 <-- 여기서부터는 Swift에서 처음 본 자료형이다 -->
 
-5. Any : Swift는의 모든 타입을 지칭하는 키워드 
+5. Any : Swift는의 모든 타입을 지칭하는 키워드   
+
+
 ```swift
 var anything : Any = 100
 anything = "String도 넣을 수 있음"
@@ -89,7 +91,9 @@ for i in 1...4{
     print("\(i)")
 }
 ```
-<img width="25" alt="스크린샷 2023-01-03 오전 9 28 56" src="https://user-images.githubusercontent.com/110437548/210287119-d07468bd-0225-46be-a46a-b687950ddc8c.png">
+<p align="left">
+  <img width="25" alt="스크린샷 2023-01-03 오전 9 28 56" src="https://user-images.githubusercontent.com/110437548/210287119-d07468bd-0225-46be-a46a-     b687950ddc8c.png">
+</p>
 
 -stride를 사용하여 범위 지정도 가능하다
 ```swift
@@ -97,7 +101,9 @@ for i in stride(from:10, to:0, by:-2){
     print("\(i)")
 }
 ```
-<img width="34" alt="스크린샷 2023-01-03 오전 9 27 39" src="https://user-images.githubusercontent.com/110437548/210287068-2c133e86-0998-495a-a7b9-84bf83dcafab.png">
+<p align="left">
+  <img width="34" alt="스크린샷 2023-01-03 오전 9 27 39" src="https://user-images.githubusercontent.com/110437548/210287068-2c133e86-0998-495a-a7b9- 84bf83dcafab.png">
+</p>
    
 #### while문
 ```swift
@@ -111,8 +117,10 @@ while true{
     }
 }
 ```
-<img width="25" alt="스크린샷 2023-01-03 오전 9 28 18" src="https://user-images.githubusercontent.com/110437548/210287096-360c5d71-20eb-458d-aa50-4dd666394cba.png">
-   
+<p align="left">
+  <img width="25" alt="스크린샷 2023-01-03 오전 9 28 18" src="https://user-images.githubusercontent.com/110437548/210287096-360c5d71-20eb-458d-aa50-4dd666394cba.png">
+</p>
+
 #### repeat - while문
 ```swift
 i=100
@@ -122,7 +130,9 @@ repeat {
     i+=1
 }while i<110
 ```
-<img width="29" alt="스크린샷 2023-01-03 오전 9 28 39" src="https://user-images.githubusercontent.com/110437548/210287108-b6c0235c-70a6-4b08-a1c7-969e9f8972ed.png">
+<p align="left">
+  <img width="29" alt="스크린샷 2023-01-03 오전 9 28 39" src="https://user-images.githubusercontent.com/110437548/210287108-b6c0235c-70a6-4b08-a1c7-969e9f8972ed.png">
+</p>
    
 ### 마무리
  Swift 문법을 배우면서 점점 느끼는 바로는 정말 매력적인 언어라고 생각한다.    
