@@ -87,7 +87,7 @@ for i in 1...4{
 }
 ```
 <img width="25" alt="스크린샷 2023-01-03 오전 9 28 56" src="https://user-images.githubusercontent.com/110437548/210287119-d07468bd-0225-46be-a46a-b687950ddc8c.png">
-<br>
+
 -stride를 사용하여 범위 지정도 가능하다
 ```swift
 for i in stride(from:10, to:0, by:-2){
