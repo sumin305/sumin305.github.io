@@ -10,15 +10,14 @@ tags:
 ---
 
 ## Swift문법
-Swift 언어 공부를 시작하며 여태까지 배운 언어들과의 차이점 위주로 정리하려 한다.
+Swift 언어 공부를 시작하며 여태까지 배운 언어들과의 차이점 위주로 정리하려 한다.   
 
 ### 변수와 상수
 
 #### 선언
-> Swift는 함수형 프로그래밍의 패러다임을 채용한 언어임 -> **불변 객체**를 굉장히 중요시 한다.
+> Swift는 함수형 프로그래밍의 패러다임을 채용한 언어임 -> **불변 객체**를 굉장히 중요시 한다.   
 
-대부분 상수나 변수 선언 시에 타입을 꼭 명시해준다.
-
+대부분 상수나 변수 선언 시에 타입을 꼭 명시해준다.   
 ```swift
 //변수의 선언
 var integer : Int = 5
@@ -27,7 +26,7 @@ var integer : Int = 5
 let greet : String = "Hello" 
 ```
 
-리터럴 문법에도 동일하다.
+리터럴 문법에도 동일하다.   
 
 
 ```swift
@@ -41,7 +40,9 @@ var anyDic : Dictionary<String, Any> = [String : Any]()
 var integerSet : Set<Int> = Set<Int>()
 ```
 #### 기본 데이터 타입
-- Swift는 데이터 타입에 엄격한 언어이다. 
+- Swift는 데이터 타입에 엄격한 언어이다.    
+    
+    
 
 1. Bool : true와 false값만 가진다.
 2. Int, UInt 
@@ -75,10 +76,12 @@ var someAnyObject : AnyObject = SomeClass()
 //AnyObject는 클래스의 인스턴스만 수용 가능함
 someAnyObject = 123.5 //컴파일 에러
 ```
-7. nil : Swift에서 '없음'을 의미하는 키워드이다.
+7. nil : Swift에서 '없음'을 의미하는 키워드이다.   
+    
+    
 
 ### 반복문
-- for문과 while문은 파이썬과 매우 유사하다.
+- for문과 while문은 파이썬과 매우 유사하다.   
 
 #### for문
 ```swift
@@ -95,7 +98,7 @@ for i in stride(from:10, to:0, by:-2){
 }
 ```
 <img width="34" alt="스크린샷 2023-01-03 오전 9 27 39" src="https://user-images.githubusercontent.com/110437548/210287068-2c133e86-0998-495a-a7b9-84bf83dcafab.png">
-
+   
 #### while문
 ```swift
 var i : Int = 0
@@ -109,7 +112,7 @@ while true{
 }
 ```
 <img width="25" alt="스크린샷 2023-01-03 오전 9 28 18" src="https://user-images.githubusercontent.com/110437548/210287096-360c5d71-20eb-458d-aa50-4dd666394cba.png">
-
+   
 #### repeat - while문
 ```swift
 i=100
@@ -120,11 +123,10 @@ repeat {
 }while i<110
 ```
 <img width="29" alt="스크린샷 2023-01-03 오전 9 28 39" src="https://user-images.githubusercontent.com/110437548/210287108-b6c0235c-70a6-4b08-a1c7-969e9f8972ed.png">
-
+   
 ### 마무리
- Swift 문법을 배우면서 점점 느끼는 바로는 정말 매력적인 언어라고 생각한다. 
+ Swift 문법을 배우면서 점점 느끼는 바로는 정말 매력적인 언어라고 생각한다.    
  이렇게 생각한 이유는 다음과 같다
  > java와 python 과의 장점의 합친 빠르고 정확한 언어
-
 이라고 생각한다. 
 앞으로 이렇게 문법을 더 정리해 Swift를 정복해보겠다.
