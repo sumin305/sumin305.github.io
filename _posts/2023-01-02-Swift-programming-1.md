@@ -71,7 +71,7 @@ let double = anything //컴파일 에러
 ```
 
 6. AnyObject : 모든 클래스 타입을 지칭하는 프로토콜
-7. 
+
 ```swift
 class SomeClass{}
 var someAnyObject : AnyObject = SomeClass()
@@ -80,7 +80,8 @@ var someAnyObject : AnyObject = SomeClass()
 someAnyObject = 123.5 //컴파일 에러
 ```
 
-7. nil : Swift에서 '없음'을 의미하는 키워드이다.   
+7. nil : Swift에서 '없음'을 의미하는 키워드이다. 
+  
     
     
 
