@@ -9,12 +9,12 @@ tags:
   - iOS
 ---
 
-## Swift문법
+# Swift문법
 Swift 언어 공부를 시작하며 여태까지 배운 언어들과의 차이점 위주로 정리하려 한다.   
 
-### 변수와 상수
+## 변수와 상수
 
-#### 선언
+### 선언
 > Swift는 함수형 프로그래밍의 패러다임을 채용한 언어임 -> **불변 객체**를 굉장히 중요시 한다.   
 
 대부분 상수나 변수 선언 시에 타입을 꼭 명시해준다.   
@@ -39,7 +39,7 @@ var anyDic : Dictionary<String, Any> = [String : Any]()
 //Set선언
 var integerSet : Set<Int> = Set<Int>()
 ```
-#### 기본 데이터 타입
+### 기본 데이터 타입
 > Swift는 데이터 타입에 엄격한 언어이다.    
     
     
@@ -97,10 +97,10 @@ print(Int(str2) == nil ? 0 : 1 ) //1 출력
 - str1를 Int형으로 변환할 때 Int형으로 변환할 수 없는 문자열 부분이 있음으로 nil을 반환한다.    
 
 
-### 반복문
+## 반복문
 - for문과 while문은 파이썬과 매우 유사하다.   
 
-#### for문
+### for문
 ```swift
 for i in 1...4{
     print("\(i)")
@@ -120,7 +120,7 @@ for i in stride(from:10, to:0, by:-2){
   <img width="34" alt="실행결과2" src="https://user-images.githubusercontent.com/110437548/210287068-2c133e86-0998-495a-a7b9-84bf83dcafab.png">
 </p>
    
-#### while문
+### while문
 ```swift
 var i : Int = 0
 while true{
@@ -136,7 +136,7 @@ while true{
   <img width="25" alt="실행결과3" src="https://user-images.githubusercontent.com/110437548/210287096-360c5d71-20eb-458d-aa50-4dd666394cba.png">
 </p>
 
-#### repeat - while문
+### repeat - while문
 ```swift
 i=100
 //repeat문 사용
@@ -149,7 +149,7 @@ repeat {
   <img width="29" alt="실행결과4" src="https://user-images.githubusercontent.com/110437548/210287108-b6c0235c-70a6-4b08-a1c7-969e9f8972ed.png">
 </p>
    
-### 마무리
+## 마무리
  Swift 문법을 배우면서 점점 느끼는 바로는 정말 매력적인 언어라고 생각한다.    
  이렇게 생각한 이유는 다음과 같다
  > java와 python 과의 장점을 합친 빠르고 정확한 언어    
