@@ -105,18 +105,20 @@ print(Int(str2) == nil ? 0 : 1 ) //1 출력
 for i in 1...4{
     print("\(i)")
 }
-```
-  <img width="25" alt="실행결과1" src="https://user-images.githubusercontent.com/110437548/210287119-d07468bd-0225-46be-a46a-b687950ddc8c.png" align="left">
+```   
+ <img width="25" alt="실행결과1" src="https://user-images.githubusercontent.com/110437548/210287119-d07468bd-0225-46be-a46a-b687950ddc8c.png">    
 
-- stride를 사용하여 범위 지정도 가능하다
+- stride를 사용하여 범위 지정도 가능하다   
 ```swift
 for i in stride(from:10, to:0, by:-2){
     print("\(i)")
 }
 ```
-  <img width="34" alt="실행결과2" src="https://user-images.githubusercontent.com/110437548/210287068-2c133e86-0998-495a-a7b9-84bf83dcafab.png" align="left">
-   
+
+ <img width="34" alt="실행결과2" src="https://user-images.githubusercontent.com/110437548/210287068-2c133e86-0998-495a-a7b9-84bf83dcafab.png">   
+      
 ### while문
+
 ```swift
 var i : Int = 0
 while true{
@@ -127,10 +129,13 @@ while true{
         break
     }
 }
-```
-  <img width="25" alt="실행결과3" src="https://user-images.githubusercontent.com/110437548/210287096-360c5d71-20eb-458d-aa50-4dd666394cba.png" align="left">>
+```      
+   
+   
+<img width="25" alt="실행결과3" src="https://user-images.githubusercontent.com/110437548/210287096-360c5d71-20eb-458d-aa50-4dd666394cba.png">   
 
 ### repeat - while문
+   
 ```swift
 i=100
 //repeat문 사용
@@ -138,8 +143,9 @@ repeat {
     print("\(i)")
     i+=1
 }while i<110
-```
-  <img width="29" alt="실행결과4" src="https://user-images.githubusercontent.com/110437548/210287108-b6c0235c-70a6-4b08-a1c7-969e9f8972ed.png" align="left">>
+```    
+
+ <img width="29" alt="실행결과4" src="https://user-images.githubusercontent.com/110437548/210287108-b6c0235c-70a6-4b08-a1c7-969e9f8972ed.png">   
    
 ## 마무리
  Swift 문법을 배우면서 점점 느끼는 바로는 정말 매력적인 언어라고 생각한다.    
