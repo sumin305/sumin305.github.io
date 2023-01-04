@@ -63,31 +63,31 @@ tags:
 
 ## Machine Learning
 ### Training - Test 
->   - 데이터가 많을수록 더 정확해진다   
-    - 대규모 데이터에서 패턴과 상관관계를 찾는다   
-    - 최적의 의사결정과 예측을 수행하기 위해 훈련   
+   - 데이터가 많을수록 더 정확해진다   
+   - 대규모 데이터에서 패턴과 상관관계를 찾는다   
+   - 최적의 의사결정과 예측을 수행하기 위해 훈련   
 - Training : 데이터를 학습시켜 모델을 추출한다
 - Test : 훈련된 모델로 테스트 데이터를 연습에 적용하고 성능을 측정한다
 
 ### 머신러닝 종류
-#### Supervised Learning
+1. Supervised Learning
 - 지도 학습
 - 훈련할 데이터와 결과값 (라벨) 제공
 - 예 : regression, classification     
-#### UnSupervised Learning
+2. UnSupervised Learning
 - 비지도 학습
 - 훈련할 데이터만 제공
 - 예 : clustering   
-#### Semi - Supervised Learning
+3. Semi - Supervised Learning
 - 준지도 학습
 - 훈련할 데이터와 약간의 결과값 제공
 - Labeled data와 UnLabeled data가 모두 사용되는 머신러닝 기법
 - 데이터를 수집하는 '데이터 레이블링' 작업에 소요되는 자원과 비용 감소
 - Proxy-Label Method : Labeld data로 UnLabeled data에 Label을 예측하여 달아준다.
-#### Reinforcement Learning
+4. Reinforcement Learning
 - 강화 학습
 - 일련의 행동으로부터의 보상 제공
-#### Self-Supervised Learning
+5. Self-Supervised Learning
 - UnLabeled dataset으로부터 good representation을 얻고자 하는 학습 방법
 - 비지도 학습의 일종
 - 모델 스스로 task를 정해서 지도학습 방식으로 모델을 학습
