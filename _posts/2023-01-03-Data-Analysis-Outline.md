@@ -27,7 +27,7 @@ tags:
   - Images, text, languages, time series, graphs, and so on   
 
 ## Regression
-### Correlation Analysis (상관분석)
+### Correlation Analysis
 - 두 연속형 변수 사이 상관관계가 존재하는지 파악, 상관관계의 정도 확인
 - 상관계수 : 통계학적 관점에서 선형적 상관도를 확인하여 정도를 파악
   - 음의 상관 : 반비례 관계
@@ -38,7 +38,7 @@ tags:
   - 상관계수 확인
   - 의사결정
   
-### Regression Analysis (회귀분석)
+### Regression Analysis
 - 상관분석과 다르게 두 연속형 변수 X와 Y를 인과관계로 설명할 수 있음 
 - X : 독립변수 -> 다른 변수에 영향을 주는 원인
 - Y : 상관변수 -> 다른 변수에 영향을 받는 결과
@@ -111,7 +111,8 @@ tags:
 |참|TP|FP|
 |거짓|FN|TN|
 
-#### ROC (Receiver Operating Characteristic)
+#### ROC
+- Receiver Operating Characteristic
 - y축에 TP, x축에 FP 수치를 배치해 두 수치의 균형을 살펴보는 머신러닝 평가를 위한 시각화 모델
 - ROC 커브 아래 면적인 AUC(Area Under Curve)가 1에 가까워질수록, 모델이 Y를 예측하는 정확도가 높은 모델
  <img width="294" alt="image" src="https://user-images.githubusercontent.com/110437548/210363188-7415d8ce-2d11-4cdd-ac9e-f4f2938698c7.png">
