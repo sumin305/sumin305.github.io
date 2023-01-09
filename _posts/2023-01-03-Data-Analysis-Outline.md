@@ -9,7 +9,7 @@ tags:
   - AI
   - Python
 ---
-## 데이터 분류
+## 1. 데이터 분류
 
 > 데이터들이 점점 많아지면서 데이터를 이해하고 분석하는 능력은 매우 중요하다    
 학교에서 배운 데이터 분석 관련 내용들을 정리해보겠다   
@@ -26,7 +26,7 @@ tags:
 - 데이터의 종류
   - Images, text, languages, time series, graphs, and so on   
 
-## Regression
+## 2. Regression
 ### Correlation Analysis
 - 두 연속형 변수 사이 상관관계가 존재하는지 파악, 상관관계의 정도 확인
 - 상관계수 : 통계학적 관점에서 선형적 상관도를 확인하여 정도를 파악
@@ -45,14 +45,14 @@ tags:
 - 데이터 x에 대한 결과를 y를 통해 둘 사이의 함수 f(x)를 학습한다   
 <img width="616" alt="image" src="https://user-images.githubusercontent.com/110437548/210358354-bc2c8228-cfd9-48e7-855f-7ed86c221af6.png">
 
-## Classification
+## 3. Classification
 ### Classification이란
 - 말 그대로 '분류'이다
 - 데이터 x에 대한 결과 y를 통해 둘 사이의 분류 함수 f(x)를 학습한다
 - 예 : 인공지능의 시각화를 통한 강아지와 고양이를 분류
 <img width="453" alt="image" src="https://user-images.githubusercontent.com/110437548/210358725-ab1af89c-2032-415c-907d-17b1491166c9.png">
 
-## Clustering
+## 4. Clustering
 ### Clustering이란
 - 데이터 사이의 숨겨진 구조를 밝혀 비슷한 데이터들을 군집화하는 것
 ### K-means clustering
@@ -61,7 +61,7 @@ tags:
 - 계산이 빠르고 안정적이지만 초기 값에 따라 결과가 달라질 수 있음   
 
 
-## Machine Learning
+## 5. Machine Learning
 ### Training - Test 
    - 데이터가 많을수록 더 정확해진다   
    - 대규모 데이터에서 패턴과 상관관계를 찾는다   
@@ -96,7 +96,7 @@ tags:
 - Contrastive Learning
   - batch 내의 data sample이 주어졌을 때, 그들 사이의 관계를 예측하는 task 수행   
 
-## 모델 평가
+## 6. 모델 평가
 ### 모델 테스트
 - 데이터 분석 모델이 완성되었다면 전체 데이터를 모델 생성을 위해 분할하여 사용
 - 훈련용, 테스트용, (검증용)으로 분할   
