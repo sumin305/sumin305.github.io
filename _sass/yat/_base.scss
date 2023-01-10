@@ -145,7 +145,7 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9375);
-  font-family: 'Cafe24Ohsquareair';
+  font-family: 'Nanum Gothic Coding', monospace;
   color: $text-color;
 }
 
@@ -290,3 +290,4 @@ table {
   background-position: center center;
   overflow: hidden;
 }
+
