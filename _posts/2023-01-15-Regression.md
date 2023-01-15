@@ -56,6 +56,7 @@ cost = 예측한 값과 실제 값의 차이의 제곱을 다 더한 후 학습 
 > Linear Regression의 목표   
 > -> Cost의 값이 가장 작게 하도록 W와 b를 설정한다!
 
+* * *   
 
 ## TensorFlow로 구현하기
 
