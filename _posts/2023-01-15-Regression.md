@@ -44,10 +44,8 @@ tags:
 ### Cost Function
 = Loss function   
 - 우리가 세운 Linear Hypothesis와 실제 데이터가 얼마나 다른가?
->       H(x)-y      -> 음수가 나올수도 있기 때문에 좋은 식은 아니다   
->       (|H(x)-y|)^2
-
-![image.png](attachment:image.png)
+> H(x)-y      -> 음수가 나올수도 있기 때문에 좋은 식은 아니다   
+> (|H(x)-y|)^2
 m = 학습 데이터의 개수   
 cost = 예측한 값과 실제 값의 차이의 제곱을 다 더한 후 학습 데이터의 개수로 나누어준다   
 
