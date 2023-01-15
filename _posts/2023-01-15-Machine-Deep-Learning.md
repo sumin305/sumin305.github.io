@@ -2,7 +2,7 @@
 layout: post
 title:  "[Machine Learning] 머신러닝의 개념과 용어"
 
-categories : Machine Learning
+categories : Machine_Learning
   
 tags:
   - Machine Learning
