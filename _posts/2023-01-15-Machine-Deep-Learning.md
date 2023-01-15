@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "[Machine/Deep Learning] 머신러닝의 개념과 용어"
+title:  "[Machine Learning] 머신러닝의 개념과 용어"
 
-categories : DataAnalysis
+categories : Machine Learning
   
 tags:
   - Machine Learning
@@ -18,7 +18,7 @@ tags:
 
 ## Machine Learning Basic
 
-### Machine Learning 이란?
+### Machine Learning
 
 explicit programming -> 각 환경에서의 출력을 명시해놓음   
 - explicit programming 의 한계
@@ -32,7 +32,7 @@ explicit programming -> 각 환경에서의 출력을 명시해놓음
 
 * * *   
 
-### Learning 이란?
+### Learning
 
 #### Supervised Learning
 - label들이 정해져 있는 데이터 (training set)를 가지고 학습을 하는 것   
@@ -49,6 +49,7 @@ explicit programming -> 각 환경에서의 출력을 명시해놓음
     |3,6,9|3|  
     |2,5,7|2|
     |2,3,5|1|   
+    
   - Machine Learning 에 test값 X[9,3,6]이 들어오면 Training data set을 통해 Y값 예측하여 출력  
   - AlphaGO Machine Learning -> 기존에 사람들이 바둑을 둔 다양한 경우의 수의 기보를 학습
   
