@@ -45,7 +45,10 @@ tags:
 = Loss function   
 - 우리가 세운 Linear Hypothesis와 실제 데이터가 얼마나 다른가?
 > H(x)-y      -> 음수가 나올수도 있기 때문에 좋은 식은 아니다   
-> (|H(x)-y|)^2
+> (|H(x)-y|)^2   
+
+> <img width="359" alt="image" src="https://user-images.githubusercontent.com/110437548/212549325-c6902af8-bc85-4082-9b34-d7e3c341e387.png">
+
 m = 학습 데이터의 개수   
 cost = 예측한 값과 실제 값의 차이의 제곱을 다 더한 후 학습 데이터의 개수로 나누어준다   
 
@@ -65,7 +68,6 @@ tensorFlow를 통한 regression graph 구현하기
 - 만드는 법 
     - shape에 랜덤한 값을 넣어준다   
  tf.random_normal([1]) : rank가 1이고 값이 1인 array
-
     - 이름 선언
 
 
