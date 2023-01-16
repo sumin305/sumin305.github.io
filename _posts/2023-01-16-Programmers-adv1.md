@@ -48,13 +48,14 @@ var array : [[Character]] = Array(repeating: Array(repeating: " ", count: M+2), 
 - 준식이가 초기에 있던 자리로 돌아오는 경우를 처리해주지 않아서 오류 발생 -> 준식이의 초기 자리에 "."를 넣어줌으로써 이동할 수 있는 공간으로 바꾸어줌.
 ```
 array[jc][jr] = "."
-```
+```   
+
 ### 사용한 문법
 - 2차원 배열에서 특정 배열의 값 바꾸기
 ```
  array[i][1...M] = ArraySlice(S)
 ```
-**Character 배열을 slicing 한 값(ArraySlice<Character>)에 접근하기 위해서 Array<Character> 앞에 ArraySlice를 붙여 형 변환을 해주었다**
+** Character 배열을 slicing 한 값(ArraySlice<Character>)에 접근하기 위해서 Array<Character> 앞에 ArraySlice를 붙여 형 변환을 해주었다 **
   
 - switch-case 문
 ```swift
@@ -79,8 +80,8 @@ array[jc][jr] = "."
                 break
         }
 ```
-**T[i] 값에 따른 처리를 다르게 해주었다   
-  swift 에서는 switch-case 문에 각 case 마다 break 함수가 내장되어 있어서 저절로 종료된다
+** T[i] 값에 따른 처리를 다르게 해주었다   
+  swift 에서는 switch-case 문에 각 case 마다 break 함수가 내장되어 있어서 저절로 종료된다   
   default 값을 꼭 붙여주어야 한다**
   
   
