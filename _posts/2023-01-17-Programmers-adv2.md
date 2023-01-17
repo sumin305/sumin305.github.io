@@ -41,44 +41,43 @@ S 에서 ^ 는 여러 번 등장할 수 있으며, 가시 함정을 의미한다
 * * *
 ## 풀이
 이전에 풀었던 준식이의 모험1 풀이에 약간의 변수만 변경 및 추가해주면 해결되는 문제였다   
+[준식이의 모험1 문제]<https://sumin305.github.io/2023/01/16/Programmers-adv1>
+- 변수 정리해주기
+`(jc,jr) = (i,input.index(of : "@")!+1)`
 
--  (jc,jr) = (i,input.index(of : "@")!+1)
-
-### 사용한 문법
-- 2차원 배열에서 특정 배열의 값 바꾸기
-```
- array[i][1...M] = ArraySlice(S)
-```
-__Character 배열을 slicing 한 값(ArraySlice<Character>)에 접근하기 위해서 Array<Character> 앞에 ArraySlice를 붙여 형 변환을 해주었다__
-  
-- switch-case 문
+- 데미지 변수 추가 
 ```swift
- switch (T[i]) {
-            case "L" :
-                if array[jc][jr-1] == "."{
-                    jr -= 1
-                }
-            case "R" :
-                if array[jc][jr+1] == "."{
-                    jr += 1
-                }
-            case "U" : 
-                if array[jc-1][jr] == "."{
-                    jc -= 1
-                }
-            case "D" : 
-                if array[jc+1][jr] == "."{
-                    jc += 1
-                }
-            default :
-                break
+var damage = 0
+if array[jc][jr] == "^"
+        {
+            damage += 1
         }
 ```
-** T[i] 값에 따른 처리를 다르게 해주었다   
-  swift 에서는 switch-case 문에 각 case 마다 break 함수가 내장되어 있어서 저절로 종료된다   
-  default 값을 꼭 붙여주어야 한다**
-  
-  
+### tuple
+```swift
+let n = readLine()!.split(separator : " ").map{Int(String($0))!}
+let (N,M) = (n[0],n[1])
+```    
+swift로 알고리즘 풀이를 하다보면 위에서와 같이 ( )로 변수를 감싼 형태를 자주 사용하게 되는데 
+정확히 정의를 모르고 사용하고 있어서 인터넷에 찾아보았다   
+
+> tuple? 매우 간단한 struct이다
+- 여러 가지 타입을 한꺼번에 묶어서 사용할 수 있다 (또 다른 튜플이나, 함수까지도 가능)
+``` 
+var tuple = (1, "hello",true)
+var anotherTuple = (3, tuple, sayhi())
+```
+- 튜플의 있는 값에 접근하려면 ? 
+  - 튜플이름.인덱스
+  - 혹은 이름 지정해주기
+```swift
+var tuple = (1, "hello",true)
+print(tuple.1) //1 출력
+var namedTuple (age : 2, name: "lee") 
+print(namedTuple.age) //2 출력
+```
+- tuple은 임시로 값들을 그룹 지을 때만 사용한다
+- tuple은 for문을 돌릴 수 없다   
 
 * * *
 
