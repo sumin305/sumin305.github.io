@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  "[Data Analysis] 데이터분석 - 개요"
+title:  "[Machine_Learning] 데이터분석 - 개요"
 
-categories : DataAnalysis
+categories : Machine_Learning
   
 tags:
-  - Data Analysis
+  - Data_Analysis
+  - Machine_Learning
   - AI
   - Python
 ---
