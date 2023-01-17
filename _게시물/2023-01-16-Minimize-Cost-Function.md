@@ -58,10 +58,8 @@ H(x) = Wx + b
 > 어떤 지점에서 시작하든 항상 최소 cost 값을 구할 수 있다
 
 - Formal definition : 미분 개념 이용
- 
-<img width="533" alt="image" src="https://user-images.githubusercontent.com/110437548/212620022-b8e279d5-884c-499c-aacc-017e8bc6092a.png">
-<img width="385" alt="image" src="https://user-images.githubusercontent.com/110437548/212620166-3bb34f12-daba-44dd-abc7-0e102b71ebca.png">
-<img width="901" alt="image" src="https://user-images.githubusercontent.com/110437548/212620541-34b73500-d824-456c-a72f-7de599f9ad0a.png">
+![IMG_5F5D70E0F266-1](https://user-images.githubusercontent.com/110437548/212935372-dd9681b6-ed26-4a46-9894-0ab6b660fef6.jpeg)
+
 
 ## TensorFlow로 구현하기
 H(x) = Wx (+b)생략하고 minimize 해보자
