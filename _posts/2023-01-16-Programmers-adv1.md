@@ -55,7 +55,7 @@ array[jc][jr] = "."
 ```
  array[i][1...M] = ArraySlice(S)
 ```
-** Character 배열을 slicing 한 값(ArraySlice<Character>)에 접근하기 위해서 Array<Character> 앞에 ArraySlice를 붙여 형 변환을 해주었다 **
+**Character 배열을 slicing 한 값(ArraySlice<Character>)에 접근하기 위해서 Array<Character> 앞에 ArraySlice를 붙여 형 변환을 해주었다**
   
 - switch-case 문
 ```swift
@@ -80,9 +80,9 @@ array[jc][jr] = "."
                 break
         }
 ```
-** T[i] 값에 따른 처리를 다르게 해주었다   
-  swift 에서는 switch-case 문에 각 case 마다 break 함수가 내장되어 있어서 저절로 종료된다   
-  default 값을 꼭 붙여주어야 한다**
+**T[i] 값에 따른 처리를 다르게 해주었다**   
+**Swift 에서는 switch-case 문에 각 case 마다 break 함수가 내장되어 있어서 저절로 종료된다**   
+**default 값을 꼭 붙여주어야 한다**
   
   
 
