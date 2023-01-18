@@ -31,20 +31,13 @@ M 개의 줄에 걸쳐서 i 번째 질문에 대한 대답을 출력한다. 즉,
 
 <img width="134" alt="image" src="https://user-images.githubusercontent.com/110437548/213100718-588f9902-bc06-4bea-9f68-3b29211da76b.png">   
 <img width="124" alt="image" src="https://user-images.githubusercontent.com/110437548/213100878-3112259e-654b-47a6-80b8-5293eefcaeb6.png">
----
+
 * * *
 ## 풀이
-MxN 크기의 격자 세상을 빈칸으로 둘러 싸기 위해 (N+2)x(M+2) 배열을 구현하였다
-```swift
-var array : [[Character]] = Array(repeating: Array(repeating: " ", count: M+2), count: N+2)
-```
-그 다음 준식이의 위치를 파악한 후, 입력받는 문자열의 문자("L","R","D","U")에 하나씩 접근하여   
-이동할 수 있는 경우(격자 바깥이나 벽으로 이동하지 않는 경우 = "."으로 이동하는 경우)에만 해당 방향으로 이동해주었다.
-
-### 문제해결
+### Dynamic Programming
 - 이전 항들의 값을 참조하여 값을 넣는 **Dynamic Programming** 방식을 사용하여 노래의 길이가 입력될 때 마다 배열 B에 i번째 노래가 끝나는 시간을 넣어주었다
 - index 1번값부터 i-1번째 항의 값 + 입력받은 노래의 길이
-```
+```swift
 for i in 0...N-1{
     if i == 0 {
         B.append(Int(readLine()!)!)
@@ -56,7 +49,7 @@ for i in 0...N-1{
 ``` 
 - 그런 듣고 있는 노래를 질문 받을 때마다 아까 만들어놓은 DP 배열(Array B)의 원소들에 접근하면서 질문 받은 시간과 노래가 끝나는 시간을 비교하여 대답한다
 - For문을 통해 DP 배열(Array B)내에 있는 노래 원소에 하나씩 접근하면서 질문을 받은 시간이 해당 노래가 끝나는 시간보다 클 경우 continue, 작거나 같을 경우 대답을 하고 break를 통해 빠져나왔다
-```
+```swift
 for i in 0...N-1{
         if B[i] < q{
             continue
@@ -74,7 +67,7 @@ for i in 0...N-1{
     899초에 질문을 받을 경우 총 플레이리스트 시간인 898으로 나눈 나머지 1로 간주하여 배열(Array B)에 접근한다
 
 **하지만 이렇게 코드를 짜면 플레이리스트 마지막 곡에서 q = 0이 되어 예외가 발생한다 -> else if 구문으로 문제 q = 0 이 될 경우 마지막 노래로 처리를 해주었다**
-```
+```swift
 if Q <= B[B.endIndex-1] {
         q = Q
     }else if Q % B[B.endIndex-1] == 0 {
