@@ -1,9 +1,7 @@
 ---
 layout: post
 title:  "[Machine Learning] Linear Regression Cost Function 최소화"
-
 categories : Machine_Learning
-  
 tags:
   - Machine Learning
   - Deep Learning
