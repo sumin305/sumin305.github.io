@@ -32,8 +32,8 @@ tags :
 |contains(_ :), contains(where:)|O(N)|
 |allSatisfy(_ :)|O(N)|
 |first(where:),firstIndex(where:)|O(N)|
-last(where:),lastIndex(where:)|O(N)|
-firstIndex(of:), lastIndex(of:)|O(N)|
+|last(where:),lastIndex(where:)|O(N)|
+|firstIndex(of:), lastIndex(of:)|O(N)|
 |min(), max()|O(N)|
 |enumerate()|O(N)|
 |sort(), sorted()|O(NlogN)|
@@ -56,12 +56,19 @@ firstIndex(of:), lastIndex(of:)|O(N)|
 
 | method | time complexity |  
 |:--:|:--:|
-|count|O(10
+|count|O(1)
 |contains(where:)|O(N)|
 |index(forKey:)|O(1)|
 |remove(at:), removeValue(forKey:), removeAll(keepingCapacity:)|O(N)|
 |popFirst()|O(1)|
 |reversed()|O(N)|   
+
+## 알게된 점
+Array에서 removeLast()는 시간복잡도가 O(1)이지만, removeFirst()는 O(N)이다   
+배열은 순서와 index가 있는 컬렉션 타입이므로, removeLast()를 한 후 처리해줄 필요가 없지만     
+removeFirst()를 한 후에는 추가로 index를 1씩 줄여주는 작업이 필요하다   
+이에 반해 Set은 순서가 따로 없으므로 removeFirst()의 시간복잡도가 O(1)이다  
+Array와 Dinctionary는 시간복잡도가 유사한 함수들이 많다고 느꼈다   
 
 ## 참고
 [set](github.com/apple/swift/blob/main/stdlib/public/core/Set.swift)   
