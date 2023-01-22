@@ -13,7 +13,8 @@ tags :
 또한 같은 결과를 출력하는 함수로 대체해주는 것도 시간복잡도를 줄이는 좋은 방법이다   
 한번 정리해놓으면 잊지 않을 것 같아 포스팅해보기로 하였다
 
-### Array
+### Array   
+
 | method | time complexity|
 |:--:|:--:|
 |append(_ newElement: Element)| O(1) |
@@ -30,37 +31,44 @@ tags :
 |removeAll(keepingCapacity:)|O(N)|
 |contains(_ :), contains(where:)|O(N)|
 |allSatisfy(_ :)|O(N)|
-|first(where:)   firstIndex(where:)   last(where:), lastIndex(where:)   firstIndex(of:)   lastIndex(of:)|O(N)|
+|first(where:),firstIndex(where:)|O(N)|
+last(where:),lastIndex(where:)|O(N)|
+firstIndex(of:), lastIndex(of:)|O(N)|
 |min(), max()|O(N)|
 |enumerate()|O(N)|
 |sort(), sorted()|O(NlogN)|
 |reverse(), reversed()|O(N)|
-|shuffle(), shuffled()|O(N)|
+|shuffle(), shuffled()|O(N)|   
+
    
 ### Set
+
 | method | time complexity|
 |:--:|:--:|
 |count|O(1)|
 |contains(_ :)|O(1)|
 |contains(where:)|O(N)|
 |removeFirst()|O(1)|
-|firstIndex(of:)|O(1)|
+|firstIndex(of:)|O(1)|   
 
 
 ### Dictionary
-| method | time complexity|
+
+| method | time complexity |  
 |:--:|:--:|
 |count|O(10
 |contains(where:)|O(N)|
 |index(forKey:)|O(1)|
 |remove(at:), removeValue(forKey:), removeAll(keepingCapacity:)|O(N)|
 |popFirst()|O(1)|
-|reversed()|O(N)|
+|reversed()|O(N)|   
 
 ## 참고
-[set]<github.com/apple/swift/blob/main/stdlib/public/core/Set.swift>
-[array]<github.com/apple/swift/blob/main/stdlib/public/core/Array.swift>
-[dictionary]<github.com/apple/swift/blob/main/stdlib/public/core/Dictionary.swift>
+[set](github.com/apple/swift/blob/main/stdlib/public/core/Set.swift)   
+
+[array](github.com/apple/swift/blob/main/stdlib/public/core/Array.swift)   
+
+[dictionary](github.com/apple/swift/blob/main/stdlib/public/core/Dictionary.swift)
 
 
 
