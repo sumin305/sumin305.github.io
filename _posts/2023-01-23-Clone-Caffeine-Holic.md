@@ -11,8 +11,8 @@ tags :
 ---
 
 ## Introduce
-CNU SW academy에서 실습한 미니 프로젝트를 소개하고 복습하는 과정을 포스팅하려고 한다 
-실습 프로젝트를 수행하면서 Swift 문법에 대해서도 자세히 알게 되었고 앱 개발 기술도 습득할 수 있었다  
+CNU SW academy에서 실습한 미니 프로젝트를 소개하고 복습하는 과정을 포스팅하려고 한다  
+실습 프로젝트를 수행하면서 Swift 문법에 대해서도 자세히 알게 되었고 앱 개발 기술도 습득할 수 있었다     
 다시 앱을 혼자서 구현해보면서 배운 점들을 상기시키고 추가할 점들이나 문제점 개선을 해보며 기록해려고 한다   
 
 ### Caffeine Holic
@@ -91,11 +91,32 @@ struct ContentView: View {
             }
         }
     }
-    
 ```
-<img width="299" alt="image" src="https://user-images.githubusercontent.com/110437548/213994567-287f6c0b-41ba-4b25-b006-cd1f2d0d69c4.png">   
-
-
+* * *    
 ## View Model
+데이터와 뷰와의 코드를 분리하기 위해 Caffeine Model을 생성하였다   
+다른 파일로 데이터를 구분하는 것은 헷갈리고 접근 제어를 신경써줘야 하기 때문에 더욱 복잡해졌다   
+하지만 깔끔하고 정리되어 있는 코드를 짜기 위해선 필수적이라는 생각이 든다   
+
+```swift
+class CaffeineModel {
+
+    enum CaffeineState : String {
+        case Intro
+        case Wakening
+        case Stressful
+        case Rest
+    }
+    
+    let originList = ["Welcome", "to Cafeine Holic"]
+    var dailyList : [String] = []
+    var currentState : CaffeineState = CaffeineState.Intro
+    var imageFrame : CGSize = CGSize(width : 200.0, height : 200.0)
+```
+생성한 Caffeine Model 파일에 클래스를 생성하고 enum 열거형 형식으로 model의 상태들을 나타내준다
+리스트를 초기화할 경우를 위한 상수 문자열 originList, 상태가 변할 경우의 리스트 dailyList, 현재 상태를 나타내주는 인스턴스인 currentState, 또 기본 이미지 크기 값인 imageFrame 로 변수들을 선언해주었다   
+
+
+
 ## Add
 ## Problem
