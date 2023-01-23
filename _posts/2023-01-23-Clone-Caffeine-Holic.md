@@ -19,7 +19,7 @@ CNU SW academy에서 실습한 미니 프로젝트를 소개하고 복습하는 
 처음으로 진행한 미니 프로젝트의 주제는 'Caffeine Holic' 이었다   
 사용자에게 상태 변화를 입력받고, 이 상태 변화를 기록하며 화면에 재밌게 나타내는 간단한 어플이다   
 상단에는 Top Button이, 가운데에는 list와 Image View, 하단에는 상태 변화를 입력받는 Button들이 배치되어 있다   
-![Caffeine-Holic-Prototype]("https://user-images.githubusercontent.com/110437548/213984080-945a7dab-3bdb-418f-b097-e8c80c28890b.png")   
+<img width="299" alt="image" src="https://user-images.githubusercontent.com/110437548/213984080-945a7dab-3bdb-418f-b097-e8c80c28890b.png">   
 
 ### function
 하단 버튼을 통해 스트레스 받기, 커피 먹기, 휴식 취하기등 상태 변화를 입력받을 수 있다   
@@ -93,9 +93,8 @@ struct ContentView: View {
     }
     
 ```
-("https://user-images.githubusercontent.com/110437548/213994567-287f6c0b-41ba-4b25-b006-cd1f2d0d69c4.png")
-{:width="80%" height="80%"}
-<center> 구름이 점점 끼고 있는 우도 풍경 🌊 </center>
+<img width="299" alt="image" src="https://user-images.githubusercontent.com/110437548/213994567-287f6c0b-41ba-4b25-b006-cd1f2d0d69c4.png">   
+
 
 ## View Model
 ## Add
