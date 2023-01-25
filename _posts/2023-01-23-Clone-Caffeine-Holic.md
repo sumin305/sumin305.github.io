@@ -116,6 +116,68 @@ class CaffeineModel {
 생성한 Caffeine Model 파일에 클래스를 생성하고 enum 열거형 형식으로 model의 상태들을 나타내준다
 리스트를 초기화할 경우를 위한 상수 문자열 originList, 상태가 변할 경우의 리스트 dailyList, 현재 상태를 나타내주는 인스턴스인 currentState, 또 기본 이미지 크기 값인 imageFrame 로 변수들을 선언해주었다   
 
+```swift
+func changeState (newState : CaffeineState) -> [String] {
+        addDailyList(newState : newState)
+        if newState == .Intro{
+            dailyList = originList
+            imageFrame.width = 200
+            imageFrame.height = 200
+        }
+        else if newState != self.currentState { //상태가 변할 경우
+            imageFrame.width = 200
+            imageFrame.height = 200
+            self.currentState = newState
+        }
+        else{ // 상태가 변하지 않을 경우
+            if imageFrame.width < 350{
+                imageFrame.width += 10
+                imageFrame.height += 10
+            }
+        }
+            return dailyList
+    }
+``` 
+위의 함수는 버튼이 눌린 newState에 따른 처리를 나타내주었다   
+일단 버튼이 눌릴 경우, `addDailyList` 함수를 통해 배경에 있는 List에 newState를 추가해주었다   
+만약 newState가 .Intro일 경우, 초기화면으로 돌아가기 위해 리스트를 초기 리스트로 바꾸어주고, 이미지의 크기를 원본 크기로 바꾸었다   
+만약 newState != currentState일 경우, 이미지를 해당 상태로 바꾸어주고, 이미지의 크기를 원본 크기로 바꾸었다   
+상태가 변하지 않을 경우, 최대 크기를 지정한 후 최대 크기가 될 때까지 이미지의 크기를 증가하였다   
+최대 크기를 지정하지 않을 경우 이미지가 매우 커지면 다른 view들을 밀어내 전체 화면이 망가지기 때문에 최대 크기를 설정해주었다   
+
+```swift
+    private func addDailyList (newState : CaffeineState) {
+        dailyList.insert(newState.rawValue, at: 0)
+    }
+    func changeImage() -> String {
+        return "Profile." + currentState.rawValue
+    }
+```
+addDailyList는 newState를 리스트에 추가해주는 함수이고,    
+changeImage()는 상태가 변할 경우, 이미지를 변화시켜 주는 함수이다   
+changeImage() 함수는 CaffineModel의 상태가 변할 때마다 Images View에 신호를 줘서 이미지를 변경하도록 한다   
+이 두 함수는 아래 코드와 같이 상태별로 case를 나눠서 일일히 코드를 작성해주지 않고 `currentState/newState.rawValue`를 활용하여 짧게 작성해주었다
+
+```swift
+switch(currentState) {
+  case .Intro: return "Profile.Intro";
+  case .Wakening : return "Profile.Wakening";
+  case .Stressful : return "Profile.Stressful";
+  case .Rest : return "Profile.Rest";
+```
+    func doReset() -> [String]{
+        changeState(newState: .Intro)
+    }
+    func doRest() -> [String]{
+        changeState(newState: .Rest)
+    }
+    func doWakening() -> [String]{
+        changeState(newState: .Wakening)
+    }
+    func doStress() -> [String]{
+        changeState(newState: .Stressful)
+    }
+```
 
 
 ## Add
