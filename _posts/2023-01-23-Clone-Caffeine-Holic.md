@@ -9,7 +9,6 @@ tags :
     - View & View Model
     - Clone Coding
 ---
-
 ## Introduce
 CNU SW academy에서 실습한 미니 프로젝트를 소개하고 복습하는 과정을 포스팅하려고 한다  
 실습 프로젝트를 수행하면서 Swift 문법에 대해서도 자세히 알게 되었고 앱 개발 기술도 습득할 수 있었다     
@@ -184,8 +183,9 @@ func doStress() -> [String]{
   changeState(newState: .Stressful)
 }
 ```
-> View의 버튼으로 부터 이러한 함수들을 호출하여 ViewModel에서 카페인 모델의 상태변화를 처리한다   
-이렇게 View Model 생성한 후 View 를 다음과 같이 변경해주었다
+View의 버튼으로 부터 이러한 함수들을 호출하여 ViewModel에서 카페인 모델의 상태변화를 처리한다   
+
+> View Model 생성 후 변경된 View Code
 ```swift
 struct ContentView: View {
     @State var caffeine : CaffeineModel = CaffeineModel()
@@ -206,26 +206,26 @@ struct ContentView: View {
        dailyList = caffeine.doStress()
     }
   
-    var DailyView : some View {
+     var DailyView : some View {
         HStack(alignment: .top){
-            VStack(alignment: .leading,spacing : 20){
+            VStack(alignment: .leading, spacing : 20){
                 List(dailyList, id: \.self) { item in
                     Text(item)
                 }
                 Spacer()
                 Text(" ")
             }
-            .frame(width : 250)
-            .opacity(30)
+            .frame(width : 200)
+            .opacity(0.3)
             Spacer()
         }
+        .padding()
     }
     var Images : some View {
-        VStack{
             Image(caffeine.changeImage())
                 .resizable()
                 .frame(width: caffeine.imageFrame.width, height: caffeine.imageFrame.height)
-        }}
+        }
     var Buttons : some View {
         VStack {
             HStack(spacing: 20){
@@ -235,6 +235,7 @@ struct ContentView: View {
                     resetState()
                 }
             }
+            .padding()
             Spacer()
             HStack{
                 Button("Get Some Rest"){
@@ -248,27 +249,66 @@ struct ContentView: View {
                 }.padding()
             }
         }
-    }
-    var body: some View {
-            ZStack{
-                //
-                DailyView
-                Images
-                Buttons
-            }
         .padding()
     }
-}
 ```
 * * *
 ## Add
 ### 색상 변경하기
+나에게 주어진 첫번째 추가 요소는 상태 변화에 따른 배경 색상 변경하기였다  
+View의 ZStack에 some View 하나를 더 추가하여 배경 색상을 나타내주었다    
+```swift
+var body: some View {
+            ZStack{
+                ColorView
+                DailyView
+                Images
+                Buttons
+            }
+}
+var ColorView : some View {
+        VStack{
+            
+        }.frame(maxWidth : .infinity, maxHeight : .infinity)
+        .background(bgColor)
+        .opacity(0.5)
+    }
+```
+이후 버튼이 눌려 상태가 변화할 때마다 색상을 바꾸어주었다   
+- 초기 화면일 경우 white
+- 휴식을 취할 경우 blue
+- 커피를 마실 경우 brown
+- 스트레스를 받을 경우 pink
+```swift
+@State var bgColor : Color = .white
+   
+    func resetState() {
+        dailyList = caffeine.doReset()
+        bgColor = .white
+    }
+    func getRest() {
+        dailyList = caffeine.doRest()
+        bgColor = .blue
+    }
+    
+    func incCoffee() {
+        dailyList = caffeine.doWakening()
+        bgColor = .brown
+    }
+    func incStress() {
+        dailyList = caffeine.doStress()
+        bgColor = .pink
+    }
+```
+
 ### 리스트 변경
+dailyList는 같은 상태가 입력되더라도 계속 리스트 가장 앞 부분에 추가한다   
+이 점을 수정하여 같은 상태가 계속 입력될 경우, 추가하지 않고 원래 상태 표기 옆에 +1, +2와 같이 숫자를 더해간다
+
 * * *
 ## Problem
 
 * * *
-## Problem
 ## Takeaway
 코드를 다시 짜보고 직접 설명을 작성해보니 실습 시간에 빠르게 지나갔던 내용들에 왜? 라는 질문을 던져볼 수 있는 시간이었다   
 완성본만 보고서 다시 코드를 작성해보는 것은 삽질하는 시간이 매우 많지만 서치해보면서 알아가는 것도 많고 문제해결 능력도 기를 수 있었다   
