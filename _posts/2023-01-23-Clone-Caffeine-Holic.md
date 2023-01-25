@@ -29,6 +29,8 @@ CNU SW academy에서 실습한 미니 프로젝트를 소개하고 복습하는 
 - 현재 상태와 입력받은 상태가 다를 경우) 배경색이 변함, 센터에 있는 이미지가 변한다   
 또한 상단의 Top Button을 누를 경우 초기화면으로 돌아간다   
 
+* * *   
+
 ## View
 ```swift
     var body: some View {
@@ -93,6 +95,7 @@ struct ContentView: View {
     }
 ```
 * * *    
+
 ## View Model
 데이터와 뷰와의 코드를 분리하기 위해 Caffeine Model을 생성하였다   
 다른 파일로 데이터를 구분하는 것은 헷갈리고 접근 제어를 신경써줘야 하기 때문에 더욱 복잡해졌다   
@@ -139,10 +142,10 @@ func changeState (newState : CaffeineState) -> [String] {
     }
 ``` 
 위의 함수는 버튼이 눌린 newState에 따른 처리를 나타내주었다   
-일단 버튼이 눌릴 경우, `addDailyList` 함수를 통해 배경에 있는 List에 newState를 추가해주었다   
-만약 newState가 .Intro일 경우, 초기화면으로 돌아가기 위해 리스트를 초기 리스트로 바꾸어주고, 이미지의 크기를 원본 크기로 바꾸었다   
-만약 newState != currentState일 경우, 이미지를 해당 상태로 바꾸어주고, 이미지의 크기를 원본 크기로 바꾸었다   
-상태가 변하지 않을 경우, 최대 크기를 지정한 후 최대 크기가 될 때까지 이미지의 크기를 증가하였다   
+- 일단 버튼이 눌릴 경우, `addDailyList` 함수를 통해 배경에 있는 List에 newState를 추가해주었다   
+- 만약 newState가 .Intro일 경우, 초기화면으로 돌아가기 위해 리스트를 초기 리스트로 바꾸어주고, 이미지의 크기를 원본 크기로 바꾸었다   
+- 만약 newState != currentState일 경우, 이미지를 해당 상태로 바꾸어주고, 이미지의 크기를 원본 크기로 바꾸었다   
+- 상태가 변하지 않을 경우, 최대 크기를 지정한 후 최대 크기가 될 때까지 이미지의 크기를 증가하였다   
 최대 크기를 지정하지 않을 경우 이미지가 매우 커지면 다른 view들을 밀어내 전체 화면이 망가지기 때문에 최대 크기를 설정해주었다   
 
 ```swift
@@ -153,32 +156,120 @@ func changeState (newState : CaffeineState) -> [String] {
         return "Profile." + currentState.rawValue
     }
 ```
-addDailyList는 newState를 리스트에 추가해주는 함수이고,    
-changeImage()는 상태가 변할 경우, 이미지를 변화시켜 주는 함수이다   
+- addDailyList는 newState를 리스트에 추가해주는 함수이고,    
+- changeImage()는 상태가 변할 경우, 이미지를 변화시켜 주는 함수이다   
 changeImage() 함수는 CaffineModel의 상태가 변할 때마다 Images View에 신호를 줘서 이미지를 변경하도록 한다   
-이 두 함수는 아래 코드와 같이 상태별로 case를 나눠서 일일히 코드를 작성해주지 않고 `currentState/newState.rawValue`를 활용하여 짧게 작성해주었다
+이 두 함수는 아래 코드와 같이 상태별로 case를 나눠서 일일히 코드를 작성해주지 않고    
+`currentState/newState.rawValue`를 활용하여 짧게 작성해주었다
 
 ```swift
 switch(currentState) {
-  case .Intro: return "Profile.Intro";
+  case .Intro : return "Profile.Intro";
   case .Wakening : return "Profile.Wakening";
   case .Stressful : return "Profile.Stressful";
   case .Rest : return "Profile.Rest";
 ```
-    func doReset() -> [String]{
-        changeState(newState: .Intro)
-    }
-    func doRest() -> [String]{
-        changeState(newState: .Rest)
-    }
-    func doWakening() -> [String]{
-        changeState(newState: .Wakening)
-    }
-    func doStress() -> [String]{
-        changeState(newState: .Stressful)
-    }
+
+```swift
+func doReset() -> [String]{
+  changeState(newState: .Intro)
+}
+func doRest() -> [String]{
+  changeState(newState: .Rest)
+}
+func doWakening() -> [String]{
+  changeState(newState: .Wakening)
+}
+func doStress() -> [String]{
+  changeState(newState: .Stressful)
+}
 ```
-
-
+> View의 버튼으로 부터 이러한 함수들을 호출하여 ViewModel에서 카페인 모델의 상태변화를 처리한다   
+이렇게 View Model 생성한 후 View 를 다음과 같이 변경해주었다
+```swift
+struct ContentView: View {
+    @State var caffeine : CaffeineModel = CaffeineModel()
+    @State private var dailyList : [String] = ["Welcome", "to Caffeine Holic"]
+    
+   
+    func resetState() {
+        dailyList = caffeine.doReset()
+    }
+    func getRest() {
+        dailyList = caffeine.doRest()
+    }
+    
+    func incCoffee() {
+        dailyList = caffeine.doWakening()
+    }
+    func incStress() {
+       dailyList = caffeine.doStress()
+    }
+  
+    var DailyView : some View {
+        HStack(alignment: .top){
+            VStack(alignment: .leading,spacing : 20){
+                List(dailyList, id: \.self) { item in
+                    Text(item)
+                }
+                Spacer()
+                Text(" ")
+            }
+            .frame(width : 250)
+            .opacity(30)
+            Spacer()
+        }
+    }
+    var Images : some View {
+        VStack{
+            Image(caffeine.changeImage())
+                .resizable()
+                .frame(width: caffeine.imageFrame.width, height: caffeine.imageFrame.height)
+        }}
+    var Buttons : some View {
+        VStack {
+            HStack(spacing: 20){
+                Text("")
+                Spacer()
+                Button("NEW"){
+                    resetState()
+                }
+            }
+            Spacer()
+            HStack{
+                Button("Get Some Rest"){
+                    getRest()
+                }.padding()
+                Button("Get Some Coffee"){
+                    incCoffee()
+                }.padding()
+                Button("Get Some Stress"){
+                    incStress()
+                }.padding()
+            }
+        }
+    }
+    var body: some View {
+            ZStack{
+                //
+                DailyView
+                Images
+                Buttons
+            }
+        .padding()
+    }
+}
+```
+* * *
 ## Add
+### 색상 변경하기
+### 리스트 변경
+* * *
 ## Problem
+
+* * *
+## Problem
+## Takeaway
+코드를 다시 짜보고 직접 설명을 작성해보니 실습 시간에 빠르게 지나갔던 내용들에 왜? 라는 질문을 던져볼 수 있는 시간이었다   
+완성본만 보고서 다시 코드를 작성해보는 것은 삽질하는 시간이 매우 많지만 서치해보면서 알아가는 것도 많고 문제해결 능력도 기를 수 있었다   
+앞으로도 이렇게 작고 큰 프로젝트들을 리뷰해보면서 생각과 코드를 정리하는 시간을 가져야겠다고 생각했다   
