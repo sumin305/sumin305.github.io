@@ -185,7 +185,8 @@ func doStress() -> [String]{
 ```
 View의 버튼으로 부터 이러한 함수들을 호출하여 ViewModel에서 카페인 모델의 상태변화를 처리한다   
 
-> View Model 생성 후 변경된 View Code
+> View Model 생성 후 변경된 View Code 
+
 ```swift
 struct ContentView: View {
     @State var caffeine : CaffeineModel = CaffeineModel()
@@ -252,11 +253,14 @@ struct ContentView: View {
         .padding()
     }
 ```
-* * *
-## Add
+* * *     
+
+## Add    
+
 ### 색상 변경하기
 나에게 주어진 첫번째 추가 요소는 상태 변화에 따른 배경 색상 변경하기였다  
-View의 ZStack에 some View 하나를 더 추가하여 배경 색상을 나타내주었다    
+View의 ZStack에 some View 하나를 더 추가하여 배경 색상을 나타내주었다      
+
 ```swift
 var body: some View {
             ZStack{
@@ -274,11 +278,14 @@ var ColorView : some View {
         .opacity(0.5)
     }
 ```
+
+
 이후 버튼이 눌려 상태가 변화할 때마다 색상을 바꾸어주었다   
 - 초기 화면일 경우 white
 - 휴식을 취할 경우 blue
 - 커피를 마실 경우 brown
 - 스트레스를 받을 경우 pink
+
 ```swift
 @State var bgColor : Color = .white
    
