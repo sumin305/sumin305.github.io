@@ -312,7 +312,9 @@ var ColorView : some View {
 dailyList는 같은 상태가 입력되더라도 계속 리스트 가장 앞 부분에 추가한다   
 이 점을 수정하여 같은 상태가 계속 입력될 경우, 추가하지 않고 원래 상태 표기 옆에 +1, +2와 같이 숫자를 더해간다     
 
-` var stateCount : [CaffeineState : Int] = [.Rest:0, .Wakening:0, .Stressful:0]`   
+```swift
+var stateCount : [CaffeineState : Int] = [.Rest:0, .Wakening:0, .Stressful:0]
+```
 위와 같은 코드로 상태와 상태 입력의 개수를 나타내는 Dictionary를 하나 생성해준 후, `addDailyList` 를 수정해서 리스트를 변경하였다   
 - stateCount가 0일 경우에는) dailyList에 추가하고 입력의 개수 count 를 +1 해준다 
 - 반대의 경우에는) 해당 dailyList에서 newState의 입력의 개수를 찾아서 += 1 해준다   
