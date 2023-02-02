@@ -42,7 +42,8 @@ func sheet<Content>(
 sheet는 임시적인 작업 뷰를 띄우고 싶을 때 사용한다    
 isPresented: Binding<Bool> 매개변수로 sheet을 띄우고, 해제할 수 있다   
 보통 body밖에 `@State`로 SwiftUI가 참조하도록 bool함수를 선언하여 isPresented에 따라서 swiftUI가 sheet을 나타내거나 없애도록 한다   
-InputAccountModal으로 시트의 View를 따로 정의해주었다    
+InputAccountModal으로 시트의 View를 따로 정의해주었다      
+  
 ![Simulator Screen Recording - iPhone 14 Pro - 2023-02-02 at 17 51 43](https://user-images.githubusercontent.com/110437548/216276667-69fbadfe-271c-4571-9dfd-effc797906a3.gif)   
 
 <center>TopArea()의 body</center>     
@@ -77,14 +78,7 @@ struct InputAccountModal: View{
  ```
   
  InputAccountModal은 데이터 입력을 sheet이기 때문에 `@State`로 입력받을 변수들을 미리 선언해주었다   
-    var body: some View {
-        VStack(alignment: .leading){
-            TopButton
-            InputArea
-            Spacer()
-        }.padding()
-    }
-    
+
     var TopButton: some View {
         VStack{
             Button {
