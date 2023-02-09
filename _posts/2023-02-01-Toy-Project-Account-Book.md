@@ -29,8 +29,8 @@ tags :
 * * *   
 ## View
 ### sheet
-상단에는 데이터를 추가하는 뷰를 띄우는 버튼과 데이터를 모두 초기화하는 버튼이 있다  
-데이터를 추가하는 뷰를 띄울 때는 sheet를 이용하였다   
+> sheet는 임시적인 작업 뷰를 띄우고 싶을 때 사용한다      
+상단의 버튼을 누르면 데이터를 추가하는 뷰를 띄우도록 sheet를 이용하였다     
 다음은 sheet의 정의이다 
 ```swift
 func sheet<Content>(
@@ -39,8 +39,6 @@ func sheet<Content>(
     content: @escaping () -> Content
 ) -> some View where Content : View
 ```
-> sheet는 임시적인 작업 뷰를 띄우고 싶을 때 사용한다      
-
 
 ![Simulator Screen Recording - iPhone 14 Pro - 2023-02-02 at 17 51 43](https://user-images.githubusercontent.com/110437548/216276667-69fbadfe-271c-4571-9dfd-effc797906a3.gif)     
 
