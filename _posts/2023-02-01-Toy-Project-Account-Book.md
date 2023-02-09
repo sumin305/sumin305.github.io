@@ -40,10 +40,13 @@ func sheet<Content>(
 ) -> some View where Content : View
 ```
 sheet는 임시적인 작업 뷰를 띄우고 싶을 때 사용한다    
-![Simulator Screen Recording - iPhone 14 Pro - 2023-02-02 at 17 51 43](https://user-images.githubusercontent.com/110437548/216276667-69fbadfe-271c-4571-9dfd-effc797906a3.gif)   
+![Simulator Screen Recording - iPhone 14 Pro - 2023-02-02 at 17 51 43](https://user-images.githubusercontent.com/110437548/216276667-69fbadfe-271c-4571-9dfd-effc797906a3.gif)     
+
 - isPresented: Binding<Bool> 매개변수로 sheet을 띄우고, 해제할 수 있다   
-보통 body밖에 `@State`로 SwiftUI가 참조하도록 bool함수를 선언하여 isPresented에 따라서 swiftUI가 sheet을 나타내거나 없애도록 한다      
-<br>  
+보통 body밖에 `@State`로 SwiftUI가 참조하도록 bool함수를 선언하여 isPresented에 따라서 swiftUI가 sheet을 나타내거나 없애도록 한다       
+<br>    
+  
+  
 - sheet 지우는 경우
   - 돌아가기 버튼을 누른 경우 : Dismiss()
   - 데이터를 추가하는 경우 : isPresented
@@ -88,9 +91,6 @@ dataManager등은 아직 소개하지 않았지만 코드를 통해 삭제하려
 - `사용자의 기본 데이터베이스에 대한 인터페이스`로, 앱을 실행할 때마다 키-값 쌍을 영구적으로 저장할 수 있다   
   - Default : 일반적으로 앱을 시작할 때 앱의 기본 상태 또는 기본적으로 작동하는 방법을 결정하는 데 사용되는 Parameter들을 가리킨다     
 - 앱은 사용자의 기본 데이터베이스에 있는 `Parameter Set`에 값을 할당하여 이러한 환경설정을 저장한다 
-- `PropertyListDecoder().decode()`: 기본 속성 목록 형식을 사용하여 속성 목록을 디코딩하여 지정된 유형의 값을 반환한다   
-하단에는 프로젝트에 User Default를 적용한 코드이다     
- key를 먼저 선언한 후, UserDefault에서 해당 key에 mapping되는 데이터를 가져와 원하는 데이터 형태로 decode한다   
 
 ```swift
 class AccountDataManager: ObservableObject {
@@ -117,11 +117,14 @@ class AccountDataManager: ObservableObject {
         return false
     }
  }
-```
-add함수는 사용자가 데이터 즉, 가계부에 특정 항목을 추가할 경우 호출되는 함수이다    
-받아온 추가할 데이터가 nil이 아닐 경우, 추가하는데 그 때 UserDefault에도 업데이트를 해줘야한다    
-`PropertyListEncoder().encode(acDataList)` 아까는 decode()함수를 사용했었는데,   
-이번에는 입력받은 데이터를 User Default에 저장할 수 있는 데이터 형태로 encode하여 업데이트한다    
+```    
+- `PropertyListDecoder().decode()`: 기본 속성 목록 형식을 사용하여 속성 목록을 디코딩하여 지정된 유형의 값을 반환한다   
+하단에는 프로젝트에 User Default를 적용한 코드이다     
+- key를 먼저 선언한 후, UserDefault에서 해당 key에 mapping되는 데이터를 가져와 원하는 데이터 형태로 decode한다   
+
+- add함수는 사용자가 데이터 즉, 가계부에 특정 항목을 추가할 경우 호출되는 함수이다    
+- 받아온 추가할 데이터가 nil이 아닐 경우, 추가하는데 그 때 UserDefault에도 업데이트를 해줘야한다    
+- `PropertyListEncoder().encode(acDataList)` 아까는 decode()함수를 사용했었는데, 이번에는 입력받은 데이터를 User Default에 저장할 수 있는 데이터 형태로 encode하여 업데이트한다    
 - `UserDefaults.standard.synchronize()` : default 데이터 베이스로의 비동기적인 보류적인 업데이트를 기다리고 그 데이터가 디스크에 성공적으로 저장되면 true, 그렇지 않으면 false를 반환한다   
 - 해당 어플에서는 데이터를 추가할 경우 `UserDefaults.standard.synchronize()`에서 true를 반환할 경우 !을 붙여 그 반대값인 false를 sheet를 나타내는 여부를 결정하는 `isPresented`에 넣어주어 데이터 베이스에 저장이 완료되면 데이터 추가 화면인 sheet를 없애도록 하였다   
 이렇게 설정을 해줌으로써 해당 데이터가 완전히 default 데이터 베이스 저장이 되었을 때 다음 동작을 수행할 수 있도록 해 좀 더 안전하게 코드를 짤 수 있다  
