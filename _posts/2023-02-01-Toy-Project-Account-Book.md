@@ -39,7 +39,9 @@ func sheet<Content>(
     content: @escaping () -> Content
 ) -> some View where Content : View
 ```
-> sheet는 임시적인 작업 뷰를 띄우고 싶을 때 사용한다    
+> sheet는 임시적인 작업 뷰를 띄우고 싶을 때 사용한다      
+
+
 ![Simulator Screen Recording - iPhone 14 Pro - 2023-02-02 at 17 51 43](https://user-images.githubusercontent.com/110437548/216276667-69fbadfe-271c-4571-9dfd-effc797906a3.gif)     
 
 - isPresented: Binding<Bool> 매개변수로 sheet을 띄우고, 해제할 수 있다   
