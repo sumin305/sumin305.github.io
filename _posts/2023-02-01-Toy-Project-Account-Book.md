@@ -39,7 +39,7 @@ func sheet<Content>(
     content: @escaping () -> Content
 ) -> some View where Content : View
 ```
-sheet는 임시적인 작업 뷰를 띄우고 싶을 때 사용한다    
+> sheet는 임시적인 작업 뷰를 띄우고 싶을 때 사용한다    
 ![Simulator Screen Recording - iPhone 14 Pro - 2023-02-02 at 17 51 43](https://user-images.githubusercontent.com/110437548/216276667-69fbadfe-271c-4571-9dfd-effc797906a3.gif)     
 
 - isPresented: Binding<Bool> 매개변수로 sheet을 띄우고, 해제할 수 있다   
@@ -88,8 +88,8 @@ dataManager등은 아직 소개하지 않았지만 코드를 통해 삭제하려
 나는 서버까지는 필요없는 작은 미니 프로젝트이고 앱이 활동할 때만 앱 내에 데이터를 저장하면 되므로 `User Default`를 사용하여 이러한 데이터들을 저장하였다 
   
 ### User Default
-- `사용자의 기본 데이터베이스에 대한 인터페이스`로, 앱을 실행할 때마다 키-값 쌍을 영구적으로 저장할 수 있다   
-  - Default : 일반적으로 앱을 시작할 때 앱의 기본 상태 또는 기본적으로 작동하는 방법을 결정하는 데 사용되는 Parameter들을 가리킨다     
+> `사용자의 기본 데이터베이스에 대한 인터페이스`로, 앱을 실행할 때마다 키-값 쌍을 영구적으로 저장할 수 있다   
+- Default : 일반적으로 앱을 시작할 때 앱의 기본 상태 또는 기본적으로 작동하는 방법을 결정하는 데 사용되는 Parameter들을 가리킨다     
 - 앱은 사용자의 기본 데이터베이스에 있는 `Parameter Set`에 값을 할당하여 이러한 환경설정을 저장한다 
 
 ```swift
