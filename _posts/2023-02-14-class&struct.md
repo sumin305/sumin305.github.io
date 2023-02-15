@@ -44,7 +44,6 @@ class Car{
     var isOld = false
 }
 ```
-
 3. 인스턴스 생성
 - 이름 뒤에 빈 괄호를 적으면 각각의 인스턴스 생성
 ```swift
