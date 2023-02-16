@@ -44,21 +44,21 @@ var integerSet : Set<Int> = Set<Int>()
     
     
 
-1. Bool : true와 false값만 가진다.
-2. Int, UInt 
+#### 1. Bool : true와 false값만 가진다.
+#### 2. Int, UInt 
   - Int : 64비트 정수형
   - UInt : 64비트 양의 정수형
-3. Float , Double
+#### 3. Float , Double
   - Float : 32비트 부동소수형
   - Double : 64비트 부동소수형
 
-4. Character, String
+#### 4. Character, String
   - Character : 문자 타입, 큰따옴표 사용
   - String : 문자열 타입, 큰따옴표 사용
 
 <-- 여기서부터는 Swift에서 처음 본 자료형이다 -->
 
-5. Any : Swift는의 모든 타입을 지칭하는 키워드   
+#### 5. Any : Swift는의 모든 타입을 지칭하는 키워드   
 
 
 ```swift
@@ -70,7 +70,7 @@ let double = anything //컴파일 에러
 명시적인 데이터 타입 변환이 필요함
 ```
 
-6. AnyObject : 모든 클래스 타입을 지칭하는 프로토콜
+#### 6. AnyObject : 모든 클래스 타입을 지칭하는 프로토콜
 
 ```swift
 class SomeClass{}
@@ -80,7 +80,7 @@ var someAnyObject : AnyObject = SomeClass()
 someAnyObject = 123.5 //컴파일 에러
 ```
 
-7. nil : Swift에서 '없음'을 의미하는 키워드이다.    
+#### 7. nil : Swift에서 '없음'을 의미하는 키워드이다.    
   0이 아니라 정말 값이 없음을 의미한다.   
  - NULL과의 차이점
    - NULL : 포인터가 기리키는 객체가 존재하지 않음
