@@ -90,7 +90,8 @@ name2 = "영희"
 #### 기타
 - UInt, UInt64, Int32..
 
-### 타입 주석(Type Annotation)
+### 타입 주석
+(Type Annotation)   
 - 변수를 선언하면서 타입도 명확하게 지정해주는 방식
 ```swift
 
@@ -102,7 +103,7 @@ num2 = 100 // 값을 저장 (초기화)
 ```   
 
 ### 타입 추론
-(Type Inference)
+(Type Inference)   
 - 타입을 지정하지 않아도 컴파일러가 타입을 유추하여 알아서 알맞는 타입으로 저장하는 방식   
    
 ```swift
