@@ -149,3 +149,24 @@ print(num2)
 //소수점 버림
 
 ```
+## 타입애일리어스(Type Alias)
+- 기존에 선언되어있는 타입이나 내가 만든 타입에서 새로운 별칭을 붙여 코드 가독성을 높이는 문법
+- 치환과 유사
+- 어떤 형태든 치환이 가능
+- 코드가 짧아져 문법이 간단해짐
+
+```swift
+typealias Name = String
+let name : Name = "leesumin"
+//Name 타입은 String타입과 동일
+
+typealias Something = (Int) -> String
+
+func someFunction(completionHandler : (Int) -> String) {
+    //~~
+}
+
+func someFunction2(completionHandler : Something) {
+    //~~
+}
+```   
