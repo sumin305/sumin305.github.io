@@ -39,16 +39,17 @@ var name = "Hongildong"
 var age = 55
 
 print("my name is \(name), and my age is \(age)")
+//출력 "my name is Hongildong, and my age is 55"
 ```
 
 ### 상수
+
 - 변하지 않는 데이터
 ```swift
 let name2 = "철수"
 name2 = "영희"
-
 //컴파일 에러
-```
+```   
 
 ## 데이터 타입
 - 데이터 타입이 존재하는 이유
