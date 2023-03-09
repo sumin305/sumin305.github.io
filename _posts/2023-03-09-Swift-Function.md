@@ -294,7 +294,48 @@ func add(a: Int, b: Int) {
 
 
 ### 오버로딩
-swift에서는 같은 이름의 함수에 parameter를 다양하게 선언하는 것이 가능하다    
-함수이름, parameter의 수와 타입, argument label, return type을 모두 포함하여 함수를 식별함!
-```swift
 
+swift에서는 같은 이름의 함수에 parameter를 다양하게 선언하는 것이 가능하다
+함수이름, parameter의 수와 타입, argument label, return type을 모두 포함하여 함수를 식별함!
+
+```swift
+func repeatNum(repeatNumber a: Double, count b: Int) -> Void {
+    for i in 1...b {
+        print(a)
+    }
+}
+
+func repeatNum(repeatNumber a: Int, count b: Int) -> Void {
+    for i in 1...b {
+        print(a)
+    }
+}
+
+func repeatNum(repeatNumber num: Int, count b: Int) -> Void {
+    for i in 1...b {
+        print(num)
+    }
+}
+```
+
+### @discardableResult
+
+return 값이 있는 함수에서 함수의 반환값을 return 하지 않았을 때의 경고창을 없애준다
+
+```swift
+func repeatNum(repeatNumber a: Int, count b: Int) -> Int {
+        var plus = 0
+    for i in 1...b {
+        plus += a
+    }
+}
+//에러 발생 Missing return in global function expected to return 'Int'
+
+@DiscardableResult
+func repeatNum(repeatNumber a: Int, count b: Int) -> Int {
+		var plus = 0
+    for i in 1...b {
+        plus += a
+    }
+}
+```
