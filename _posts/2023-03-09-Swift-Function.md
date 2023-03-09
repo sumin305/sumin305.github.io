@@ -85,7 +85,7 @@ repeatNum(a: 13, b: 33)
   - return 값이 없을 경우 : return type은 생략하거나 (), 혹은 Void로 나타낼 수 있음
 <br>   
 
-> 함수 호출 : `함수이름` + `소괄호(argument: )`    
+> 함수 호출 : `함수이름` + `소괄호(argument label: argument)`    
 
 - 이 때 input으로 넘기는 값들을 소괄호 안에 넣어준다    
 - 이렇게 함수로 넘겨주는 값들을 `argument`라고 한다     
@@ -100,8 +100,8 @@ var name = myName()
 
 
 #### 1. parameter
-- parameter는 위에서 말한 것처럼 함수에서 입력값으로 받아와서 함수 내부에서 사용되는 변수를 의미한다   
-- parameter는 받아온 값을 복사하여 let 값으로 사용하게 되므로, 함수 내부에서 수정할 수 없다   
+- parameter는 위에서 말한 것처럼 함수에서 입력값으로 받아와서 함수 내부에서 사용되는 변수를 의미한다    
+- parameter는 받아온 값을 복사하여 let 값으로 사용하게 되므로, 함수 내부에서 수정할 수 없다     
 ```swift
 var a = 1
 var b = 2
@@ -113,7 +113,8 @@ func addAB(_ a :Int, _ b: Int) -> Int {
 addAB(a,b)
 ```
 
-##### 기본 값 설정된 parameter
+##### 기본 값 설정
+- 함수 정의시 기본 값을 미리 설정해놓으면, 나중에 호출할 때 해당 정의된 기본 값의 argument를 생략하면 자동으로 기본 값으로 실행된다 
 ```swift
 func repeatNum(repeatNumber a: Int, count b: Int = 5) -> Void {
     for i in 1...b {
@@ -127,8 +128,8 @@ repeatNum(repeatNumber: 3)//3 5번 출력 -> 기본 값 설정된 parameter 이�
 ```
 
 
-##### Variadic Parameters
-- 가변 파라미터 - 개수가 정해지지 않은 여러 개의 parameter일 경우 사용한다   
+##### 가변 파라미터
+- 개수가 정해지지 않은 여러 개의 parameter일 경우 사용한다   
 - 하나의 parameter로 2개 이상의 argument 전달할 수 있다     
 - 개별 함수마다 하나씩만 선언 가능하다     
 ```swift
@@ -163,7 +164,9 @@ func repeatNum(repeatNumber a: Int, count b: Int) -> Void {
 repeatNum(repeatNumber: 13, count: 33)
 ```
 
-- 함수를 정의할 때, argument label을 작성하지 않으면 함수 호출 시 반드시 argument label을 명시해주어야 한다 
+- 함수를 정의할 때, argument label을 작성하지 않으면 함수 호출 시 반드시 argument label을 명시해주어야 한다     
+
+
 ```swift
 func repeatNum(a: Int, b: Int) -> Void {
     for i in 1...b {
@@ -172,11 +175,13 @@ func repeatNum(a: Int, b: Int) -> Void {
 }
 
 repeatNum(2, 3) // 컴파일 에러 **Missing argument labels 'a:b:' in call**
-```
-- 함수를 정의할 때, argument label을 \_(와일드 카드 패턴)로 작성하면 함수 호출 시 argument label을 생략할 수 있다    
+```    
 
 
-```swift
+- 함수를 정의할 때, argument label을 \_(와일드 카드 패턴)로 작성하면 함수 호출 시 argument label을 생략할 수 있다      
+
+
+```swift 
 func repeatNum(_ a: Int, _ b: Int) -> Void {
     for i in 1...b {
         print(a)
@@ -184,11 +189,14 @@ func repeatNum(_ a: Int, _ b: Int) -> Void {
 }
 
 repeatNum(2, 3)
-```
+```   
+
 #### 3. inout parameter
 - parameter type앞에 inout 키워드를 추가해주면 parameter의 복사본이 전달되지 않고 원본 데이터의 메모리 주소값이 전달된다    
 - 즉 함수 내부에서 이 값을 변경하면 외부에서 받아온 변수의 값도 변한다    
-- 이러한 외부 변수들을 받아올 때 argument 변수 앞에 `&`값을 붙여준다
+- 이러한 외부 변수들을 받아올 때 argument 변수 앞에 `&`값을 붙여준다   
+
+
 ```swift
 var a = 1
 var b = 2
@@ -199,7 +207,7 @@ func addAB(a :inout Int, b: inout Int) -> Int {
   return (a+b)
 }
 print(addAB(a: &a,b: &b))
-```
+```   
 
 #### 표기법 
 - 개발자 문서를 읽을 때 알아야하는 함수 표기법이다   
@@ -213,12 +221,14 @@ print(addAB(a: &a,b: &b))
   - () -> Void
   - (String) -> String
   - (Int, Int) -> Int   
-
+   
 
 * * *     
 ### scope
 - 변수는 범위 내에서 꼭 선언되어야만 접근이 가능하다
-- 상위 스코프 변수에는 접근이 가능하지만 (하위 스코프에서는 상위 스코프 변수가 전역변수처럼 작용)
+- 상위 스코프 변수에는 접근이 가능하지만 (하위 스코프에서는 상위 스코프 변수가 전역변수처럼 작용)   
+
+
 ```swift
 func add(a: Int, b: Int) {
     var temp = a
@@ -226,8 +236,12 @@ func add(a: Int, b: Int) {
         temp = 5
     }
 }
-```
-- 하위 스코프 변수에는 접근이 불가능하다
+```   
+
+
+- 하위 스코프 변수에는 접근이 불가능하다   
+
+
 ```swift
 func add(a: Int, b: Int) {
     temp = a // 컴파일 에러 **Cannot find 'temp' in scope**
@@ -235,8 +249,12 @@ func add(a: Int, b: Int) {
         var temp = 5
     }
 }
-```
-- 다른 스코프에서 이름 중복이 가능하다
+```   
+
+
+- 다른 스코프에서 이름 중복이 가능하다   
+
+
 ```swift
 func add(a: Int, b: Int) {
      var temp = a
@@ -246,8 +264,11 @@ func add(a: Int, b: Int) {
         temp += 5
     }
 }
-```
-* * *   
+```   
+
+
+* * *    
+
 ### 제어전송문
 - break
   - switch문 : 해당 케이스에서 실행하는 문장이 없을 경우, 빈 칸으로 두지 않고 반드시 `break`를 명시해준다
@@ -260,7 +281,7 @@ func add(a: Int, b: Int) {
   - 반복문에서 함수의 실행을 중지함 (return type 있을 경우 결과 반환)
 - throw
   - 에러가 발생가능한 함수에서 throw 키워드 다음에 정의된 에러의 타입을 반환하면서 함수를 빠져나온다        
-  
+     
 * * *    
 
 ### 메모리 구조
@@ -275,3 +296,5 @@ func add(a: Int, b: Int) {
 ### 오버로딩
 swift에서는 같은 이름의 함수에 parameter를 다양하게 선언하는 것이 가능하다    
 함수이름, parameter의 수와 타입, argument label, return type을 모두 포함하여 함수를 식별함!
+```swift
+
