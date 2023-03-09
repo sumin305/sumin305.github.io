@@ -81,8 +81,9 @@ repeatNum(a: 13, b: 33)
 코드를 한 줄씩 읽을 때 정의에서는 아무런 일도 발생하지 않는다   
 - return 값이 있을 경우 : 함수의 호출은 어떠한 값을 나타낸다 
 - return 값이 없을 경우 : return type은 생략하거나 (), 혹은 Void로 나타낼 수 있음
-<br>
-> 함수 호출 : `함수이름` + `소괄호()`    
+<br>   
+
+> 함수 호출 : `함수이름` + `소괄호(argument: )`    
 
 이 때 input으로 넘기는 값들을 소괄호 안에 넣어준다    
 이렇게 함수로 넘겨주는 값들을 `argument`라고 한다     
@@ -128,7 +129,6 @@ repeatNum(repeatNumber: 3)//3 5번 출력 -> 기본 값 설정된 parameter 이�
 - 가변 파라미터 - 개수가 정해지지 않은 여러 개의 parameter일 경우 사용한다   
 - 하나의 parameter로 2개 이상의 parameter 전달할 수 있다     
 - 개별 함수마다 하나씩만 선언 가능하다   
-- 기본 값을 가질 수 있다
 ```swift
 func sum(nums: Int..., num: Int) -> Int {
     var temp = num
@@ -161,7 +161,7 @@ func repeatNum(repeatNumber a: Int, count b: Int) -> Void {
 repeatNum(repeatNumber: 13, count: 33)
 ```
 
-함수를 정의할 때, argument label을 작성하지 않으면 함수 호출 시 반드시 parameter name을 명시해주어야 한다 
+함수를 정의할 때, argument label을 작성하지 않으면 함수 호출 시 반드시 parameter label을 명시해주어야 한다 
 ```swift
 func repeatNum(a: Int, b: Int) -> Void {
     for i in 1...b {
