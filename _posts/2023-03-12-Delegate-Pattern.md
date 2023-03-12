@@ -188,7 +188,7 @@ if let fullScreenSize = myWindow.delegate?.window(myWindow, willUseFullScreenCon
     - → 정적인 디자인 구조보다 이해가 어려움
 - 복잡함 < 단순화의 효과일 경우, 이러한 `Delegate Pattern` 을 사용하는 것이 유리하다
 
-- 참고
+## 참고
 
 [Using Delegates to Customize Object Behavior | Apple Developer Documentation](https://developer.apple.com/documentation/swift/using-delegates-to-customize-object-behavior)
 
