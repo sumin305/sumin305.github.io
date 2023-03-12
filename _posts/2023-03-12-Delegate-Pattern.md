@@ -154,9 +154,6 @@ if let fullScreenSize = myWindow.delegate?.window(myWindow, willUseFullScreenCon
 }
 ```
 
-- 참고
-
-[Using Delegates to Customize Object Behavior | Apple Developer Documentation](https://developer.apple.com/documentation/swift/using-delegates-to-customize-object-behavior)
 
 ## 클래스 상속
 
@@ -190,7 +187,7 @@ if let fullScreenSize = myWindow.delegate?.window(myWindow, willUseFullScreenCon
 
 ## 참고
 
-[Using Delegates to Customize Object Behavior | Apple Developer Documentation](https://developer.apple.com/documentation/swift/using-delegates-to-customize-object-behavior)
+[Using Delegates to Customize Object Behavior](https://developer.apple.com/documentation/swift/using-delegates-to-customize-object-behavior)
 
 [[디자인 패턴] 위임 패턴(Delegate Pattern)](https://june0122.github.io/2021/08/21/design-pattern-delegate/)
 
