@@ -37,7 +37,7 @@ protocol Area {
 }
 
 class Rectangle: Area {
-    //Window 인스턴스에 대한 참조자를 갖고 있음.
+    //Window 인스턴스에 대한 참조
     init(receiver: Window) {
         receiver.delegate = self
     }
@@ -113,10 +113,14 @@ var boss = Boss()
 
 //boss의 delegate를 sunny로
 let sunny = Employee1(supervisor: boss)
+
+//python언어로 코딩하는중.. 출력
 boss.delegate?.Coding(language: "python")
 
 //boss의 delegate를 marco로
 let marco = Employee2(supervisor: boss)
+
+//4줄째 코드 리딩중.. 출력
 boss.delegate?.Reading(num: 4)
 ```
 
