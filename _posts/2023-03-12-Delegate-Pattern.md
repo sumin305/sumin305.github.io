@@ -11,8 +11,8 @@ tags :
 ---
 ## Delegate Pattern 
 
-> 💡 특정 다른 클래스에 있는 어떠한 행동을 하고 싶을 때, 
-> 상속을 사용하는 대신 delegate라는 위임자를 선언하여 다른 클래스의 행동을 재사용하도록 하는 것. 
+> 💡 특정 다른 클래스에 있는 어떠한 행동을 하고 싶을 때,    
+> 상속을 사용하는 대신 delegate라는 위임자를 선언하여 다른 클래스의 행동을 재사용하도록 하는 것.    
 > 이때, 위임할 클래스에 위임한 내용을 수신받을 클래스의 객체를 참조하도록 해줘야됨.     
 
 
@@ -63,9 +63,9 @@ w.delegate?.area(width: 40, height: 30)
 - Window class를 Rectangle class의 서브클래스로 만드는 대신, Window class는 Rectangle class를 자신의 인스턴스 변수로 만들고, Rectangle class에 정의된 행동이 필요할 때만 Rectangle class에 위임함으로써 Rectangle class의 행동을 재사용할 수 있다
 
    
-> 💡 즉, 상속에 의해 Window인스턴스를 Rectangle 인스턴스로 간주하는 것이 아닌, 
-> Window 인스턴스가 Rectangle 인스턴스를 포함하도록 하고, 
-> Window 인스턴스가 자신이 받은 요청을 Rectangle 인스턴스로 전달하는 것!   
+> 💡 즉, 상속에 의해 Window인스턴스를 Rectangle 인스턴스로 간주하는 것이 아닌,    
+> Window 인스턴스가 Rectangle 인스턴스를 포함하도록 하고,    
+> Window 인스턴스가 자신이 받은 요청을 Rectangle 인스턴스로 전달하는 것!     
 
    
 
