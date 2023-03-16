@@ -1,3 +1,13 @@
+---
+
+layout: post
+title : "[Swift] 클래스와 구조체"
+categories : Swift
+tags : 
+    - Swift
+    - class
+    - struct
+---
 ## 1. 클래스와 구조체
 
 - 같은 데이터들을 가지고 있는  데이터 묶음을 정의해두는 틀
