@@ -14,7 +14,7 @@ tags :
 - 동일한 종류의 값들 (이름, 나이, 성별 등)을 가지고 있는 객체들을 생성할 때, 공통으로 사용되는 부분을 미리 정의해놓는것
 - 즉, `객체를 생성하기 위한 설계도`라고 할 수 있다
 - 사용자 정의 타입 : String, Int와 같은 타입을 사용자가 정의한다 → Optional 처리 가능
-- 프로퍼티, `메서드`로 구성
+-`프로퍼티`, `메서드`로 구성
 - 데이터 모델링 시 주로 사용
 - .(점문법)으로 내부의 멤버( 프로퍼티, 메소드)에 접근
 
@@ -28,13 +28,15 @@ class Vehicle {
 
     //메서드(함수)
     func engineSound() {
-				//메서드에서 해당 class/struct내의 프로퍼티에 접근할 수 있음
-        print("\(name)이 달린다 부아아앙~")
-				// 메서드 정의문 내에는 메서드(함수) 실행문 존재할 수 있다!
-				turnRight()
+      //메서드에서 해당 class/struct내의 프로퍼티에 접근할 수 있음
+      print("\(name)이 달린다 부아아앙~")
+      
+      // 메서드 정의문 내에는 메서드(함수) 실행문 존재할 수 있다!
+      turnRight()
     }
-		func turnRight() {
-				print("오른쪽으로 회전")
+    
+    func turnRight() {
+      print("오른쪽으로 회전")
 		}
 
 		//클래스 내부에는 직접 메서드(함수) 실행문이 올 수 없다.
@@ -271,8 +273,8 @@ let animal1 = AnimalStruct(name: "panda", age: 5)
 //swiftUI내에서 기본으로 제공되는 모든 view component들은 구조체 형식으로 정의되고 사용된다
 struct MainScrollView: View{
     
-		@StateObject var dataManager: AccountDataManager = AccountDataManager.shared
-    @State var acCategory: AccountCategory = .none
+  @StateObject var dataManager: AccountDataManager = AccountDataManager.shared
+  @State var acCategory: AccountCategory = .none
 
     var body: some View{
         VStack{
