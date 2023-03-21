@@ -1,5 +1,4 @@
 ---
-
 layout: post
 title : "[Swift] 값 타입과 참조 타입"
 categories : Swift
@@ -7,7 +6,7 @@ tags :
     - Swift
     - Value Type
     - Reference Type
----
+---    
 
 
 ## 값 타입과 참조 타입   
