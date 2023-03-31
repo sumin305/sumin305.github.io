@@ -11,7 +11,8 @@ tags :
     - 다형성
     - Any
     - AnyObject
----    
+---     
+
 
 ## 타입 캐스팅
 
@@ -159,13 +160,13 @@ let student1: Person = Student()
     
 
     - `let person: Person = Undergraduate()` 의 person은 Person 타입으로 업캐스팅 되었지만 실제 데이터는 Undergraduate 타입이라 Undergraduate() 클래스를 가리키고 있기 때문에 study()나 party() 함수는 실행이 불가능하지만, walk() 함수를 실행할 경우, Undergraduate 클래스에서 재정의한 walk()-2 함수를 시행한다
-        - (메서드 디스패치)
+    - (메서드 디스패치)
     
     - as 연산자의 활용
-        - Bridging → 서로 호환되는 형식을 캐스팅해서 쉽게 사용하는 것
-        - swift에서는 여전히 objective-C의 프레임워크를 많이 사용
-        - 서로 완전히 상호 호환 가능 (업 다운 캐스팅 개념 x)
-        - 강제 캐스팅할 필요가 없으므로 `as` 연산자를 활용한다
+     - Bridging → 서로 호환되는 형식을 캐스팅해서 쉽게 사용하는 것
+     - swift에서는 여전히 objective-C의 프레임워크를 많이 사용
+     - 서로 완전히 상호 호환 가능 (업 다운 캐스팅 개념 x)
+     - 강제 캐스팅할 필요가 없으므로 `as` 연산자를 활용한다
         
         ```swift
         let str: String = "HELLO"
@@ -313,8 +314,8 @@ for person in people {
     ```
     
     - 옵셔널 값의 Any 반환
-        - Any는 모든 타입, 옵셔널 타입까지 포함하므로 옵셔널 값을 사용할 때 Any 타입으로 변환해주면 컴파일러의 경고를 없앨 수 있다.
-        - 옵셔널값은 임시적인 값이므로 옵셔널을 벗겨줘야 하는데 Any로 변환하는 것은 그 자체를 사용하겠다는 의미이다.
+     - Any는 모든 타입, 옵셔널 타입까지 포함하므로 옵셔널 값을 사용할 때 Any 타입으로 변환해주면 컴파일러의 경고를 없앨 수 있다.
+     - 옵셔널값은 임시적인 값이므로 옵셔널을 벗겨줘야 하는데 Any로 변환하는 것은 그 자체를 사용하겠다는 의미이다.
         
         ```swift
         let optionalNumber: Int? = 3
