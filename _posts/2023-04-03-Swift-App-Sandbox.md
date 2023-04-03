@@ -29,7 +29,7 @@ tags :
 - 샌드박스가 없을 경우 → 앱에서 사용자의 모든 데이터에 접근 가능 & 모든 시스템 자원이 앱에 접근 가능
 - 이러한 보안 문제로 인해 iOS 정책은 사용자 앱에 모든 리소스들이나 사용자 데이터에 접근 불가능하도록 함
 
-    (샌드박스 내의 파일만 접근 가능)
+    (샌드박스 내의 파일만 접근 가능)   
 ![image](https://user-images.githubusercontent.com/110437548/229504448-62e99476-410d-421d-9206-d66ca266756c.png)
 ![image](https://user-images.githubusercontent.com/110437548/229504483-f663c870-0b25-4516-b413-f76a6c721372.png)
 
@@ -57,7 +57,7 @@ tags :
 - 커스텀 파일을 어디에 배치해야 할지 결정할 때 앱 번들 구조에 대한 이해가 필요하다!
 
 ### \[Bundle Container의 구조]
-
+   
 ```xml
 MyApp.app
    MyApp
@@ -75,31 +75,31 @@ MyApp.app
       MyImage.png
 ```
 
-1. MyApp (필수)
+### 1. MyApp (필수)
   - 앱의 코드를 포함하고 있는 실행가능한 파일
   - .app 확장자를 뗀 것이 실제 앱 프로젝트의 이름과 같음
 ---
-2. Application icons((MyAppIcon.png, MySearchIcon.png, and MySettingsIcon.png)
+### 2. Application icons((MyAppIcon.png, MySearchIcon.png, and MySettingsIcon.png)
   - 앱 아이콘은 앱을 표시하는데 사용
   - 예를 들어 홈 스크린, 검색 결과 그리고 설정에서 앱이 앱의 아이콘으로 표시
   - 대부분의 경우 앱 아이콘을 꼭 포함해야 한다.
 ---
-3. Info.plist (필수)
+### 3. Info.plist (필수)
   - bundle ID, 버젼 번호 등 앱에 대한 구성(configuration) 정보를 포함하고 있는 파일
 ---
-4. Launch images(Default.png)
+### 4. Launch images(Default.png)
   - 앱의 시작 인터페이스를 보여주는 이미지이고 시스템은 제공된 런치 이미지 중 하나를 앱이 윈도우와 유저 인터페이스를 로드할 동안 임시로 사용한다.
   - 만약 임시 런처 이미지가 없다면 검은 화면이 보여진다.
 ---
-5. MainWindow.nib
+### 5. MainWindow.nib
   - 앱의 main nib file은 앱 런치 시간에 앱을 로드하기 위한 기본 인터페이스 객체를 포함한다.
   - 보통 앱의 메인 윈도우 객체와 앱 델리게이트 객체를 갖고 있다.
 ---
-6. Settings.bundle
+### 6. Settings.bundle
   - 앱의 application-specific preferences를 포함하는 특별한 타입의 플러그인이다.
   - 이 번들은 property list와 구성하기 윈한 다른 리소스 파일이 포함되어 있고 preference를 보여준다.
 ---
-7. Custom resource files
+### 7. Custom resource files
   - non-localized 리소스들은 최상위 디렉토리에 위치하고 localized 리소스는 language-specific 하위 디렉토리에 위치한다.
 ---    
 
