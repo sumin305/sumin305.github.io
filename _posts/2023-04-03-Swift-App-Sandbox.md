@@ -56,7 +56,7 @@ tags :
     - 컴파일이 실행되는 동안 파일이 생성
 - 커스텀 파일을 어디에 배치해야 할지 결정할 때 앱 번들 구조에 대한 이해가 필요하다!
 
-### \[Bundle Container의 구조]
+### Bundle Container의 구조
    
 ```xml
 MyApp.app
@@ -73,33 +73,34 @@ MyApp.app
       MyImage.png
    fr.lproj
       MyImage.png
-```
+```   
 
-### 1. MyApp (필수)
-  - 앱의 코드를 포함하고 있는 실행가능한 파일
-  - .app 확장자를 뗀 것이 실제 앱 프로젝트의 이름과 같음
+
+1. MyApp (필수)
+- 앱의 코드를 포함하고 있는 실행가능한 파일
+- .app 확장자를 뗀 것이 실제 앱 프로젝트의 이름과 같음
 ---
-### 2. Application icons((MyAppIcon.png, MySearchIcon.png, and MySettingsIcon.png)
-  - 앱 아이콘은 앱을 표시하는데 사용
-  - 예를 들어 홈 스크린, 검색 결과 그리고 설정에서 앱이 앱의 아이콘으로 표시
-  - 대부분의 경우 앱 아이콘을 꼭 포함해야 한다.
+2. Application icons((MyAppIcon.png, MySearchIcon.png, and MySettingsIcon.png)
+- 앱 아이콘은 앱을 표시하는데 사용
+- 예를 들어 홈 스크린, 검색 결과 그리고 설정에서 앱이 앱의 아이콘으로 표시
+- 대부분의 경우 앱 아이콘을 꼭 포함해야 한다.
 ---
-### 3. Info.plist (필수)
-  - bundle ID, 버젼 번호 등 앱에 대한 구성(configuration) 정보를 포함하고 있는 파일
+3. Info.plist (필수)
+- bundle ID, 버젼 번호 등 앱에 대한 구성(configuration) 정보를 포함하고 있는 파일
 ---
-### 4. Launch images(Default.png)
-  - 앱의 시작 인터페이스를 보여주는 이미지이고 시스템은 제공된 런치 이미지 중 하나를 앱이 윈도우와 유저 인터페이스를 로드할 동안 임시로 사용한다.
+4. Launch images(Default.png)
+- 앱의 시작 인터페이스를 보여주는 이미지이고 시스템은 제공된 런치 이미지 중 하나를 앱이 윈도우와 유저 인터페이스를 로드할 동안 임시로 사용한다.
   - 만약 임시 런처 이미지가 없다면 검은 화면이 보여진다.
 ---
-### 5. MainWindow.nib
+5. MainWindow.nib
   - 앱의 main nib file은 앱 런치 시간에 앱을 로드하기 위한 기본 인터페이스 객체를 포함한다.
   - 보통 앱의 메인 윈도우 객체와 앱 델리게이트 객체를 갖고 있다.
 ---
-### 6. Settings.bundle
+6. Settings.bundle
   - 앱의 application-specific preferences를 포함하는 특별한 타입의 플러그인이다.
   - 이 번들은 property list와 구성하기 윈한 다른 리소스 파일이 포함되어 있고 preference를 보여준다.
 ---
-### 7. Custom resource files
+7. Custom resource files
   - non-localized 리소스들은 최상위 디렉토리에 위치하고 localized 리소스는 language-specific 하위 디렉토리에 위치한다.
 ---    
 
@@ -107,7 +108,7 @@ MyApp.app
 
 ![image](https://user-images.githubusercontent.com/110437548/229504536-639d5b6a-328b-458b-ad77-390395d9ff7c.png)
 
-### 1. Documents
+1. Documents
 
 - 유저가 앱을 통해 생성한 파일, 다운로드한 파일같은 것들을 저장해주는 디렉터리 (음악, pdf 등)
 - 설정에 따라 유저가 직접 파일 추가 및 삭제 가능 ( info.plist에서 UIFileSharingEnabled = YES로 설정)
@@ -118,7 +119,7 @@ ex) 그림 파일이나 텍스트 파일 / 메모 / 동영상
 
 ---
 
-### 1-1. Documents / inbox
+1-1. Documents / inbox
 
 - Documents의 내부 inbox
 - **외부 앱에서 요청하여 가져온 데이터를 inbox에 저장**한다
@@ -131,7 +132,7 @@ ex) 메일의 첨부파일 / 사진 편집을 위해 사진첩에서 가져온 �
 
 ---
 
-### 2. Library
+2. Library
 
 - 유저 데이터 파일 및 임시 파일을 제외한 모든 파일들을 관리
 - 어플을 구동하기 위해 필요한 데이터 (유저 정보, 앱 설정 데이터) → 앱 구동을 이해 반드시 필요하나, 유저에게 공개되고 싶지 않은 민감한 데이터 저장시 사용
@@ -143,7 +144,7 @@ ex) 메일의 첨부파일 / 사진 편집을 위해 사진첩에서 가져온 �
 
 ---
 
-### 2-1. Library / Application Supprot
+2-1. Library / Application Supprot
 
 - 앱의 기능 또는 관리를 위해 지속적으로 관리해야되는 파일 저장
 - Documents와 거의 동일한 속성을 가지지만, 유저에 대한 노출 여부에 따라 위치가 결정됩니다.
@@ -158,7 +159,7 @@ ex) 메모장 앱의 코어 데이터 저장소로 사용 / 앱 생성 데이터
 
 ---
 
-### 2-2. Library / Caches
+2-2. Library / Caches
 
 - 앱의 동작 속도/데이터 절약 등을 위해 사용되는 공간
 - 예를 들어 Background에서 Foreground로 넘어올 때 스냅샷 이미지로 사용됨.
@@ -169,14 +170,14 @@ ex) Background에서 Foreground로 넘어올 때 스냅샷 이미지ex) ﻿웹 �
 
 ---
 
-### 2-3. Library / Preferences
+2-3. Library / Preferences
 
 - 앱의 중요 설정들이 담김.
 - **NSUserDefaults** 를 사용해 파일을 만들어 저장
 
 ---
 
-### 3. tmp
+3. tmp
 
 - 임시 데이터 저장
 - 잠깐 쓰고 버릴 데이터 저장
