@@ -56,7 +56,7 @@ tags :
     - 컴파일이 실행되는 동안 파일이 생성
 - 커스텀 파일을 어디에 배치해야 할지 결정할 때 앱 번들 구조에 대한 이해가 필요하다!
 
-### [Bundle Container의 구조]
+### \[Bundle Container의 구조]
 
 ```xml
 MyApp.app
