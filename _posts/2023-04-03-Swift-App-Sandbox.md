@@ -16,34 +16,31 @@ tags :
 - iOS 에서는 하나의 앱마다 sandbox를 두고 공유되지 않도록 하여 접근에 대해 보호함
 - sandbox 내의 파일만 정보를 주고 받을 수 있도록 함
 - 전략
-    - 1. App Sandbox를 사용하면, 앱이 시스템과 상호 작용하는 방식을 설명할 수 있습니다.
-        
+  - 1. App Sandbox를 사용하면, 앱이 시스템과 상호 작용하는 방식을 설명할 수 있습니다.   
         **시스템에서 작업을 완료하는 데 필요한 접근권한을 앱에 "부여"하는 것이죠.**
         
-    - 2. App Sandbox를 사용하면, 열기 및 저장, 드래그 앤 드롭 및 친숙한 사용자 상호 작용을 통해
+  - 2. App Sandbox를 사용하면, 열기 및 저장, 드래그 앤 드롭 및 친숙한 사용자 상호 작용을 통해 앱에 투명하게 추가 접근 권한을 부여할 수 있습니다.
         
-        앱에 투명하게 추가 접근 권한을 부여할 수 있습니다.
-        
-![Untitled](https://user-images.githubusercontent.com/110437548/229504418-d3456290-034f-40ac-9258-4e76b7c2afbf.png)
+![Untitled](https://user-images.githubusercontent.com/110437548/229504418-d3456290-034f-40ac-9258-4e76b7c2afbf.png)   
 
 - 샌드박스가 없을 경우 → 앱에서 사용자의 모든 데이터에 접근 가능 & 모든 시스템 자원이 앱에 접근 가능
 - 이러한 보안 문제로 인해 iOS 정책은 사용자 앱에 모든 리소스들이나 사용자 데이터에 접근 불가능하도록 함
 
     (샌드박스 내의 파일만 접근 가능)   
-![image](https://user-images.githubusercontent.com/110437548/229504448-62e99476-410d-421d-9206-d66ca266756c.png)
-![image](https://user-images.githubusercontent.com/110437548/229504483-f663c870-0b25-4516-b413-f76a6c721372.png)
+![image](https://user-images.githubusercontent.com/110437548/229504448-62e99476-410d-421d-9206-d66ca266756c.png)   
+![image](https://user-images.githubusercontent.com/110437548/229504483-f663c870-0b25-4516-b413-f76a6c721372.png)   
 
 
 
-위와 같은 구조로 하나의 앱에 샌드박스가 구성되어 있다. 
+위와 같은 구조로 하나의 앱에 샌드박스가 구성되어 있다.    
 
-샌드박스 내에는 파일, 환경설정, 네트워크 리소스, 하드웨어 등에 대한 앱의 접근을 제한하는 세분화된 제어 집합이다.
+샌드박스 내에는 파일, 환경설정, 네트워크 리소스, 하드웨어 등에 대한 앱의 접근을 제한하는 세분화된 제어 집합이다.   
 
-데이터를 분리하고 고립시키고 보안 침해의 가능성을 낮춘다.
+데이터를 분리하고 고립시키고 보안 침해의 가능성을 낮춘다.   
 
-샌드박스 내부에는 다양한 역할을 하는 Container들이 있다. 
+샌드박스 내부에는 다양한 역할을 하는 Container들이 있다.    
 
-하나 하나 살펴보자.
+하나 하나 살펴보자.   
 
 ## 1. Bundle
 
@@ -79,34 +76,34 @@ MyApp.app
 1. MyApp (필수)
 - 앱의 코드를 포함하고 있는 실행가능한 파일
 - .app 확장자를 뗀 것이 실제 앱 프로젝트의 이름과 같음
----
+---   
 2. Application icons((MyAppIcon.png, MySearchIcon.png, and MySettingsIcon.png)
 - 앱 아이콘은 앱을 표시하는데 사용
 - 예를 들어 홈 스크린, 검색 결과 그리고 설정에서 앱이 앱의 아이콘으로 표시
 - 대부분의 경우 앱 아이콘을 꼭 포함해야 한다.
----
+---   
 3. Info.plist (필수)
 - bundle ID, 버젼 번호 등 앱에 대한 구성(configuration) 정보를 포함하고 있는 파일
----
+---   
 4. Launch images(Default.png)
 - 앱의 시작 인터페이스를 보여주는 이미지이고 시스템은 제공된 런치 이미지 중 하나를 앱이 윈도우와 유저 인터페이스를 로드할 동안 임시로 사용한다.
   - 만약 임시 런처 이미지가 없다면 검은 화면이 보여진다.
----
+---   
 5. MainWindow.nib
   - 앱의 main nib file은 앱 런치 시간에 앱을 로드하기 위한 기본 인터페이스 객체를 포함한다.
   - 보통 앱의 메인 윈도우 객체와 앱 델리게이트 객체를 갖고 있다.
----
+---   
 6. Settings.bundle
   - 앱의 application-specific preferences를 포함하는 특별한 타입의 플러그인이다.
   - 이 번들은 property list와 구성하기 윈한 다른 리소스 파일이 포함되어 있고 preference를 보여준다.
----
+---   
 7. Custom resource files
   - non-localized 리소스들은 최상위 디렉토리에 위치하고 localized 리소스는 language-specific 하위 디렉토리에 위치한다.
 ---    
 
 ## 2. Data
 
-![image](https://user-images.githubusercontent.com/110437548/229504536-639d5b6a-328b-458b-ad77-390395d9ff7c.png)
+![image](https://user-images.githubusercontent.com/110437548/229504536-639d5b6a-328b-458b-ad77-390395d9ff7c.png)   
 
 1. Documents
 
@@ -115,9 +112,9 @@ MyApp.app
 - 하드디스크와 같은 저장소 역할
 - 유저에게 노출되는 파일만 저장해야한다. 내부의 파일들은 ITuns와 iCloud에 백업된다
 
-ex) 그림 파일이나 텍스트 파일 / 메모 / 동영상
+ex) 그림 파일이나 텍스트 파일 / 메모 / 동영상   
 
----
+---   
 
 1-1. Documents / inbox
 
