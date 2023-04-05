@@ -72,22 +72,18 @@ MyApp.app
 
 
 1. MyApp (필수)   
-
   - 앱의 코드를 포함하고 있는 실행가능한 파일 
-  - .app 확장자를 뗀 것이 실제 앱 프로젝트의 이름과 같음      
+  - .app 확장자를 뗀 것이 실제 앱 프로젝트의 이름과 같음        
+         
     
-* * *         
-
-
 2. Application icons((MyAppIcon.png, MySearchIcon.png, and MySettingsIcon.png)    
 
   - 앱 아이콘은 앱을 표시하는데 사용   
   - 예를 들어 홈 스크린, 검색 결과 그리고 설정에서 앱이 앱의 아이콘으로 표시   
   - 대부분의 경우 앱 아이콘을 꼭 포함해야 한다.         
      
-* * *   
-
-
+   
+   
 3. Info.plist (필수)    
   - bundle ID, 버젼 번호 등 앱에 대한 구성(configuration) 정보를 포함하고 있는 파일     
          
@@ -97,27 +93,26 @@ MyApp.app
 4. Launch images(Default.png)   
   - 앱의 시작 인터페이스를 보여주는 이미지이고 시스템은 제공된 런치 이미지 중 하나를 앱이 윈도우와 유저 인터페이스를 로드할 동안 임시로 사용한다.   
   - 만약 임시 런처 이미지가 없다면 검은 화면이 보여진다.        
-    
- * * *   
+   
 
 5. MainWindow.nib    
   - 앱의 main nib file은 앱 런치 시간에 앱을 로드하기 위한 기본 인터페이스 객체를 포함한다.   
   - 보통 앱의 메인 윈도우 객체와 앱 델리게이트 객체를 갖고 있다.          
    
-* * *     
+   
 
 
 6. Settings.bundle   
   - 앱의 application-specific preferences를 포함하는 특별한 타입의 플러그인이다.   
   - 이 번들은 property list와 구성하기 윈한 다른 리소스 파일이 포함되어 있고 preference를 보여준다.    
           
-* * *   
+    
 
 
 7. Custom resource files
   - non-localized 리소스들은 최상위 디렉토리에 위치하고 localized 리소스는 language-specific 하위 디렉토리에 위치한다.   
     
-* * *   
+   
 
 
 
@@ -196,7 +191,7 @@ ex) 웹 서버에서 받아온 임시 데이터
 ---
 
 
-3. temp
+3-0. tmp
 - 임시 데이터 저장
 - 잠깐 쓰고 버릴 데이터 저장
 - OS나 유저에 의해 종종 비워지는 공간
