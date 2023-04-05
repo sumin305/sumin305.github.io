@@ -76,8 +76,7 @@ MyApp.app
   - .app 확장자를 뗀 것이 실제 앱 프로젝트의 이름과 같음        
          
     
-2. Application icons((MyAppIcon.png, MySearchIcon.png, and MySettingsIcon.png)    
-
+2. Application icons((MyAppIcon.png, MySearchIcon.png, and MySettingsIcon.png)   
   - 앱 아이콘은 앱을 표시하는데 사용   
   - 예를 들어 홈 스크린, 검색 결과 그리고 설정에서 앱이 앱의 아이콘으로 표시   
   - 대부분의 경우 앱 아이콘을 꼭 포함해야 한다.         
