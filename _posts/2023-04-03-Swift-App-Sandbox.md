@@ -86,8 +86,6 @@ MyApp.app
 3. Info.plist (필수)    
   - bundle ID, 버젼 번호 등 앱에 대한 구성(configuration) 정보를 포함하고 있는 파일     
          
-* * *  
-
 
 4. Launch images(Default.png)   
   - 앱의 시작 인터페이스를 보여주는 이미지이고 시스템은 제공된 런치 이미지 중 하나를 앱이 윈도우와 유저 인터페이스를 로드할 동안 임시로 사용한다.   
