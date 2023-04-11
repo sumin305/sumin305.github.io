@@ -35,7 +35,9 @@ tags :
   var p = Person(name:"sumin")
   ```
 <br/>
-2. 클래스 내부에서 저장 프로퍼티에 접근하는 경우 사용      
+2. 클래스 내부에서 저장 프로퍼티에 접근하는 경우 사용    
+
+  
   ```swift
   class Person {
       var name: String
