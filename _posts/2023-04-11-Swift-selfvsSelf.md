@@ -33,14 +33,11 @@ tags :
   }
 
   var p = Person(name:"sumin")
-  ```
-<br/>   
-
-
+```
 2. 클래스 내부에서 저장 프로퍼티에 접근하는 경우 사용    
 
   
-  ```swift
+```swift
   class Person {
       var name: String
       init(name: String) {
@@ -54,13 +51,12 @@ tags :
   var p = Person(name:"sumin")
   p.sayMyName()
   // sumin 출력
-  ```    
+```    
   <br/>
   다음과 같이 p 인스턴스는 self 키워드를 통해 자기 자신의 인스턴스의 name 저장 프로퍼티를 초기화하고,
   함수 내부에서 자기 자신의 인스턴스에 접근하여 해당 프로퍼티를 출력할 수 있다!    
   물론 구조체에서는 값 타입으로 함수에서 자기 자신의 프로퍼티에 접근할 수 없으므로
-  self 키워드 없이 `mutating fun` 키워드를 사용하면 된다   
-<br/>   
+
 
 
 3. 새로운 값으로 프로퍼티 초기화 하는 경우      
@@ -69,7 +65,7 @@ tags :
 - 클래스는 사용 불가능 (클래스는 참조 타입이므로 self 타입 변경 불가능하다)   
 <br/>
 
-  ```swift
+```swift
   struct Calculator {
       var number: Int = 0
 
@@ -86,10 +82,10 @@ tags :
   var c = Calculator(number: 4)
   c.reset()
   print(c.number) // 0 출력
-  ```   
+```   
 
 4. 타입 멤버에서 사용하는 경우, 인스턴스가 아닌 타입 자체를 가르킨다     
-  ```swift
+```swift
   struct Dog {
       static let species = "강아지"
 
@@ -99,14 +95,14 @@ tags :
   }
 
   Dog.doPrintSpecies() // 종은 강아지입니다. 출력
-  ```      
+```      
 self 키워드가 타입 메서드내에서 해당 인스턴스가 아닌 해당 타입을 가르킨다        
 
 5. 타입 인스턴스를 가르키는 경우, 타입 자체의 뒤에 붙여서 사용한다      
 - 외부에서 타입을 가르키는 경우
 - 타입 인스턴스는 데이터 영역에 저장된다   
 
-  ```swift
+```swift
   class SomeClass {
       static let name = "클래스"
   }
@@ -120,13 +116,13 @@ self 키워드가 타입 메서드내에서 해당 인스턴스가 아닌 해당
 
   Int.max // 9223372036854775807
   Int.self.max // 9223372036854775807 
-  ```          
+```          
 
 ### Self
 > Self는 타입을 가르킨다!   
 
 1. 특정 타입 내부에서 타입을 선언하는 위치에서 사용한다    
-  ```swift
+```swift
   extension Int {
       // 타입 저장 속성
       static let zero: Self = 0   
@@ -145,7 +141,7 @@ self 키워드가 타입 메서드내에서 해당 인스턴스가 아닌 해당
           return self.zero    
       }
   }
-  ```   
+```   
     
     
 2. 프로토콜에서의 Self 사용   
