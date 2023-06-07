@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[알고리즘/Swift] 14719 빗물 | soom.log</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="[알고리즘/Swift] 14719 빗물">
+<meta name="author" content="Lee su-min">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="문제 정보 문제 출처: 백준 온라인 저지 문제 링크: 14719번 빗물 제출 언어: Swift 알고리즘 분류: 구현 시뮬레이션">
+<meta property="og:description" content="문제 정보 문제 출처: 백준 온라인 저지 문제 링크: 14719번 빗물 제출 언어: Swift 알고리즘 분류: 구현 시뮬레이션">
+<link rel="canonical" href="https://hanabzu.github.io/jekyll-theme-yat/2023/02/06/Baekjoon-14719">
+<meta property="og:url" content="https://hanabzu.github.io/jekyll-theme-yat/2023/02/06/Baekjoon-14719">
+<meta property="og:site_name" content="soom.log">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-02-06T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[알고리즘/Swift] 14719 빗물">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Lee su-min"},"dateModified":"2023-02-06T00:00:00+00:00","datePublished":"2023-02-06T00:00:00+00:00","description":"문제 정보 문제 출처: 백준 온라인 저지 문제 링크: 14719번 빗물 제출 언어: Swift 알고리즘 분류: 구현 시뮬레이션","headline":"[알고리즘/Swift] 14719 빗물","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanabzu.github.io/jekyll-theme-yat/2023/02/06/Baekjoon-14719"},"url":"https://hanabzu.github.io/jekyll-theme-yat/2023/02/06/Baekjoon-14719"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://hanabzu.github.io/jekyll-theme-yat/feed.xml" title="soom.log">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #389092;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="soom.log" src="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png" onerror="this.style.display='none'">
+  soom.log
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags">TAGS</a>
+
+
+
+
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[알고리즘/Swift] 14719 빗물</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2023-02-06T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Feb 06, 2023
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98">#시뮬레이션</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="문제-정보">문제 정보</h2>
+<ul>
+  <li>문제 출처: <a href="http://boj.kr/">백준 온라인 저지</a>
+</li>
+  <li>문제 링크: <a href="https://www.acmicpc.net/problem/14719">14719번 빗물</a>
+</li>
+  <li>제출 언어: Swift</li>
+  <li>알고리즘 분류:
+    <ul>
+      <li>구현</li>
+      <li>시뮬레이션</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br></p>
+
+<h2 id="문제">문제</h2>
+<p>2차원 세계에 블록이 쌓여있다. 비가 오면 블록 사이에 빗물이 고인다. <br>
+<img src="https://user-images.githubusercontent.com/110437548/216887547-964f276b-0f47-4f28-aca7-d4d0c5d8729f.png" alt="image">
+<img src="https://user-images.githubusercontent.com/110437548/216887595-2d865ae2-a2f4-4c46-9b5e-166da74f6a94.png" alt="image"></p>
+
+<p>비는 충분히 많이 온다. 고이는 빗물의 총량은 얼마일까?</p>
+<h3 id="입력">입력</h3>
+<p>첫 번째 줄에는 2차원 세계의 세로 길이 H과 2차원 세계의 가로 길이 W가 주어진다. (1 ≤ H, W ≤ 500)</p>
+
+<p>두 번째 줄에는 블록이 쌓인 높이를 의미하는 0이상 H이하의 정수가 2차원 세계의 맨 왼쪽 위치부터 차례대로 W개 주어진다.</p>
+
+<p>따라서 블록 내부의 빈 공간이 생길 수 없다. 또 2차원 세계의 바닥은 항상 막혀있다고 가정하여도 좋다.</p>
+<h3 id="출력">출력</h3>
+<p>2차원 세계에서는 한 칸의 용량은 1이다. 고이는 빗물의 총량을 출력하여라.</p>
+
+<p>빗물이 전혀 고이지 않을 경우 0을 출력하여라.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//입력</span>
+<span class="mi">4</span> <span class="mi">4</span>
+<span class="mi">3</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">4</span>
+<span class="c1">//출력</span>
+<span class="mi">5</span>
+</code></pre></div></div>
+
+<h2 id="풀이">풀이</h2>
+<h3 id="단순-구현">단순 구현</h3>
+<p>가장 먼저 떠오른 풀이는 이중 배열을 생성하여 블록이 쌓여있는 공간을 1로 채워주고 <br>
+for문으로 돌며 물이 채워지는 공간을 count하는 단순 구현이었다<br>
+하나의 열씩 볼 때, 두 블록 사이에 있는 공간은 모두 비가 고이는 것을 확인할 수 있었다 <br>
+아래와 같이 하나의 열씩 확인하며 두 개의 블록 사이에는 비가 고이는 것으로 간주하여 물이 채워지는 공간을 확인하였다   <br>
+<img width="436" alt="image" src="https://user-images.githubusercontent.com/110437548/216962426-0b7356f9-14bf-42d8-808b-ea0e24376f6f.png"></p>
+
+<p><code class="language-plaintext highlighter-rouge">bool</code>변수를 하나 선언하고, 두 개의 블록 사이에 있을 경우 bool이 참이 되도록 한다  <br>
+두 개의 블록 사이에 비가 고일 때 이 두개의 블록을 감싸고 있는 두 블록이라고 하겠다 <br>
+다음과 같은 알고리즘을 통해 구현하였다</p>
+<ul>
+  <li>열은 <code class="language-plaintext highlighter-rouge">0 \~ H-1</code>만큼, 행은 <code class="language-plaintext highlighter-rouge">0 \~ W-2</code> (마지막에서 한 칸 앞의 원소)만큼 돌면서 해당 원소가 고여있는 빗물일 경우 count</li>
+  <li>해당 원소가 블록이 아닐 경우) bool이 참일 경우에만 temp를 1씩 더한다</li>
+  <li>해당 원소가 블록인 경우) 두 개의 조건을 체크한다
+    <ul>
+      <li>해당 원소가 두 개의 블록중 뒷 블록일 경우 : <code class="language-plaintext highlighter-rouge">temp</code>를 <code class="language-plaintext highlighter-rouge">count</code>에 더해주고 <code class="language-plaintext highlighter-rouge">temp</code>를 초기화한다</li>
+      <li>다음 원소가 블록이 아닐 경우(감싸고 있는 두 블록중 앞 블록일 경우) : <code class="language-plaintext highlighter-rouge">bool &lt;- true</code>
+</li>
+      <li>다음 원소가 블록일 경우(감싸고 있는 두 블록중 앞 블록일 경우) : <code class="language-plaintext highlighter-rouge">bool &lt;- false</code> (블록이 연속할 경우)</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">array[i][j+1]</code>를 검사할 경우 배열 범위를 초과하는 것을 막기 위해서 행을 <code class="language-plaintext highlighter-rouge">W-2</code>만큼만 돌았으므로 하나의 열이 끝날 때마다 그 열의 마지막 원소가 블록일 경우에만 <code class="language-plaintext highlighter-rouge">temp</code>를 더해주고 블록이 아닐 경우(앞 블록만 있고 뒤 블록은 없는 경우) <code class="language-plaintext highlighter-rouge">temp</code>를 초기화해준다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="kt">H</span><span class="o">-</span><span class="mi">1</span><span class="p">{</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="kt">W</span><span class="o">-</span><span class="mi">2</span> <span class="p">{</span>
+        <span class="c1">//블록일 경우</span>
+        <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">{</span>
+            <span class="c1">//두 개의 블록 사이에 있는 물의 수 계산 후 뒤의 블록을 만난 경우</span>
+            <span class="k">if</span> <span class="n">bool</span><span class="p">{</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="n">temp</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="p">}</span>
+            <span class="c1">//다음 원소가 블록이 아닐 경우 -&gt; count 시작</span>
+            <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">{</span>
+                <span class="n">bool</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="c1">//음 원소가 블록일 경우 -&gt; count 하지 않는다 </span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="n">bool</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">//블록이 아닐 경우</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="k">if</span> <span class="n">bool</span><span class="p">{</span>
+                <span class="n">temp</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//한 행이 끝났을 때 마지막에서 -1인 원소가 1일 경우 count에 더해주고 0일 경우 temp 초기화              </span>
+    <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">endIndex</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">{</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">temp</span>
+    <span class="p">}</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">bool</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="max-사용">max 사용</h3>
+<p>다음은 다른 사람들의 풀이를 보고 참고해서 푼 풀이이다 <br>
+위처럼 단순 구현시 빠르게 코드를 짤 수 있지만 발상의 전환을 하면 짧은 코드로 문제를 해결할 수 있었다 <br>
+각 행의 블록이 쌓인 높이를 의미하는 배열을 이용한다</p>
+
+<ul>
+  <li>배열을 돌면서 해당 원소의 앞쪽 행들 중 최대 높이와 뒤쪽 행들 중 최대 높이를 구한다</li>
+  <li>이 두 높이중 min값을 구한다</li>
+  <li>이 mim값보다 해당 행의 높이가 낮으면 물이 고인다</li>
+  <li>그때 result에 min값에서 해당 행의 높이를 뺀 값을 더한다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">))</span><span class="o">!</span><span class="p">}</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">H</span><span class="p">,</span><span class="nv">W</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">let</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">))</span><span class="o">!</span><span class="p">}</span>
+<span class="k">var</span> <span class="nv">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="kt">W</span><span class="o">-</span><span class="mi">2</span><span class="p">{</span>
+    <span class="k">let</span> <span class="nv">m</span> <span class="o">=</span> <span class="nf">min</span><span class="p">((</span><span class="n">arr</span><span class="p">[</span><span class="o">..&lt;</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span><span class="p">,</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">...</span><span class="p">])</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">m</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="코드">코드</h2>
+
+<center> 전체코드 </center>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">))</span><span class="o">!</span><span class="p">}</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">H</span><span class="p">,</span><span class="nv">W</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">var</span> <span class="nv">array</span><span class="p">:</span> <span class="p">[[</span><span class="kt">Int</span><span class="p">]]</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="kt">Array</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">W</span><span class="p">),</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">H</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">m</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">))</span><span class="o">!</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="kt">W</span><span class="o">-</span><span class="mi">1</span><span class="p">{</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">H</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">H</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nv">by</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+        <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">var</span> <span class="nv">bool</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">var</span> <span class="nv">temp</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="kt">H</span><span class="o">-</span><span class="mi">1</span><span class="p">{</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="kt">W</span><span class="o">-</span><span class="mi">2</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">{</span>
+            <span class="k">if</span> <span class="n">bool</span><span class="p">{</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="n">temp</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">{</span>
+                <span class="n">bool</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="n">bool</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="k">if</span> <span class="n">bool</span><span class="p">{</span>
+                <span class="n">temp</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">endIndex</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">{</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">temp</span>
+    <span class="p">}</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">bool</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</code></pre></div></div>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/2023/02/03/Baekjoon-2504" title="[알고리즘/Swift] 2504 괄호의 값">[알고리즘/Swift] 2504 괄호의 값</a><a class="next" href="/jekyll-theme-yat/2023/02/08/Baekjoon-1700" title="[알고리즘/Swift] 1700 멀티탭 스케줄링">[알고리즘/Swift] 1700 멀티탭 스케줄링</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/2022/12/31/boj1260" title="[알고리즘/Swift] 1700 멀티탭 스케줄링">[백준/Python] 1260번 DFS와 BFS 풀이</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9" title="[알고리즘/Swift] 1700 멀티탭 스케줄링">[알고리즘/Swift] 연속된 부분 수열의 합</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/01/15/Regression" title="[알고리즘/Swift] 1700 멀티탭 스케줄링">[Machine Learning] Linear Regression</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/02/27/Swift-Variables-Constants" title="[알고리즘/Swift] 1700 멀티탭 스케줄링">[Swift] 변수와 상수</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Github Blog 2022-2023 Lee su-min</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

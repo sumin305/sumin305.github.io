@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[Project] Caffeine Holic | soom.log</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="[Project] Caffeine Holic">
+<meta name="author" content="Lee su-min">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Introduce CNU SW academy에서 실습한 미니 프로젝트를 소개하고 복습하는 과정을 포스팅하려고 한다 실습 프로젝트를 수행하면서 Swift 문법에 대해서도 자세히 알게 되었고 앱 개발 기술도 습득할 수 있었다 다시 앱을 혼자서 구현해보면서 배운 점들을 상기시키고 추가할 점들이나 문제점 개선을 해보며 기록해려고 한다">
+<meta property="og:description" content="Introduce CNU SW academy에서 실습한 미니 프로젝트를 소개하고 복습하는 과정을 포스팅하려고 한다 실습 프로젝트를 수행하면서 Swift 문법에 대해서도 자세히 알게 되었고 앱 개발 기술도 습득할 수 있었다 다시 앱을 혼자서 구현해보면서 배운 점들을 상기시키고 추가할 점들이나 문제점 개선을 해보며 기록해려고 한다">
+<link rel="canonical" href="https://hanabzu.github.io/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic">
+<meta property="og:url" content="https://hanabzu.github.io/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic">
+<meta property="og:site_name" content="soom.log">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-01-23T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[Project] Caffeine Holic">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Lee su-min"},"dateModified":"2023-01-23T00:00:00+00:00","datePublished":"2023-01-23T00:00:00+00:00","description":"Introduce CNU SW academy에서 실습한 미니 프로젝트를 소개하고 복습하는 과정을 포스팅하려고 한다 실습 프로젝트를 수행하면서 Swift 문법에 대해서도 자세히 알게 되었고 앱 개발 기술도 습득할 수 있었다 다시 앱을 혼자서 구현해보면서 배운 점들을 상기시키고 추가할 점들이나 문제점 개선을 해보며 기록해려고 한다","headline":"[Project] Caffeine Holic","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanabzu.github.io/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic"},"url":"https://hanabzu.github.io/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://hanabzu.github.io/jekyll-theme-yat/feed.xml" title="soom.log">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #389092;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="soom.log" src="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png" onerror="this.style.display='none'">
+  soom.log
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags">TAGS</a>
+
+
+
+
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[Project] Caffeine Holic</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2023-01-23T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 23, 2023
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 13 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#SwiftUI">#SwiftUI</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Project">#Project</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#View%20&amp;%20View%20Model">#View &amp; View Model</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Clone%20Coding">#Clone Coding</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="introduce">Introduce</h2>
+<p>CNU SW academy에서 실습한 미니 프로젝트를 소개하고 복습하는 과정을 포스팅하려고 한다<br>
+실습 프로젝트를 수행하면서 Swift 문법에 대해서도 자세히 알게 되었고 앱 개발 기술도 습득할 수 있었다   <br>
+다시 앱을 혼자서 구현해보면서 배운 점들을 상기시키고 추가할 점들이나 문제점 개선을 해보며 기록해려고 한다</p>
+
+<h3 id="caffeine-holic">Caffeine Holic</h3>
+<p>처음으로 진행한 미니 프로젝트의 주제는 ‘Caffeine Holic’ 이었다 <br>
+사용자에게 상태 변화를 입력받고, 이 상태 변화를 기록하며 화면에 재밌게 나타내는 간단한 어플이다 <br>
+상단에는 Top Button이, 가운데에는 list와 Image View, 하단에는 상태 변화를 입력받는 Button들이 배치되어 있다 <br>
+<img width="299" alt="image" src="https://user-images.githubusercontent.com/110437548/213984080-945a7dab-3bdb-418f-b097-e8c80c28890b.png"></p>
+
+<h3 id="function">function</h3>
+<p>하단 버튼을 통해 스트레스 받기, 커피 먹기, 휴식 취하기등 상태 변화를 입력받을 수 있다 <br>
+이렇게 상태 변화를 입력 받았을 때의 변화는 다음과 같다</p>
+<ul>
+  <li>list에 입력한 상태가 추가된다</li>
+  <li>현재 상태와 입력받은 상태가 같을 경우) 배경색이 그대로, 센터에 있는 이미지의 크기가 조금 커진다</li>
+  <li>현재 상태와 입력받은 상태가 다를 경우) 배경색이 변함, 센터에 있는 이미지가 변한다 <br>
+또한 상단의 Top Button을 누를 경우 초기화면으로 돌아간다</li>
+</ul>
+
+<hr>
+
+<h2 id="view">View</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">ZStack</span><span class="p">{</span>
+                <span class="kt">DailyView</span>
+                <span class="kt">Images</span>
+                <span class="kt">Buttons</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<p>다음과 같이 ContentView의 body안에 ZStack으로 View들을 겹쳐서 쌓았다<br>
+ZStack도 Stack 개념 (First-In-Last-Out) 이기 때문에 화면 가장 깊은 곳에 배치할 DailyView를 가장 먼저 배치했다 <br>
+이렇게 하지 않고 Buttons을 먼저 배치할 경우, DailyView나 Images로 인해 버튼이 눌리지 않을 수도 있다</p>
+
+<p><img width="233" alt="image" src="https://user-images.githubusercontent.com/110437548/213989348-cc95514c-b6c2-4941-a125-c3ebfb0f7653.png"></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">dailyList</span> <span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Not yet"</span><span class="p">,</span> <span class="s">"Hello~!"</span><span class="p">]</span>
+   
+    <span class="k">var</span> <span class="nv">DailyView</span> <span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">HStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">){</span>
+            <span class="kt">VStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">,</span><span class="nv">spacing</span> <span class="p">:</span> <span class="mi">20</span><span class="p">){</span>
+                <span class="kt">List</span><span class="p">(</span><span class="n">dailyList</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">item</span> <span class="k">in</span>
+                    <span class="kt">Text</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">" "</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span> <span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+            <span class="kt">Spacer</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">Images</span> <span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Image</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">Buttons</span> <span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">HStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">20</span><span class="p">){</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"NEW"</span><span class="p">){</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="kt">Spacer</span><span class="p">()</span>
+            <span class="kt">HStack</span><span class="p">{</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"Get Some Rest"</span><span class="p">){</span>
+                <span class="p">}</span><span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"Get Some Coffee"</span><span class="p">){</span>
+                <span class="p">}</span><span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"Get Some Stress"</span><span class="p">){</span>
+                <span class="p">}</span><span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<hr>
+
+<h2 id="view-model">View Model</h2>
+<p>데이터와 뷰와의 코드를 분리하기 위해 Caffeine Model을 생성하였다 <br>
+다른 파일로 데이터를 구분하는 것은 헷갈리고 접근 제어를 신경써줘야 하기 때문에 더욱 복잡해졌다 <br>
+하지만 깔끔하고 정리되어 있는 코드를 짜기 위해선 필수적이라는 생각이 든다</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">CaffeineModel</span> <span class="p">{</span>
+
+    <span class="kd">enum</span> <span class="kt">CaffeineState</span> <span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="kt">Intro</span>
+        <span class="k">case</span> <span class="kt">Wakening</span>
+        <span class="k">case</span> <span class="kt">Stressful</span>
+        <span class="k">case</span> <span class="kt">Rest</span>
+    <span class="p">}</span>
+    
+    <span class="k">let</span> <span class="nv">originList</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Welcome"</span><span class="p">,</span> <span class="s">"to Cafeine Holic"</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">dailyList</span> <span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">var</span> <span class="nv">currentState</span> <span class="p">:</span> <span class="kt">CaffeineState</span> <span class="o">=</span> <span class="kt">CaffeineState</span><span class="o">.</span><span class="kt">Intro</span>
+    <span class="k">var</span> <span class="nv">imageFrame</span> <span class="p">:</span> <span class="kt">CGSize</span> <span class="o">=</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span> <span class="p">:</span> <span class="mf">200.0</span><span class="p">,</span> <span class="nv">height</span> <span class="p">:</span> <span class="mf">200.0</span><span class="p">)</span>
+</code></pre></div></div>
+<p>생성한 Caffeine Model 파일에 클래스를 생성하고 enum 열거형 형식으로 model의 상태들을 나타내준다
+리스트를 초기화할 경우를 위한 상수 문자열 originList, 상태가 변할 경우의 리스트 dailyList, 현재 상태를 나타내주는 인스턴스인 currentState, 또 기본 이미지 크기 값인 imageFrame 로 변수들을 선언해주었다</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">changeState</span> <span class="p">(</span><span class="nv">newState</span> <span class="p">:</span> <span class="kt">CaffeineState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span>
+        <span class="nf">addDailyList</span><span class="p">(</span><span class="nv">newState</span> <span class="p">:</span> <span class="n">newState</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">newState</span> <span class="o">==</span> <span class="o">.</span><span class="kt">Intro</span><span class="p">{</span>
+            <span class="n">dailyList</span> <span class="o">=</span> <span class="n">originList</span>
+            <span class="n">imageFrame</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">200</span>
+            <span class="n">imageFrame</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">200</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="n">newState</span> <span class="o">!=</span> <span class="k">self</span><span class="o">.</span><span class="n">currentState</span> <span class="p">{</span> <span class="c1">//상태가 변할 경우</span>
+            <span class="n">imageFrame</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">200</span>
+            <span class="n">imageFrame</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">200</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">currentState</span> <span class="o">=</span> <span class="n">newState</span>
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span> <span class="c1">// 상태가 변하지 않을 경우</span>
+            <span class="k">if</span> <span class="n">imageFrame</span><span class="o">.</span><span class="n">width</span> <span class="o">&lt;</span> <span class="mi">350</span><span class="p">{</span>
+                <span class="n">imageFrame</span><span class="o">.</span><span class="n">width</span> <span class="o">+=</span> <span class="mi">10</span>
+                <span class="n">imageFrame</span><span class="o">.</span><span class="n">height</span> <span class="o">+=</span> <span class="mi">10</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+            <span class="k">return</span> <span class="n">dailyList</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<p>위의 함수는 버튼이 눌린 newState에 따른 처리를 나타내주었다</p>
+<ul>
+  <li>일단 버튼이 눌릴 경우, <code class="language-plaintext highlighter-rouge">addDailyList</code> 함수를 통해 배경에 있는 List에 newState를 추가해주었다</li>
+  <li>만약 newState가 .Intro일 경우, 초기화면으로 돌아가기 위해 리스트를 초기 리스트로 바꾸어주고, 이미지의 크기를 원본 크기로 바꾸었다</li>
+  <li>만약 newState != currentState일 경우, 이미지를 해당 상태로 바꾸어주고, 이미지의 크기를 원본 크기로 바꾸었다</li>
+  <li>상태가 변하지 않을 경우, 최대 크기를 지정한 후 최대 크기가 될 때까지 이미지의 크기를 증가하였다 <br>
+최대 크기를 지정하지 않을 경우 이미지가 매우 커지면 다른 view들을 밀어내 전체 화면이 망가지기 때문에 최대 크기를 설정해주었다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">addDailyList</span> <span class="p">(</span><span class="nv">newState</span> <span class="p">:</span> <span class="kt">CaffeineState</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dailyList</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">newState</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">changeImage</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"Profile."</span> <span class="o">+</span> <span class="n">currentState</span><span class="o">.</span><span class="n">rawValue</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>addDailyList는 newState를 리스트에 추가해주는 함수이고,</li>
+  <li>changeImage()는 상태가 변할 경우, 이미지를 변화시켜 주는 함수이다 <br>
+changeImage() 함수는 CaffineModel의 상태가 변할 때마다 Images View에 신호를 줘서 이미지를 변경하도록 한다 <br>
+이 두 함수는 아래 코드와 같이 상태별로 case를 나눠서 일일히 코드를 작성해주지 않고  <br>
+<code class="language-plaintext highlighter-rouge">currentState/newState.rawValue</code>를 활용하여 짧게 작성해주었다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="n">currentState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="o">.</span><span class="kt">Intro</span> <span class="p">:</span> <span class="k">return</span> <span class="s">"Profile.Intro"</span><span class="p">;</span>
+  <span class="k">case</span> <span class="o">.</span><span class="kt">Wakening</span> <span class="p">:</span> <span class="k">return</span> <span class="s">"Profile.Wakening"</span><span class="p">;</span>
+  <span class="k">case</span> <span class="o">.</span><span class="kt">Stressful</span> <span class="p">:</span> <span class="k">return</span> <span class="s">"Profile.Stressful"</span><span class="p">;</span>
+  <span class="k">case</span> <span class="o">.</span><span class="kt">Rest</span> <span class="p">:</span> <span class="k">return</span> <span class="s">"Profile.Rest"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">doReset</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]{</span>
+  <span class="nf">changeState</span><span class="p">(</span><span class="nv">newState</span><span class="p">:</span> <span class="o">.</span><span class="kt">Intro</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">doRest</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]{</span>
+  <span class="nf">changeState</span><span class="p">(</span><span class="nv">newState</span><span class="p">:</span> <span class="o">.</span><span class="kt">Rest</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">doWakening</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]{</span>
+  <span class="nf">changeState</span><span class="p">(</span><span class="nv">newState</span><span class="p">:</span> <span class="o">.</span><span class="kt">Wakening</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">doStress</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]{</span>
+  <span class="nf">changeState</span><span class="p">(</span><span class="nv">newState</span><span class="p">:</span> <span class="o">.</span><span class="kt">Stressful</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>View의 버튼으로 부터 이러한 함수들을 호출하여 ViewModel에서 카페인 모델의 상태변화를 처리한다</p>
+
+<blockquote>
+  <p>View Model 생성 후 변경된 View Code</p>
+</blockquote>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">caffeine</span> <span class="p">:</span> <span class="kt">CaffeineModel</span> <span class="o">=</span> <span class="kt">CaffeineModel</span><span class="p">()</span>
+    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">dailyList</span> <span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Welcome"</span><span class="p">,</span> <span class="s">"to Caffeine Holic"</span><span class="p">]</span>
+    
+   
+    <span class="kd">func</span> <span class="nf">resetState</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">dailyList</span> <span class="o">=</span> <span class="n">caffeine</span><span class="o">.</span><span class="nf">doReset</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">getRest</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">dailyList</span> <span class="o">=</span> <span class="n">caffeine</span><span class="o">.</span><span class="nf">doRest</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">incCoffee</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">dailyList</span> <span class="o">=</span> <span class="n">caffeine</span><span class="o">.</span><span class="nf">doWakening</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">incStress</span><span class="p">()</span> <span class="p">{</span>
+       <span class="n">dailyList</span> <span class="o">=</span> <span class="n">caffeine</span><span class="o">.</span><span class="nf">doStress</span><span class="p">()</span>
+    <span class="p">}</span>
+  
+     <span class="k">var</span> <span class="nv">DailyView</span> <span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">HStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">){</span>
+            <span class="kt">VStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">,</span> <span class="nv">spacing</span> <span class="p">:</span> <span class="mi">20</span><span class="p">){</span>
+                <span class="kt">List</span><span class="p">(</span><span class="n">dailyList</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">item</span> <span class="k">in</span>
+                    <span class="kt">Text</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">" "</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span> <span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+            <span class="kt">Spacer</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">Images</span> <span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+            <span class="kt">Image</span><span class="p">(</span><span class="n">caffeine</span><span class="o">.</span><span class="nf">changeImage</span><span class="p">())</span>
+                <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
+                <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="n">caffeine</span><span class="o">.</span><span class="n">imageFrame</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">caffeine</span><span class="o">.</span><span class="n">imageFrame</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">Buttons</span> <span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">HStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">20</span><span class="p">){</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"NEW"</span><span class="p">){</span>
+                    <span class="nf">resetState</span><span class="p">()</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+            <span class="kt">Spacer</span><span class="p">()</span>
+            <span class="kt">HStack</span><span class="p">{</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"Get Some Rest"</span><span class="p">){</span>
+                    <span class="nf">getRest</span><span class="p">()</span>
+                <span class="p">}</span><span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"Get Some Coffee"</span><span class="p">){</span>
+                    <span class="nf">incCoffee</span><span class="p">()</span>
+                <span class="p">}</span><span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"Get Some Stress"</span><span class="p">){</span>
+                    <span class="nf">incStress</span><span class="p">()</span>
+                <span class="p">}</span><span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<hr>
+
+<h2 id="add">Add</h2>
+
+<h3 id="색상-변경하기">색상 변경하기</h3>
+<p>나에게 주어진 첫번째 추가 요소는 상태 변화에 따른 배경 색상 변경하기였다<br>
+View의 ZStack에 some View 하나를 더 추가하여 배경 색상을 나타내주었다</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+            <span class="kt">ZStack</span><span class="p">{</span>
+                <span class="kt">ColorView</span>
+                <span class="kt">DailyView</span>
+                <span class="kt">Images</span>
+                <span class="kt">Buttons</span>
+            <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">var</span> <span class="nv">ColorView</span> <span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span><span class="p">{</span>
+            
+        <span class="p">}</span><span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxWidth</span> <span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">,</span> <span class="nv">maxHeight</span> <span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="n">bgColor</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>이후 버튼이 눌려 상태가 변화할 때마다 색상을 바꾸어주었다</p>
+<ul>
+  <li>초기 화면일 경우 white</li>
+  <li>휴식을 취할 경우 blue</li>
+  <li>커피를 마실 경우 brown</li>
+  <li>스트레스를 받을 경우 pink</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@State</span> <span class="k">var</span> <span class="nv">bgColor</span> <span class="p">:</span> <span class="kt">Color</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+   
+    <span class="kd">func</span> <span class="nf">resetState</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">dailyList</span> <span class="o">=</span> <span class="n">caffeine</span><span class="o">.</span><span class="nf">doReset</span><span class="p">()</span>
+        <span class="n">bgColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">getRest</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">dailyList</span> <span class="o">=</span> <span class="n">caffeine</span><span class="o">.</span><span class="nf">doRest</span><span class="p">()</span>
+        <span class="n">bgColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">blue</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">incCoffee</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">dailyList</span> <span class="o">=</span> <span class="n">caffeine</span><span class="o">.</span><span class="nf">doWakening</span><span class="p">()</span>
+        <span class="n">bgColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">brown</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">incStress</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">dailyList</span> <span class="o">=</span> <span class="n">caffeine</span><span class="o">.</span><span class="nf">doStress</span><span class="p">()</span>
+        <span class="n">bgColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">pink</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="리스트-변경">리스트 변경</h3>
+<p>dailyList는 같은 상태가 입력되더라도 계속 리스트 가장 앞 부분에 추가한다 <br>
+이 점을 수정하여 같은 상태가 계속 입력될 경우, 추가하지 않고 원래 상태 표기 옆에 +1, +2와 같이 숫자를 더해간다</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">stateCount</span> <span class="p">:</span> <span class="p">[</span><span class="kt">CaffeineState</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="kt">Rest</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="kt">Wakening</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="kt">Stressful</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+<p>위와 같은 코드로 상태와 상태 입력의 개수를 나타내는 Dictionary를 하나 생성해준 후, <code class="language-plaintext highlighter-rouge">addDailyList</code> 를 수정해서 리스트를 변경하였다</p>
+<ul>
+  <li>stateCount가 0일 경우에는) dailyList에 추가하고 입력의 개수 count 를 +1 해준다</li>
+  <li>반대의 경우에는) 해당 dailyList에서 newState의 입력의 개수를 찾아서 += 1 해준다</li>
+  <li>Swift에서 Dictionary형은 value값이 없을 경우를 대비해서 value값을 optional값으로 반환해준다 -&gt; 그러므로 옵셔널을 강제 추출해주었다</li>
+</ul>
+<center>[수정된 addDailyList 함수]</center>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">addDailyList</span> <span class="p">(</span><span class="nv">newState</span> <span class="p">:</span> <span class="kt">CaffeineState</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">newState</span> <span class="o">==</span> <span class="o">.</span><span class="kt">Intro</span><span class="p">{</span>
+            <span class="n">dailyList</span> <span class="o">=</span> <span class="n">originList</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="n">stateCount</span><span class="p">[</span><span class="n">newState</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">{</span>
+            <span class="n">dailyList</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">newState</span><span class="o">.</span><span class="n">rawValue</span><span class="o">+</span><span class="kt">String</span><span class="p">(</span><span class="n">stateCount</span><span class="p">[</span><span class="n">newState</span><span class="p">]</span><span class="o">!</span><span class="p">),</span> <span class="nv">at</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">stateCount</span><span class="p">[</span><span class="n">newState</span><span class="p">]</span><span class="o">!</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="n">dailyList</span><span class="p">[</span><span class="n">dailyList</span><span class="o">.</span><span class="nf">firstIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">newState</span><span class="o">.</span><span class="n">rawValue</span><span class="o">+</span><span class="kt">String</span><span class="p">(</span><span class="n">stateCount</span><span class="p">[</span><span class="n">newState</span><span class="p">]</span><span class="o">!-</span><span class="mi">1</span><span class="p">))</span><span class="o">!</span><span class="p">]</span> <span class="o">=</span> <span class="n">newState</span><span class="o">.</span><span class="n">rawValue</span><span class="o">+</span><span class="kt">String</span><span class="p">(</span><span class="n">stateCount</span><span class="p">[</span><span class="n">newState</span><span class="p">]</span><span class="o">!</span><span class="p">)</span>
+            <span class="n">stateCount</span><span class="p">[</span><span class="n">newState</span><span class="p">]</span><span class="o">!</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<p><img src="https://user-images.githubusercontent.com/110437548/214882171-bbdebd18-c8cc-4496-83d1-5584de4dce00.png" alt="Simulator Screen Shot - iPhone 14 Pro - 2023-01-27 at 00 48 35"></p>
+
+<hr>
+<h2 id="takeaway">Takeaway</h2>
+<p>코드를 다시 짜보고 직접 설명을 작성해보니 실습 시간에 빠르게 지나갔던 내용들에 왜? 라는 질문을 던져볼 수 있는 시간이었다 <br>
+완성본만 보고서 다시 코드를 작성해보는 것은 삽질하는 시간이 매우 많지만 서치해보면서 알아가는 것도 많고 문제해결 능력도 기를 수 있었다 <br>
+앞으로도 이렇게 작고 큰 프로젝트들을 리뷰해보면서 생각과 코드를 정리하는 시간을 가져야겠다고 생각했다</p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/2023/01/22/Swift-TimeComplexity" title="[Swift] Time Complexity">[Swift] Time Complexity</a><a class="next" href="/jekyll-theme-yat/2023/01/25/Programmers-New-year-money-1" title="[알고리즘/Swift] 0125 세뱃돈 ">[알고리즘/Swift] 0125 세뱃돈 </a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/2023/02/13/Baekjoon-1197" title="[알고리즘/Swift] 0125 세뱃돈 ">[알고리즘/Swift] 1197 최소 스패닝 트리</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/01/02/Swift-programming-1" title="[알고리즘/Swift] 0125 세뱃돈 ">[Swift] Swift 기본 문법 - 변수 &amp; 상수와 반복문</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book" title="[알고리즘/Swift] 0125 세뱃돈 ">[Project] Account Book</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/02/21/Baekjoon-2294" title="[알고리즘/Swift] 0125 세뱃돈 ">[알고리즘/Swift] 2294 동전 2</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Github Blog 2022-2023 Lee su-min</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

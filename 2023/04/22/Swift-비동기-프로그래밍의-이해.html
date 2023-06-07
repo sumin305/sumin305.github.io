@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[Swift] 비동기 프로그래밍이란 | soom.log</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="[Swift] 비동기 프로그래밍이란">
+<meta name="author" content="Lee su-min">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="1. 동기/ 비동기 개념에 대한 이해">
+<meta property="og:description" content="1. 동기/ 비동기 개념에 대한 이해">
+<link rel="canonical" href="https://hanabzu.github.io/jekyll-theme-yat/2023/04/22/Swift-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%98-%EC%9D%B4%ED%95%B4">
+<meta property="og:url" content="https://hanabzu.github.io/jekyll-theme-yat/2023/04/22/Swift-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%98-%EC%9D%B4%ED%95%B4">
+<meta property="og:site_name" content="soom.log">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-04-22T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[Swift] 비동기 프로그래밍이란">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Lee su-min"},"dateModified":"2023-04-22T00:00:00+00:00","datePublished":"2023-04-22T00:00:00+00:00","description":"1. 동기/ 비동기 개념에 대한 이해","headline":"[Swift] 비동기 프로그래밍이란","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanabzu.github.io/jekyll-theme-yat/2023/04/22/Swift-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%98-%EC%9D%B4%ED%95%B4"},"url":"https://hanabzu.github.io/jekyll-theme-yat/2023/04/22/Swift-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%98-%EC%9D%B4%ED%95%B4"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://hanabzu.github.io/jekyll-theme-yat/feed.xml" title="soom.log">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #389092;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="soom.log" src="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png" onerror="this.style.display='none'">
+  soom.log
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags">TAGS</a>
+
+
+
+
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[Swift] 비동기 프로그래밍이란</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2023-04-22T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Apr 22, 2023
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 15 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B9%84%EB%8F%99%EA%B8%B0%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D">#비동기 프로그래밍</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%93%B0%EB%A0%88%EB%93%9C">#쓰레드</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%81%90">#큐</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%9E%91%EC%97%85">#작업</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="1-동기-비동기-개념에-대한-이해">1. 동기/ 비동기 개념에 대한 이해</h2>
+
+<h3 id="쓰레드">쓰레드</h3>
+
+<p>연산을 수행하는 연산 장치 ( 코어 하나당 대부분 2개의 쓰레드 )</p>
+
+<ul>
+  <li>소프트웨어적인 Thread - NSThread라고 불리는 객체임</li>
+  <li>메인쓰레드 (1번 쓰레드)는 앱의 시작과 화면을 다시 그리는 역할도 한다 (60Hz 1초에 60번)
+    <ul>
+      <li>여러 역할을 수행하므로 너무 오래 걸리는 작업 시키면 x</li>
+      <li>다른 thread로 분산처리를 해야함!</li>
+    </ul>
+  </li>
+</ul>
+
+<aside>
+💡 작업(Task)를 대기 행렬(Queue)로 보내기만 하면, iOS가 알아서 여러 쓰레드로 나눠서 분산처리
+
+</aside>
+
+<h3 id="병렬-vs-동시">병렬 vs 동시</h3>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">병렬</code>은 <code class="language-plaintext highlighter-rouge">물리</code>적인 쓰레드에서 실제 동시에 일을 하는 개념이고</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">동시성</code>은 메인 쓰레드가 아닌 다른 <code class="language-plaintext highlighter-rouge">소프트웨어</code>적인 쓰레드에서 동시에 일을 하는 개념이다!</li>
+</ul>
+
+<p>개발자는 동시성 부분은 신경쓰면 된다.</p>
+
+<p>여러 개의 쓰레드에서 작업을 해도 내부 물리적인 쓰레드는 1개만 사용할 수도 있음</p>
+
+<h2 id="2-비동기-처리가-필요한-이유">2. 비동기 처리가 필요한 이유</h2>
+
+<ul>
+  <li>네트워크 통신 - 서버에 데이터 (이미지 등) 를 요청하는 일을 부하가 많이 걸리고 시간이 오래 걸림!</li>
+  <li>비동기 처리를 하지 않으면 → 네트워크 통신과 같은 실행이 제대로 동작하지 않아 화면이 버벅거림</li>
+  <li>비동기 처리와 동시성 프로그래밍 → <code class="language-plaintext highlighter-rouge">성능/ 반응성/ 최적화</code>와 관련되어 있다!</li>
+</ul>
+
+<hr>
+
+<h2 id="3-비동기-동기의-개념">3. 비동기, 동기의 개념</h2>
+
+<h3 id="동기-처리-synchronous">동기 처리 (Synchronous)</h3>
+
+<aside>
+💡 작업을 다른 쓰레드에서 하도록 시킨 후, 그 작업이 끝날 때까지 `기다린다`
+
+</aside>
+
+<ul>
+  <li>하나의 작업을 마칠 때까지 다음 작업들이 대기하는 것</li>
+  <li>서버에 요청을 보냈을 때 응답이 돌아올 때까지 다른 작업들을 멈추고 대기</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">task1</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Task 1 시작"</span><span class="p">)</span>
+    <span class="nf">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Task 1 완료★"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">task2</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Task 2 시작"</span><span class="p">)</span>
+    <span class="nf">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Task 2 완료★"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">task3</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Task 3 시작"</span><span class="p">)</span>
+    <span class="nf">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Task 3 완료★"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">task1</span><span class="p">()</span>
+<span class="nf">task2</span><span class="p">()</span>
+<span class="nf">task3</span><span class="p">()</span>
+<span class="c1">// 각자의 task가 수행이 완료되어야만 다음 줄의 함수를 실행한다!</span>
+</code></pre></div></div>
+
+<h3 id="비동기-처리-asynchronous">비동기 처리 (Asynchronous)</h3>
+
+<aside>
+💡 작업을 다른 쓰레드에서 하도록 시킨 후, 그 작업이 끝나길 `안 기다리고 다른 작업을 수행한다`
+
+</aside>
+
+<ul>
+  <li>여러 개의 쓰레드에서 각자 작업들을 수행한다.</li>
+  <li>서버에 요청을 보내고 응답이 돌아오기 전에도 다른 작업들을 수행할 수 있음</li>
+  <li>일을 시작 시키고, 작업이 끝날 때까지 기다리지 않는다 !!</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">task4</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Task 4 시작"</span><span class="p">)</span>
+        <span class="nf">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Task 4 완료★"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">task5</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Task 5 시작"</span><span class="p">)</span>
+        <span class="nf">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Task 5 완료★"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">task6</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Task 6 시작"</span><span class="p">)</span>
+        <span class="nf">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Task 6 완료★"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">task4</span><span class="p">()</span>
+<span class="nf">task5</span><span class="p">()</span>
+<span class="nf">task6</span><span class="p">()</span>
+<span class="c1">// 동시 다발적으로 queue에서 여러 개의 쓰레드로 보냄 -&gt; 일이 끝나지 않아도 다음 줄 수행</span>
+<span class="c1">// (기다리지 않는다!)</span>
+
+<span class="c1">// 출력:</span>
+<span class="c1">// Task 6 시작</span>
+<span class="c1">// Task 4 시작</span>
+<span class="c1">// Task 5 시작</span>
+<span class="c1">// 2초 쉬고,</span>
+<span class="c1">// Task 5 완료★</span>
+<span class="c1">// Task 4 완료★</span>
+<span class="c1">// Task 6 완료★</span>
+<span class="c1">// -&gt; 각자 다른 쓰레드에서 수행되므로 순서도 바뀐다</span>
+</code></pre></div></div>
+
+<h3 id="직렬serial-vs-동시concurrent">직렬(serial) vs 동시(concurrent)</h3>
+
+<ul>
+  <li>큐가 thread를 처리하는 방식</li>
+  <li>직렬은 한 개의 쓰레드에서 처리한다</li>
+  <li>동시는 서로 다른 여러 개의 쓰레드에서 처리한다</li>
+</ul>
+
+<h3 id="직렬큐가-필요한-이유">직렬큐가 필요한 이유?</h3>
+
+<p>→ 순서가 중요한 작업을 처리할 때 사용한다</p>
+
+<p>→ 동시성 프로그래밍의 문제를 해결할 때 사용한다</p>
+
+<hr>
+
+<h2 id="4-gcd의-개념-및-종류">4. GCD의 개념 및 종류</h2>
+
+<h3 id="큐의-종류">큐의 종류</h3>
+
+<p>Queue : 작업들을 여러 쓰레드로 보내 분산처리한다@</p>
+
+<ul>
+  <li>직접적으로 쓰레드를 관리하지 않고 큐로 보내 작업은 분산처리 한다.</li>
+  <li>OS가 알아서 쓰레드 개수 관리
+    <ol>
+      <li>DispatchQueue ( GCD - Grand Central DispatchQueue)</li>
+    </ol>
+    <ul>
+      <li>(글로벌) 메인 큐 <code class="language-plaintext highlighter-rouge">DispatchQueue.main</code>
+</li>
+      <li>글로벌 큐 <code class="language-plaintext highlighter-rouge">DispatchQueue.global()</code>
+</li>
+      <li>프라이빗 큐 (커스텀 큐) <code class="language-plaintext highlighter-rouge">DispatchQueue(label:"...")</code>
+        <ol>
+          <li>OpeationQueue</li>
+        </ol>
+      </li>
+      <li>메인 큐 <code class="language-plaintext highlighter-rouge">OperationQueue.main</code>
+</li>
+      <li>프리이빗 큐 (커스텀 큐) <code class="language-plaintext highlighter-rouge">OperationQueue()</code>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p>1) 메인 큐</p>
+
+<ul>
+  <li>메인쓰레드 == 메인 큐</li>
+  <li>유일하게 한 개이고, Serial 큐!</li>
+  <li>실제로 그냥 메인 쓰레드 (1번 쓰레드)임</li>
+  <li>별도의 코드를 작성하지 않으면 모든 작업은 메인 큐에서</li>
+</ul>
+
+<p>2) 글로벌 큐 &amp; Qos</p>
+
+<ul>
+  <li>종류가 여러 개이고, Concurrent 큐이다!</li>
+  <li>
+    <p>Qos (Quality of Service)는 6개의 종류가 있다</p>
+  </li>
+  <li>Qos의 개념
+    <ul>
+      <li>iOS가 업무의 중요도에 따라 우선순위를 매겨서 더 많은 쓰레드를 배치하고, CPU의 배터리 집중해서 일을 빨리 끝내도록 함</li>
+    </ul>
+  </li>
+</ul>
+
+<p>3) 프리이빗(커스텀) 큐</p>
+
+<ul>
+  <li>커스텀으로 개발자가 직접 만드는 큐</li>
+  <li>Serial Queue (기본 설정) Concurrent도 가능</li>
+  <li>Qos도 설정 가능!</li>
+</ul>
+
+<hr>
+
+<h2 id="5-gcd-사용-시-주의해야-할-사항">5. GCD 사용 시 주의해야 할 사항</h2>
+
+<p>1) UI 업데이트는 메인 쓰레드에서 이뤄져야 된다!!!!</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    
+    <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span><span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"에러있음"</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">imageData</span> <span class="o">=</span> <span class="n">data</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+    
+    <span class="c1">// 즉, 데이터를 가지고 이미지로 변형하는 코드</span>
+    <span class="k">let</span> <span class="nv">photoImage</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">imageData</span><span class="p">)</span>
+    
+    <span class="c1">// 🎾 이미지 표시는 DispatchQueue.main에서 🎾</span>
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="n">imageView</span><span class="p">?</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">photoImage</span>
+    <span class="p">}</span>
+    
+    
+<span class="p">}</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>2) 올바른 비동기 함수의 설계! - 컴플리션 핸들러 (콜백함수) 사용</p>
+
+<ul>
+  <li>네트워크 통신 비동기 프로그래밍시 → 함수 return 형식 x 클로저 형식</li>
+  <li>다른 쓰레드로 작업을 시키기 때문에 메인 쓰레드 그 작업이 끝나는 시점을 알 수 없음!</li>
+  <li>→ 끝나는 시점에 completion 함수 실행 (파라미터가 클로저)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">getImages</span><span class="p">(</span><span class="n">with</span> <span class="nv">urlString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
+    
+    <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">urlString</span><span class="p">)</span><span class="o">!</span>
+    
+    <span class="k">var</span> <span class="nv">photoImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+    
+    <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"에러있음: </span><span class="se">\(</span><span class="n">error</span><span class="o">!</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="c1">// 옵셔널 바인딩</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">imageData</span> <span class="o">=</span> <span class="n">data</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        
+        <span class="c1">// 데이터를 UIImage 타입으로 변형</span>
+        <span class="n">photoImage</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">imageData</span><span class="p">)</span>
+        
+    <span class="p">}</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+
+    
+    <span class="k">return</span> <span class="n">photoImage</span>    <span class="c1">// 항상 nil 이 나옴</span>
+<span class="p">}</span>
+
+<span class="nf">getImages</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="s">"https://bit.ly/32ps0DI"</span><span class="p">)</span>    <span class="c1">// 무조건 nil로 리턴함 ⭐️</span>
+
+<span class="o">**********</span> <span class="n">콜백함수</span> <span class="n">활용</span> <span class="o">**********</span>
+
+<span class="kd">func</span> <span class="nf">properlyGetImages</span><span class="p">(</span><span class="n">with</span> <span class="nv">urlString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UIImage</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">urlString</span><span class="p">)</span><span class="o">!</span>
+    
+    <span class="k">var</span> <span class="nv">photoImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+    
+    <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"에러있음: </span><span class="se">\(</span><span class="n">error</span><span class="o">!</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="c1">// 옵셔널 바인딩</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">imageData</span> <span class="o">=</span> <span class="n">data</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        
+        <span class="c1">// 데이터를 UIImage 타입으로 변형</span>
+        <span class="n">photoImage</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">imageData</span><span class="p">)</span>
+        
+        <span class="nf">completionHandler</span><span class="p">(</span><span class="n">photoImage</span><span class="p">)</span>
+        
+    <span class="p">}</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+    
+<span class="p">}</span>
+
+<span class="c1">// 올바르게 설계한 함수 실행</span>
+<span class="nf">properlyGetImages</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="s">"https://bit.ly/32ps0DI"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="k">in</span>
+    
+    <span class="c1">// 처리 관련 코드 넣는 곳...</span>
+    
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="c1">// UI관련작업의 처리는 여기서</span>
+    <span class="p">}</span>
+    
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>3) weak, strong 사용 시 주의</p>
+
+<p>[객체 내에서 비동기 코드 사용시 주의!]</p>
+
+<ul>
+  <li>강한 참조
+    <ul>
+      <li>클로저 내부에서 객체의 <code class="language-plaintext highlighter-rouge">self</code>사용 시 강한 참조가 된다</li>
+      <li>클로저의 수명 주기가 길어짐</li>
+    </ul>
+  </li>
+  <li>약한 참조
+    <ul>
+      <li>weak self 로 선언하는 것 권장 (일반적인 경우)</li>
+      <li>불필요한 일을 줄인다</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 강한 참조 예시</span>
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"뷰컨"</span>
+    
+    <span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="nf">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"글로벌큐에서 출력하기: </span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">deinit</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s"> 메모리 해제"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">localScopeFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">vc</span> <span class="o">=</span> <span class="kt">ViewController</span><span class="p">()</span>
+    <span class="n">vc</span><span class="o">.</span><span class="nf">doSomething</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="c1">// 글로벌큐에서 출력하기: 뷰컨</span>
+<span class="c1">// 뷰컨 메모리 해제</span>
+
+<span class="c1">// localScopeFunction()은 이미 종료가 되어서 vc가 사라졌지만,</span>
+<span class="c1">// 클로저가 vc를 3초동안 붙잡아둠 (강한 참조) RC 증가</span>
+
+<span class="c1">// 약한 참조 예시 (weak self 사용)</span>
+<span class="kd">class</span> <span class="kt">ViewController1</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"뷰컨"</span>
+    
+    <span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 강한 참조 사이클이 일어나지 않지만, 굳이 뷰컨트롤러를 길게 잡아둘 필요가 없다면</span>
+        <span class="c1">// weak self로 선언</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+             <span class="k">guard</span> <span class="k">let</span> <span class="nv">weakSelf</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+            <span class="nf">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"글로벌큐에서 출력하기: </span><span class="se">\(</span><span class="n">weakSelf</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">deinit</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s"> 메모리 해제"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">localScopeFunction1</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">vc</span> <span class="o">=</span> <span class="kt">ViewController1</span><span class="p">()</span>
+    <span class="n">vc</span><span class="o">.</span><span class="nf">doSomething</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="c1">// 뷰컨 메모리 해제</span>
+<span class="c1">// 글로벌큐에서 출력하기: nil</span>
+
+<span class="c1">// </span>
+<span class="c1">// self가 없어졌으므로 self에 nil값이 들어가있음!</span>
+</code></pre></div></div>
+
+<p>4) 동기함수를 비동기적으로 동작하는 함수로 변형하는 방법</p>
+
+<ul>
+  <li>일반 (동기) 함수 : 오래 걸리는 일반적인 함수를 단순히 동기 함수로 만들면 메인쓰레드에 부하</li>
+  <li>비동기 함수 : 오래 걸리는 일반적인 함수를 내부에 비동기적 처리를 통해 비동기로 동작하는 함수로 변형 가능</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 오래 걸리는 함수!</span>
+<span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"프린트 시작"</span><span class="p">)</span>
+	<span class="nf">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"프린트 종료"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">doSomething</span><span class="p">()</span>
+
+<span class="c1">// 비동기로 동작하도록 변형</span>
+<span class="kd">func</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">gloabl</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"프린트 시작"</span><span class="p">)</span>
+		<span class="nf">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"프린트 종료"</span><span class="p">)</span>
+		<span class="nf">completion</span><span class="p">()</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">doSomething</span> <span class="p">{</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"비동기 동작으로"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr>
+
+<h2 id="6-비동기-함수메서드의-이해">6. 비동기 함수/메서드의 이해</h2>
+
+<ul>
+  <li>애플은 일반적으로 대부분의 오래 걸리는 API들을 내부적으로 비동기적으로 구현해놓음</li>
+  <li>URLSession.shared.dataTask 수행 시 → 무조건 다른 Thread로 보내서 일처리 (기다리지 않음)</li>
+  <li>이미 내부적으로 GCD를 이용해서, 비동기적으로 처리하는 메서드(함수)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="s">"출력 - 1"</span><span class="p">)</span>
+
+<span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">!</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">safeData</span> <span class="o">=</span> <span class="n">data</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    
+    <span class="nf">print</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="nv">decoding</span><span class="p">:</span> <span class="n">safeData</span><span class="p">,</span> <span class="nv">as</span><span class="p">:</span> <span class="kt">UTF8</span><span class="o">.</span><span class="k">self</span><span class="p">))</span>
+    
+<span class="p">}</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="s">"출력 - 2"</span><span class="p">)</span>
+
+<span class="c1">// 출력 결과</span>
+<span class="c1">// 출력 - 1</span>
+<span class="c1">// 출력 - 2</span>
+<span class="c1">// 데이터들~~~</span>
+</code></pre></div></div>
+
+<hr>
+
+<h2 id="7-asyncwait의-도입-swift-55">7. Async/wait의 도입 (Swift 5.5~)</h2>
+
+<ul>
+  <li>비동기 처리 : 다른 thread로 일을 보내고 수행을 마칠 때까지 기다리지 않고 즉시 리턴!]</li>
+  <li>함수 마칠 때 return 형 x 클로저(컴플리션 블럭)을 실행한다</li>
+</ul>
+
+<p>💡 클로저 방식 사용 시 단점 !!</p>
+
+<p>completion task가 끝날 때 또 비동기식 작업을 completion task를 실행한다면 ??</p>
+
+<p>비동기 함수가 여러 개 뭉쳐있으면 ??</p>
+
+<p>→  단점 : 끊임없는 콜백함수의 연결, 들여쓰기,,</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">linkedPrint</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">longtimePrint</span> <span class="p">{</span> <span class="n">num</span> <span class="k">in</span>
+        <span class="c1">// 코드처리</span>
+        <span class="n">longtimePrint</span> <span class="p">{</span> <span class="n">num</span> <span class="k">in</span>
+            <span class="c1">// 코드처리</span>
+            <span class="n">longtimePrint</span> <span class="p">{</span> <span class="n">num</span> <span class="k">in</span>
+                <span class="c1">// 코드처리</span>
+                <span class="n">longtimePrint</span> <span class="p">{</span> <span class="n">num</span> <span class="k">in</span>
+                    <span class="c1">// 코드처리</span>
+                    <span class="nf">completion</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>    <span class="c1">// 모든 비동기함수의 종료시점을 알려줌</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<aside>
+💡 async/await 키워드 사용해서 리턴 형식으로 바꿔준다
+
+</aside>
+
+<p>async/await 키워드를 붙이면 비동기 작업이 return할 때까지 기다려줘서 리턴 타입을 사용할 수 있게 됨</p>
+
+<p>→ 장점 : 들여쓰지 않고 어디서 코드가 멈추는 지 한눈에 들어온다!</p>
+
+<p>코드가 깔끔해짐~</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">linkedPrint2</span><span class="p">()</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">longtimeAsyncAwait</span><span class="p">()</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">longtimeAsyncAwait</span><span class="p">()</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">longtimeAsyncAwait</span><span class="p">()</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">longtimeAsyncAwait</span><span class="p">()</span>
+    <span class="k">return</span> <span class="mi">7</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr>
+
+<h2 id="8-동시성-프로그래밍과-관련된-문제점">8. 동시성 프로그래밍과 관련된 문제점</h2>
+
+<p>하나의 앱은 코/데/힙/스 영역으로 이루어짐.</p>
+
+<p>대부분의 함수는 stack에 쌓았다 없어지는 구조로 메모리가 움직임!</p>
+
+<p>쓰레드 하나당 Stack 하나 사용 → 각자 쓰레드마다 수행하는 작업과 사용하는 메모리 다름!</p>
+
+<p>코드, 데이터, 힙 영역의 메모리는 공유한다!</p>
+
+<ul>
+  <li>메인 쓰레드 stack에 main() 함수</li>
+  <li>global등 비동기적 함수는 다른 Stack에서 실행</li>
+</ul>
+
+<hr>
+
+<p>1) 경쟁상황/ 경쟁조건 (Race Condition)</p>
+
+<ul>
+  <li>= <code class="language-plaintext highlighter-rouge">Thread-safe 하지 않음</code>
+</li>
+  <li>멀티 쓰레드 환경에서, 같은 시점에 여러 개의 쓰레드에서 하나의 메모리에 동시 접근하는 문제 발생!</li>
+  <li>
+    <p>클래스의 인스턴스와 같은 힙 영역의 메모리에 여러 쓰레드가 동시 접근</p>
+
+    <p>(이름을 쓰는 와중에 다른 쓰레드에서 이름을 읽을 경우 ???)</p>
+  </li>
+  <li>한 쓰레드에 하나만 접근할 수 있도록 Lock을 거는 방식으로 해결 (Thread-Safe 처리)</li>
+</ul>
+
+<hr>
+
+<p>2) 교착상태 (Deadlocks)</p>
+
+<ul>
+  <li>멀티 쓰레드 환경에서, 베타적인 메모리 사용으로 일이 진행이 안되는 문제</li>
+  <li>쓰레드의 작업이 종료되지 않아 앱이 멈추는 상황!</li>
+  <li>앱이 여러 개일 경우도 같은 함수를 사용하다 설정이 바뀌면 모든 앱이 중단된다.</li>
+</ul>
+
+<hr>
+
+<h2 id="9-동시성-프로그래밍-문제점의-해결">9. 동시성 프로그래밍 문제점의 해결</h2>
+
+<p>⭐️ 동시큐에서 직렬큐로 보내기</p>
+
+<p>여러 쓰레드에서 동시 접근하는 작업은 다시 Serial Queue로 보낸다</p>
+
+<p>→ 순차적인 처리 가능 &amp; 하나의 쓰레드에서만 메모리에 접근</p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9" title="[알고리즘/Swift] 연속된 부분 수열의 합">[알고리즘/Swift] 연속된 부분 수열의 합</a><span></span>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/2023/02/08/Baekjoon-1700" title="">[알고리즘/Swift] 1700 멀티탭 스케줄링</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/01/16/Programmers-adv1" title="">[알고리즘/Swift] 0116 준식이의 모험1</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/02/01/Programmers-320" title="">[알고리즘/Swift] 0201 320개 </a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667" title="">[알고리즘/Swift] 2667 단지번호붙이기</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Github Blog 2022-2023 Lee su-min</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

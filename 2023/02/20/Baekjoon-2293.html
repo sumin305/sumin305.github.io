@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[알고리즘/Swift] 2293 동전 1 | soom.log</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="[알고리즘/Swift] 2293 동전 1">
+<meta name="author" content="Lee su-min">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="문제 정보 문제 출처: 백준 온라인 저지 문제 링크: 2293 동전 1 제출 언어: Swift 알고리즘 분류: 다이나믹 프로그래밍">
+<meta property="og:description" content="문제 정보 문제 출처: 백준 온라인 저지 문제 링크: 2293 동전 1 제출 언어: Swift 알고리즘 분류: 다이나믹 프로그래밍">
+<link rel="canonical" href="https://hanabzu.github.io/jekyll-theme-yat/2023/02/20/Baekjoon-2293">
+<meta property="og:url" content="https://hanabzu.github.io/jekyll-theme-yat/2023/02/20/Baekjoon-2293">
+<meta property="og:site_name" content="soom.log">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-02-20T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[알고리즘/Swift] 2293 동전 1">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Lee su-min"},"dateModified":"2023-02-20T00:00:00+00:00","datePublished":"2023-02-20T00:00:00+00:00","description":"문제 정보 문제 출처: 백준 온라인 저지 문제 링크: 2293 동전 1 제출 언어: Swift 알고리즘 분류: 다이나믹 프로그래밍","headline":"[알고리즘/Swift] 2293 동전 1","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanabzu.github.io/jekyll-theme-yat/2023/02/20/Baekjoon-2293"},"url":"https://hanabzu.github.io/jekyll-theme-yat/2023/02/20/Baekjoon-2293"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://hanabzu.github.io/jekyll-theme-yat/feed.xml" title="soom.log">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #389092;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="soom.log" src="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png" onerror="this.style.display='none'">
+  soom.log
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags">TAGS</a>
+
+
+
+
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[알고리즘/Swift] 2293 동전 1</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2023-02-20T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Feb 20, 2023
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D">#다이나믹 프로그래밍</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="문제-정보">문제 정보</h2>
+<ul>
+  <li>문제 출처: <a href="http://boj.kr/">백준 온라인 저지</a>
+</li>
+  <li>문제 링크: <a href="https://www.acmicpc.net/problem/2293">2293 동전 1</a>
+</li>
+  <li>제출 언어: Swift</li>
+  <li>알고리즘 분류:
+    <ul>
+      <li>다이나믹 프로그래밍</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br></p>
+
+<p><img src="https://user-images.githubusercontent.com/110437548/220009794-492c9ec2-760b-41ac-a0d5-7b5d05909d37.png" alt="image"></p>
+
+<hr>
+<h2 id="풀이">풀이</h2>
+<h3 id="다이나믹-프로그래밍">다이나믹 프로그래밍</h3>
+<blockquote>
+  <p>전체 문제의 최적해가 부분 문제의 최적해로부터 만들어지는 알고리즘이다</p>
+</blockquote>
+
+<ul>
+  <li>하나의 문제를 단 한 번의 연산으로 해결하기 위해, 즉 전체 문제를 풀 때, 동일한 계산을 반복하지 않기 위해</li>
+  <li>Table에 부분문제의 solution을 저장한다</li>
+  <li>항상 최적의 해를 보장하지만</li>
+  <li>Table에 부분문제의 solution을 저장하므로 많은 메모리를 차지한다</li>
+</ul>
+
+<h3 id="알고리즘-설계">알고리즘 설계</h3>
+<p>아래의 그림과 같이 다이나믹 프로그래밍 배열을 하나 생성하여 부분 문제의 해에 해당하는 값들을 넣어주었다 <br>
+<code class="language-plaintext highlighter-rouge">i : 해당 동전까지 사용할 수 있을 때 만들 수 있는 경우의 수</code> <br>
+<code class="language-plaintext highlighter-rouge">j : 가치의 합을 1원부터 k원까지 만들 수 있는 경우의 수   </code>
+라고 설정하였다  <br>
+예를 들어 i = 2, j = 5일 때 해당 배열 numArray[2][5] 에는, 동전을 1원짜리랑, 2원 짜리 두 개를 사용할 수 있을 때, 5원을 만들 수 있는 경우의 수가 들어간다 <br>
+이렇게 모든 배열을 다 채운 후, 가장 마지막 원소를 출력하면 그 값이 1원, 2원, 5원 총 3개의 동전으로 10원을 만들 수 있는 경우의 수가 나온다    <br>
+<img src="https://user-images.githubusercontent.com/110437548/220011299-1af54d08-60cd-4fdd-adf3-68f5bfebb0dd.png" alt="image">
+이러한 배열을 채울 때 dp(다이나믹 프로그래밍) 알고리즘을 사용하였다    <br>
+특정 동전까지 사용할 수 있을 때, 특정 가치의 합을 구하려고 할 때, 특정 동전을 사용할 수 없는 경우와 있는 경우로 나눠서 문제를 풀었다</p>
+<ul>
+  <li>특정 동전을 사용할 수 없는 경우
+    <ul>
+      <li>해당 동전의 가치가 구하려는 특정 가치의 합보다 클 경우 특정 동전을 사용할 수 없다</li>
+      <li>이럴 때에는 직전 동전에서 구할 수 있는 경우의 수와 같다</li>
+      <li>예를 들어, 1원, 2원, 5원의 동전을 사용할 수 있을 때, 총 4원의 가치의 합의 경우의 수을 구할 때 5원은 사용할 수 없다</li>
+      <li>이런 경우, 1원, 2원으로 총 4원의 가치의 합을 만드는 경우의 수와 같으므로 <code class="language-plaintext highlighter-rouge">numArray[i][j] = numArray[i-1][j]</code>값을 넣어준다</li>
+    </ul>
+  </li>
+  <li>특정 동전을 사용할 수 있는 경우
+    <ul>
+      <li>해당 동전의 가치가 구하려는 특정 가치의 합보다 작은 경우 특정 동전을 사용할 수 있다</li>
+      <li>이런 경우에 해당 dp값을 구하려면 직전 동전에서 구할 수 있는 경우의 수를 열 배열에서 해당 동전의 값을 빼준 곳의 dp값과 더한다</li>
+      <li>예를 들어, 1원, 2원의 동전을 사용할 수 있을 때, 총 4원의 가치의 합의 경우의 수를 구하는 방법 :</li>
+      <li>1원으로 4원의 가치의 합을 구하는 경우의 수 + 1원,2원으로 2원의 가치의 합을 구하는 경우의 수</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">numArray[i][j] = numArray[i-1][j] + numArray[i][j-coin[i-1]]</code>를 해준다</li>
+    </ul>
+  </li>
+  <li>주의할 점! <br>
+swift에서는 배열의 원소가 swift에서 다룰 수 있는 Int형의 최대 값보다 커질 경우, 오버플로우 런타임 에러가 발생하므로 그러한 경우를 사전에 방지해주어야 한다<br>
+swift가 다룰 수 있는 Int형의 범위 :  <br>
+Int의 최대 값: 9223372036854775807, Int의 최소 값: -9223372036854775808 (-2^31 ~ 2^31-1)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">n</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">k</span> <span class="p">{</span>
+        <span class="c1">//i에 해당하는 동전을 사용할 수 있을 때 -&gt; 해당 동전의 가치가 구하려는 총 동전의 가치 합보다 작을 때</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">coin</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">{</span>
+            <span class="c1">//배열의 원소가 swift에서 다룰 수 있는 Int형의 최대 값보다 커질 경우, 오버플로우 런타임 에러가 발생하므로 </span>
+            <span class="c1">//다음과 같이 방지해주었다</span>
+            <span class="k">if</span> <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="n">coin</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">&gt;=</span> <span class="kt">Int</span><span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">31.0</span><span class="p">)){</span>
+                <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="p">}</span>
+            <span class="c1">//해당 값의 dp를 구하려면 직전 동전까지의 가치 합 경우의 수에 해당 항목에서 해당 동전의 값을 뺀 값을 더한다    </span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="n">coin</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">//i에 해당하는 동전을 사용할 수 없을 때 -&gt; 해당 동전의 가치가 구하려는 총 동전의 가치 합보다 클 때</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="전체-코드">전체 코드</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="k">let</span> <span class="nv">N</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">))</span><span class="o">!</span><span class="p">}</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">n</span><span class="p">,</span><span class="nv">k</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="kt">N</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="kt">N</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">var</span> <span class="nv">numArray</span> <span class="p">:</span> <span class="p">[[</span><span class="kt">Int</span><span class="p">]]</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="kt">Array</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="nv">count</span><span class="p">:</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">coin</span> <span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">n</span> <span class="p">{</span>
+    <span class="n">coin</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">n</span> <span class="p">{</span>
+    <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">n</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">k</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">coin</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="n">coin</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">&gt;=</span> <span class="kt">Int</span><span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">31.0</span><span class="p">)){</span>
+                <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="n">coin</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">numArray</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numArray</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">numArray</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">endIndex</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/2023/02/17/Baekjoon-3085" title="[알고리즘/Swift] 3085 사탕 게임">[알고리즘/Swift] 3085 사탕 게임</a><a class="next" href="/jekyll-theme-yat/2023/02/21/Baekjoon-2294" title="[알고리즘/Swift] 2294 동전 2">[알고리즘/Swift] 2294 동전 2</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789" title="[알고리즘/Swift] 2294 동전 2">[알고리즘/Swift] 1789 수들의 합</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606" title="[알고리즘/Swift] 2294 동전 2">[알고리즘/Swift] 2606 바이러스</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/01/31/Programmers-Lipogram" title="[알고리즘/Swift] 2294 동전 2">[알고리즘/Swift] 0131 리포그램 </a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/01/16/Minimize-Cost-Function" title="[알고리즘/Swift] 2294 동전 2">[Machine Learning] Linear Regression Cost Function 최소화</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Github Blog 2022-2023 Lee su-min</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

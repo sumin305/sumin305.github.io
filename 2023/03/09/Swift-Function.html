@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[Swift] 함수 | soom.log</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="[Swift] 함수">
+<meta name="author" content="Lee su-min">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="함수 swift문법에서 평소에 쓰던 함수에 대해 메모리 구조 혹은 @discardableResult과 같은 새로운 개념도 알게 되었고, 헷갈렸던 부분도 더욱 구체적으로 알게되었다 배운 내용들을 정리하고 예제도 만들어보고 내 생각도 덧붙이면서 지식을 공유하고자 한다 함수는 특정한 기능을 하는 코드의 모음이고, 입력과 출력이 존재할 수 있다">
+<meta property="og:description" content="함수 swift문법에서 평소에 쓰던 함수에 대해 메모리 구조 혹은 @discardableResult과 같은 새로운 개념도 알게 되었고, 헷갈렸던 부분도 더욱 구체적으로 알게되었다 배운 내용들을 정리하고 예제도 만들어보고 내 생각도 덧붙이면서 지식을 공유하고자 한다 함수는 특정한 기능을 하는 코드의 모음이고, 입력과 출력이 존재할 수 있다">
+<link rel="canonical" href="https://hanabzu.github.io/jekyll-theme-yat/2023/03/09/Swift-Function">
+<meta property="og:url" content="https://hanabzu.github.io/jekyll-theme-yat/2023/03/09/Swift-Function">
+<meta property="og:site_name" content="soom.log">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-03-09T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[Swift] 함수">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Lee su-min"},"dateModified":"2023-03-09T00:00:00+00:00","datePublished":"2023-03-09T00:00:00+00:00","description":"함수 swift문법에서 평소에 쓰던 함수에 대해 메모리 구조 혹은 @discardableResult과 같은 새로운 개념도 알게 되었고, 헷갈렸던 부분도 더욱 구체적으로 알게되었다 배운 내용들을 정리하고 예제도 만들어보고 내 생각도 덧붙이면서 지식을 공유하고자 한다 함수는 특정한 기능을 하는 코드의 모음이고, 입력과 출력이 존재할 수 있다","headline":"[Swift] 함수","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanabzu.github.io/jekyll-theme-yat/2023/03/09/Swift-Function"},"url":"https://hanabzu.github.io/jekyll-theme-yat/2023/03/09/Swift-Function"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://hanabzu.github.io/jekyll-theme-yat/feed.xml" title="soom.log">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #389092;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="soom.log" src="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png" onerror="this.style.display='none'">
+  soom.log
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags">TAGS</a>
+
+
+
+
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[Swift] 함수</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2023-03-09T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Mar 09, 2023
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 13 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Function">#Function</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="함수">함수</h2>
+<p>swift문법에서 평소에 쓰던 함수에 대해 메모리 구조 혹은 @discardableResult과 같은 새로운 개념도 알게 되었고, 헷갈렸던 부분도 더욱 구체적으로 알게되었다 <br>
+배운 내용들을 정리하고 예제도 만들어보고 내 생각도 덧붙이면서 지식을 공유하고자 한다 <br>
+<br></p>
+<blockquote>
+  <p>함수는 특정한 기능을 하는 코드의 모음이고, 입력과 출력이 존재할 수 있다</p>
+</blockquote>
+
+<ul>
+  <li>함수는 코드의 반복되는 부분을 줄이고 기능에 따라 분류해놓기 위해 사용된다</li>
+  <li>예를 들어 a와 b에 다양한 수를 넣어 a를 b만큼 출력하는 알고리즘을 작성하려고 할 때,</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">var</span> <span class="nv">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">33</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>위와 같이 한 번의 알고리즘을 수행할 때 for문을 작성해서 수행하여야 한다 <br>
+함수를 이용해보자</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">repeatNum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">repeatNum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nf">repeatNum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nf">repeatNum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="mi">33</span><span class="p">)</span>
+</code></pre></div></div>
+<p>이렇게 함수를 선언하면 코드를 간결화하고 함수 이름에 어떠한 기능을 하는지 명시적으로 나타낼 수 있다 <br>
+또 앞으로 어떠한 수를 반복해서 출력할 경우 이 함수를 가져와 사용할 수 있으므로 굉장히 편리하다 <br>
+이것이 함수를 사용하는 이유이다</p>
+
+<h3 id="정의와-실행">정의와 실행</h3>
+<ul>
+  <li>함수는 크게 정의 단계와 실행 단계로 나뉘어진다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 함수 정의 </span>
+<span class="kd">func</span> <span class="nf">repeatNum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 함수 실행</span>
+<span class="nf">repeatNum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nf">repeatNum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nf">repeatNum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="mi">33</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li>함수는 어떤 동작을 수행할 때, 다룰 값들을 받아올 수도 있고, 수행한 결과를 반환해줄수도 있다</li>
+  <li>이 받아온 값들은 input, 반환한 값들은 output이라고 한다</li>
+  <li>위에서 살펴본 이 예제 코드를 보면 (a: Int, b: Int)의 값들은 input을 나타낸 것이고 Void는 output의 자료형을 나타낸 것이다</li>
+</ul>
+
+<p><br></p>
+
+<blockquote>
+  <p>함수 정의 : func 함수이름 ( <code class="language-plaintext highlighter-rouge">argument label</code> <code class="language-plaintext highlighter-rouge">parameter name</code> : <code class="language-plaintext highlighter-rouge">parameter type</code> ) -&gt; <code class="language-plaintext highlighter-rouge">return type</code> { 함수 내용 }</p>
+</blockquote>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">parameter</code>는 함수를 실행할 때 받아온 값들을 의미한다</li>
+  <li>코드를 한 줄씩 읽을 때 정의에서는 아무런 일도 발생하지 않는다
+    <ul>
+      <li>return 값이 있을 경우 : 함수의 호출은 어떠한 값을 나타낸다</li>
+      <li>return 값이 없을 경우 : return type은 생략하거나 (), 혹은 Void로 나타낼 수 있음
+<br>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>함수 호출 : <code class="language-plaintext highlighter-rouge">함수이름</code> + <code class="language-plaintext highlighter-rouge">소괄호(argument label: argument)</code></p>
+</blockquote>
+
+<ul>
+  <li>이 때 input으로 넘기는 값들을 소괄호 안에 넣어준다</li>
+  <li>이렇게 함수로 넘겨주는 값들을 <code class="language-plaintext highlighter-rouge">argument</code>라고 한다</li>
+  <li>return type이 있는 함수를 호출할 경우, 그 자체로 표현식이 된다
+    <div class="language-swift highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">myName</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">{</span>
+<span class="k">return</span> <span class="s">"soom"</span>
+<span class="p">}</span>
+<span class="c1">//함수 호출이 표현식이 됨</span>
+<span class="k">var</span> <span class="nv">name</span> <span class="o">=</span> <span class="nf">myName</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="1-parameter">1. parameter</h4>
+<ul>
+  <li>parameter는 위에서 말한 것처럼 함수에서 입력값으로 받아와서 함수 내부에서 사용되는 변수를 의미한다</li>
+  <li>parameter는 받아온 값을 복사하여 let 값으로 사용하게 되므로, 함수 내부에서 수정할 수 없다
+    <div class="language-swift highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">var</span> <span class="nv">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="kd">func</span> <span class="nf">addAB</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span> <span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+<span class="k">var</span> <span class="nv">temp</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span>     <span class="c1">//컴파일 에러 'a'는 상수임</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">temp</span>  <span class="c1">//컴파일 에러 'b'는 상수임</span>
+<span class="p">}</span>
+<span class="nf">addAB</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h5 id="기본-값-설정">기본 값 설정</h5>
+<ul>
+  <li>함수 정의시 기본 값을 미리 설정해놓으면, 나중에 호출할 때 해당 정의된 기본 값의 argument를 생략하면 자동으로 기본 값으로 실행된다
+```swift
+func repeatNum(repeatNumber a: Int, count b: Int = 5) -&gt; Void {
+  for i in 1…b {
+      print(a)
+  }
+}</li>
+</ul>
+
+<p>repeatNum(repeatNumber: 2, count: 3) //2 3번 출력
+repeatNum(repeatNumber: 5, count: 4)//5 4번 출력
+repeatNum(repeatNumber: 3)//3 5번 출력 -&gt; 기본 값 설정된 parameter 이용</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+##### 가변 파라미터
+- 개수가 정해지지 않은 여러 개의 parameter일 경우 사용한다   
+- 하나의 parameter로 2개 이상의 argument 전달할 수 있다     
+- 개별 함수마다 하나씩만 선언 가능하다     
+```swift
+func sum(nums: Int..., num: Int) -&gt; Int {
+    var temp = num
+    for n in nums {
+        temp += n
+    }
+    return temp
+}
+
+print(sum(nums: 1,2,3,4,5, num: 5)) //20출력
+</code></pre></div></div>
+
+<ul>
+  <li>print도 Variadic Parameters의 예시이다.
+    <div class="language-swift highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">print</span><span class="p">(</span><span class="n">_</span> <span class="nv">items</span><span class="p">:</span> <span class="kt">Any</span><span class="o">...</span><span class="p">,</span> <span class="nv">separator</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">" "</span><span class="p">,</span> <span class="nv">terminator</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>출력할 값들을 Any 타입의 가변 파라미터로 입력을 받고, separator와 terminator에 기본 parameter값이 설정되어 있다</li>
+</ul>
+
+<h4 id="2-argument">2. argument</h4>
+<p>argument는 함수 호출 시 parameter type에 맞게 데이터를 전달하는 것을 의미한다 <br>
+argument label을 작성해주면 함수가 원하는 것을 길게 작성하여 명시해줄 수 있다</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">repeatNum</span><span class="p">(</span><span class="n">repeatNumber</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">count</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">repeatNum</span><span class="p">(</span><span class="nv">repeatNumber</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">33</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>함수를 정의할 때, argument label을 작성하지 않으면 함수 호출 시 반드시 argument label을 명시해주어야 한다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">repeatNum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">repeatNum</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// 컴파일 에러 **Missing argument labels 'a:b:' in call**</span>
+</code></pre></div></div>
+
+<ul>
+  <li>함수를 정의할 때, argument label을 _(와일드 카드 패턴)로 작성하면 함수 호출 시 argument label을 생략할 수 있다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">repeatNum</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">repeatNum</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="3-inout-parameter">3. inout parameter</h4>
+<ul>
+  <li>parameter type앞에 inout 키워드를 추가해주면 parameter의 복사본이 전달되지 않고 원본 데이터의 메모리 주소값이 전달된다</li>
+  <li>즉 함수 내부에서 이 값을 변경하면 외부에서 받아온 변수의 값도 변한다</li>
+  <li>이러한 외부 변수들을 받아올 때 argument 변수 앞에 <code class="language-plaintext highlighter-rouge">&amp;</code>값을 붙여준다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">var</span> <span class="nv">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="kd">func</span> <span class="nf">addAB</span><span class="p">(</span><span class="nv">a</span> <span class="p">:</span><span class="k">inout</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">temp</span> <span class="o">=</span> <span class="n">a</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">temp</span>
+  <span class="nf">return</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">addAB</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="nv">b</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4 id="표기법">표기법</h4>
+<ul>
+  <li>개발자 문서를 읽을 때 알아야하는 함수 표기법이다</li>
+  <li>함수이름과 parameter name까지만 적어준다</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">,</code>도 생략해준다
+    <ul>
+      <li>NumberPrint(n:)</li>
+      <li>repeatNum(a<img class="emoji" title=":b:" alt=":b:" raw="🅱️" src="https://github.githubassets.com/images/icons/emoji/unicode/1f171.png" style="vertical-align: middle; display: inline; max-width: 1em; visibility: hidden;" onload="this.style.visibility='visible'" onerror="this.replaceWith(this.getAttribute('raw'))">)</li>
+      <li>addAB(_:_:)</li>
+    </ul>
+  </li>
+  <li>함수의 타입 표기
+    <ul>
+      <li>() -&gt; ()</li>
+      <li>() -&gt; Void</li>
+      <li>(String) -&gt; String</li>
+      <li>(Int, Int) -&gt; Int</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+<h3 id="scope">scope</h3>
+<ul>
+  <li>변수는 범위 내에서 꼭 선언되어야만 접근이 가능하다</li>
+  <li>상위 스코프 변수에는 접근이 가능하지만 (하위 스코프에서는 상위 스코프 변수가 전역변수처럼 작용)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">temp</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="kd">func</span> <span class="nf">minus</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>하위 스코프 변수에는 접근이 불가능하다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span> <span class="c1">// 컴파일 에러 **Cannot find 'temp' in scope**</span>
+    <span class="kd">func</span> <span class="nf">minus</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">temp</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>다른 스코프에서 이름 중복이 가능하다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">var</span> <span class="nv">temp</span> <span class="o">=</span> <span class="n">a</span>
+     <span class="n">temp</span> <span class="o">+=</span> <span class="mi">5</span>
+    <span class="kd">func</span> <span class="nf">minus</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">temp</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="mi">5</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr>
+
+<h3 id="제어전송문">제어전송문</h3>
+<ul>
+  <li>break
+    <ul>
+      <li>switch문 : 해당 케이스에서 실행하는 문장이 없을 경우, 빈 칸으로 두지 않고 반드시 <code class="language-plaintext highlighter-rouge">break</code>를 명시해준다</li>
+      <li>반복문 : 가장 인접한 반복문을 break을 만나는 순간 바로 빠져나온다</li>
+    </ul>
+  </li>
+  <li>fallthrough
+    <ul>
+      <li>switch문 : switch문에서 fallthrough를 만나면 조건 상관없이 무조건 다음 case도 실행한다</li>
+    </ul>
+  </li>
+  <li>continue
+    <ul>
+      <li>반복문에서 continue를 만나면 그 밑의 코드를 실행하지 않고 바로 반복문의 다음 cycle로 넘어간다</li>
+    </ul>
+  </li>
+  <li>return
+    <ul>
+      <li>반복문에서 함수의 실행을 중지함 (return type 있을 경우 결과 반환)</li>
+    </ul>
+  </li>
+  <li>throw
+    <ul>
+      <li>에러가 발생가능한 함수에서 throw 키워드 다음에 정의된 에러의 타입을 반환하면서 함수를 빠져나온다</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3 id="메모리-구조">메모리 구조</h3>
+<ul>
+  <li>함수 실행 시 메모리의 stack 영역에 메모리 공간을 만들고 함수가 실행이 완료될 경우 stack frame이 사라진다!</li>
+  <li>재귀 함수를 사용할 경우, 종료 조건을 만날 때까지 stack frame에 메모리 쌓이고 하나씩 처리된다</li>
+  <li>즉, 종료 조건을 명시하지 않으면 stack over flow가 발생!</li>
+</ul>
+
+<hr>
+
+<h3 id="오버로딩">오버로딩</h3>
+
+<p>swift에서는 같은 이름의 함수에 parameter를 다양하게 선언하는 것이 가능하다
+함수이름, parameter의 수와 타입, argument label, return type을 모두 포함하여 함수를 식별함!</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">repeatNum</span><span class="p">(</span><span class="n">repeatNumber</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="n">count</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">repeatNum</span><span class="p">(</span><span class="n">repeatNumber</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">count</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">repeatNum</span><span class="p">(</span><span class="n">repeatNumber</span> <span class="nv">num</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">count</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="discardableresult">@discardableResult</h3>
+
+<p>return 값이 있는 함수에서 함수의 반환값을 return 하지 않았을 때의 경고창을 없애준다</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">repeatNum</span><span class="p">(</span><span class="n">repeatNumber</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">count</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">plus</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+        <span class="n">plus</span> <span class="o">+=</span> <span class="n">a</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//에러 발생 Missing return in global function expected to return 'Int'</span>
+
+<span class="kd">@DiscardableResult</span>
+<span class="kd">func</span> <span class="nf">repeatNum</span><span class="p">(</span><span class="n">repeatNumber</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">count</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+		<span class="k">var</span> <span class="nv">plus</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">b</span> <span class="p">{</span>
+        <span class="n">plus</span> <span class="o">+=</span> <span class="n">a</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303" title="[알고리즘/Swift] 1303 전쟁 - 전투">[알고리즘/Swift] 1303 전쟁 - 전투</a><a class="next" href="/jekyll-theme-yat/2023/03/12/Delegate-Pattern" title="[Design Pattern] 델리게이트 패턴이란?">[Design Pattern] 델리게이트 패턴이란?</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789" title="[Design Pattern] 델리게이트 패턴이란?">[알고리즘/Swift] 1789 수들의 합</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/03/09/Swift-Function" title="[Design Pattern] 델리게이트 패턴이란?">[Swift] 함수</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2022/12/31/boj1260" title="[Design Pattern] 델리게이트 패턴이란?">[백준/Python] 1260번 DFS와 BFS 풀이</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/02/01/Programmers-320" title="[Design Pattern] 델리게이트 패턴이란?">[알고리즘/Swift] 0201 320개 </a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Github Blog 2022-2023 Lee su-min</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

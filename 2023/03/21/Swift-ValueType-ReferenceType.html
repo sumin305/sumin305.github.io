@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[Swift] 값 타입과 참조 타입 | soom.log</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="[Swift] 값 타입과 참조 타입">
+<meta name="author" content="Lee su-min">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="값 타입과 참조 타입">
+<meta property="og:description" content="값 타입과 참조 타입">
+<link rel="canonical" href="https://hanabzu.github.io/jekyll-theme-yat/2023/03/21/Swift-ValueType-ReferenceType">
+<meta property="og:url" content="https://hanabzu.github.io/jekyll-theme-yat/2023/03/21/Swift-ValueType-ReferenceType">
+<meta property="og:site_name" content="soom.log">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-03-21T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[Swift] 값 타입과 참조 타입">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Lee su-min"},"dateModified":"2023-03-21T00:00:00+00:00","datePublished":"2023-03-21T00:00:00+00:00","description":"값 타입과 참조 타입","headline":"[Swift] 값 타입과 참조 타입","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanabzu.github.io/jekyll-theme-yat/2023/03/21/Swift-ValueType-ReferenceType"},"url":"https://hanabzu.github.io/jekyll-theme-yat/2023/03/21/Swift-ValueType-ReferenceType"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://hanabzu.github.io/jekyll-theme-yat/feed.xml" title="soom.log">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #389092;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="soom.log" src="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png" onerror="this.style.display='none'">
+  soom.log
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags">TAGS</a>
+
+
+
+
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[Swift] 값 타입과 참조 타입</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2023-03-21T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Mar 21, 2023
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Value%20Type">#Value Type</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Reference%20Type">#Reference Type</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="값-타입과-참조-타입">값 타입과 참조 타입</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>값 타입(Value Type)</th>
+      <th>참조 타입(Reference Type)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>구조체, 열거형, 튜플</td>
+      <td>클래스, 클로저</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="값-타입">값 타입</h2>
+
+<ul>
+  <li>구조체, 열거형, 튜플 타입 자체는 <code class="language-plaintext highlighter-rouge">데이터 메모리 영역</code> 에서 생성된다</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">스택 메모리 영역</code> 에 인스턴스가 생성된다</li>
+  <li>인스턴스 복사시)
+    <ul>
+      <li>새로운 값이 할당되어 <code class="language-plaintext highlighter-rouge">스택 메모리 영역</code>에 쌓인다</li>
+      <li>그러므로 복사본의 내부 프로퍼티를 변경하면 그 복사본의 값이 변하고 원본 값은 변하지 않는다</li>
+    </ul>
+  </li>
+  <li>인스턴스 let으로 선언시)
+    <ul>
+      <li>인스턴스의 내부 프로퍼티들이 var로 선언되었더라도 그 값을 변경할 수 없게된다</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="참조-타입">참조 타입</h2>
+
+<ul>
+  <li>클래스나 클로저 타입 자체도 값 타입과 마찬가지로 <code class="language-plaintext highlighter-rouge">데이터 메모리 영역</code> 에서 생성된다</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">힙 메모리 영역</code> 에 생성된 인스턴스의 데이터를 저장한다</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">스택 메모리 영역</code> 에서는 <code class="language-plaintext highlighter-rouge">힙 메모리 영역</code> 에 있는 인스턴스의 데이터의 메모리 주소를 저장한다</li>
+  <li>인스턴스 복사시)
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">스택 메모리 영역</code>에 새로운 데이터가 생겨서 원본 데이터와 같은 메모리 주소를 가리킨다</li>
+      <li>그러므로 복사본의 내부 프로퍼티를 변경하면 가리키고 있는 메모리 주소의 데이터가 변경된다 (부수 효과 발생)</li>
+    </ul>
+  </li>
+  <li>인스턴스 let으로 선언시)
+    <ul>
+      <li>인스턴스를 let으로 선언하면 그 인스턴스가 가르키고 있는 메모리 주소를 변경할 수 없게 된다</li>
+    </ul>
+  </li>
+</ul>
+
+<p>swift에서는 값 타입이 훨씬 더 강력한 기능을 한다</p>
+
+<p><strong>Stack의 장단점</strong></p>
+
+<ul>
+  <li>Stack은 Push, Pop을 통해 메모리를 할당/해제한다. → 스택 포인터만 움직이면 되므로 한번의 명령으로 메모리 할당과 해제 수행</li>
+  <li>선형적인 데이터 구조다. 단순하고 효율적이다.</li>
+</ul>
+
+<p>하지만 컴파일 타임에 스택에 필요한 메모리 크기를 미리 알 수 있어야 한다. 하나의 스택이 올라갔을 때 그 크기를 확정할 수 있어야, 다음 스택이 생길 때 할당할 메모리를 알 수 있다.</p>
+
+<p>또 스택이 끝나면 해제되어 버린다. 데이터를 스택에 할당하면 다른 객체에서 데이터에 접근하기가 어렵다.</p>
+
+<p><strong>Heap의 장단점</strong></p>
+
+<ul>
+  <li>Heap은 임의의 메모리 주소에 메모리를 할당/해제한다.</li>
+  <li>동적할당에 사용된다</li>
+  <li>메모리 할당을 할 때 순차적인 탐색이 필요하다.</li>
+  <li>더 이상 사용하지 않는 데이터를 탐지하기 위해 참조 카운팅(Reference counting)을 해야 한다.</li>
+  <li>Stack보다 할당/해제에 드는 오버헤드가 크다.</li>
+</ul>
+
+<p>다만 Heap은 런타임에 메모리 할당 크기가 변할 수 있고, 여러 객체나 스코프에서 참조값을 통해 데이터에 접근이 가능하다.</p>
+
+<p>우리는 주로 값 타입은 Stack을 쓰고, 참조 타입은 Heap을 쓴다고 배운다. 그렇지 않은 경우도 있다. 즉, 시멘틱의 관점에서는 ‘불변성’을 가지면서도, 실제 메모리는 힙을 사용할 수도 있다는 뜻이다.</p>
+
+<h2 id="struct-vs-class-언제-무엇을-이용할까">Struct vs Class 언제 무엇을 이용할까</h2>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">최대한 구조체 사용</code>
+    <ul>
+      <li>값 타입은 부수 효과가 없고 또 다른 메모리의 주소를 참조하고 있지 않으므로 특정 부분의 코드만 보고도 이해가 가능하고, 결과를 예측할 수 있다</li>
+      <li>멀티 스레드 환경에서 공유 데이터를 가지지 않아 안전하고 간단하다</li>
+      <li>스택 사용으로 인해 메모리 자원의 할당 및 해제의 성능이 효율적이다!</li>
+      <li>구조체도 프로토콜과 값 타입의 조합을 통해 다형성을 만들어 낼 수 있으므로 상속이 필요 없다! (swift는 Protocol-oriented)</li>
+    </ul>
+  </li>
+  <li>
+    <p>Cocoa framework의 타입 계층, 및 obj-c 런타임이 필요할 경우 <code class="language-plaintext highlighter-rouge">클래스 사용</code></p>
+
+    <ul>
+      <li>UIKit를 서브클래싱할 경우 class 사용.</li>
+    </ul>
+  </li>
+  <li>고유성을 가진 데이터를 제어할 경우→ <code class="language-plaintext highlighter-rouge">클래스</code>사용
+    <ul>
+      <li>데이터의 변화를 감지하기 위해서는 데이터의 고유성이 필요하다 ( 그 데이터의 식별할 수 있는 고유한 형태가 있어야 변경됨을 감지할 수 있다)</li>
+      <li>또한 앱의 여러 곳에서 사용할 때 한 영역에서 적용한 수정이 다른 영역에도 적용되기를 원하면 클래스를 사용한다</li>
+      <li>주로 파일 관리나 네트워크 연결과 같은 작업을 다룰 때 클래스를 사용한다</li>
+    </ul>
+  </li>
+  <li>많은 양의 복사→ <code class="language-plaintext highlighter-rouge">구조체 내에 클래스</code> 사용
+    <ul>
+      <li>값 타입(구조체)내에 데이터가 굉장히 많거나 복사가 많이 일어날 경우, 내부에 클래스를 활용한다 (구조체 내에 참조 타입으로 별도의 저장소 생성)</li>
+      <li>복사를 최소화하여 성능을 최적화한다</li>
+      <li>구조체가 여러번 복사되고 할당되더라도 참조 타입 내의 데이터는 값이 복사되지 않고 참조만 늘어나기 때문에 효율적으로 사용 가능하다!</li>
+      <li>Copy-on-Write를 사용하여 변경이 일어날 경우에만 복사해준다</li>
+      <li>하지만 구조체 내에 참조 타입도 가급적 숫자를 줄이면 좋다 !</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="참고">참고</h2>
+
+<p><a href="https://velog.io/@eddy_song/value-reference-decision">https://velog.io/@eddy_song/value-reference-decision</a></p>
+
+<p><a href="https://icksw.tistory.com/257">https://icksw.tistory.com/257</a></p>
+
+<p><a href="https://velog.io/@eddy_song/value-reference-decision#%EA%B0%84%EB%8B%A8-%EC%84%A4%EB%AA%85-%EA%B0%92-%ED%83%80%EC%9E%85%EA%B3%BC-%EC%B0%B8%EC%A1%B0-%ED%83%80%EC%9E%85%EC%9D%98-%EC%B0%A8%EC%9D%B4">https://velog.io/@eddy_song/value-reference-decision#간단-설명-값-타입과-참조-타입의-차이</a></p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953" title="[알고리즘/Swift] 16953 A -&gt; B">[알고리즘/Swift] 16953 A -&gt; B</a><a class="next" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851" title="[알고리즘/Swift] 12851 숨바꼭질 2">[알고리즘/Swift] 12851 숨바꼭질 2</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9" title="[알고리즘/Swift] 12851 숨바꼭질 2">[알고리즘/Swift] 연속된 부분 수열의 합</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/02/14/class&amp;struct" title="[알고리즘/Swift] 12851 숨바꼭질 2">[Swift] 클래스와 구조체</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/02/09/Baekjoon-1806" title="[알고리즘/Swift] 12851 숨바꼭질 2">[알고리즘/Swift] 1806 부분합</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/01/26/Programmers-Buildings" title="[알고리즘/Swift] 12851 숨바꼭질 2">[알고리즘/Swift] 0126 빌딩 </a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Github Blog 2022-2023 Lee su-min</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

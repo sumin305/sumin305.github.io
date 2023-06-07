@@ -1,0 +1,6209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Home | soom.log</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="Home">
+<meta name="author" content="Lee su-min">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="hanabzu Github Blog">
+<meta property="og:description" content="hanabzu Github Blog">
+<link rel="canonical" href="https://hanabzu.github.io/jekyll-theme-yat/">
+<meta property="og:url" content="https://hanabzu.github.io/jekyll-theme-yat/">
+<meta property="og:site_name" content="soom.log">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Home">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Lee su-min"},"description":"hanabzu Github Blog","headline":"Home","name":"soom.log","url":"https://hanabzu.github.io/jekyll-theme-yat/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://hanabzu.github.io/jekyll-theme-yat/feed.xml" title="soom.log">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #389092;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="soom.log" src="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png" onerror="this.style.display='none'">
+  soom.log
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags">TAGS</a>
+
+
+
+
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/jekyll-theme-yat/assets/home.jpg)"></div>
+        <img class="img-placeholder" src="/jekyll-theme-yat/assets/home.jpg">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner"><div class="page-banner-default">
+            <h1 class="page-banner-heading">
+              soom.log
+            </h1>
+            <h2 class="page-banner-subheading">
+               
+            </h2>
+          </div></div>
+    </div>
+  </section><script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="articles">
+  
+
+  
+
+
+  <div class="pagination">
+  <!-- Post list links -->
+  <ul class="post-list">
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/04/22/Swift-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%98-%EC%9D%B4%ED%95%B4">
+          [Swift] 비동기 프로그래밍이란
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 22, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 15 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/04/22/Swift-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%98-%EC%9D%B4%ED%95%B4">
+        <p>
+        1. 동기/ 비동기 개념에 대한 이해
+
+쓰레드
+
+연산을 수행하는 연산 장치 ( 코어 하나당 대부분 2개의 쓰레드 )
+
+
+  소프트웨어적인 Thread - NSThread라고 불리는 객체임
+  메인쓰레드 (1번 쓰레드)는 앱의 시작과 화면을 다시 그리는 역할도 한다 (60Hz 1초에 60번)
+    
+      여러 역할을 수행하므로 너무 오래 걸리는 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B9%84%EB%8F%99%EA%B8%B0%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D">#비동기 프로그래밍</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%93%B0%EB%A0%88%EB%93%9C">#쓰레드</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%81%90">#큐</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%9E%91%EC%97%85">#작업</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9">
+          [알고리즘/Swift] 연속된 부분 수열의 합
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 12, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9">
+        <p>
+        문제
+비내림차순으로 정렬된 수열이 주어질 때, 다음 조건을 만족하는 부분 수열을 찾으려고 합니다.
+
+기존 수열에서 임의의 두 인덱스의 원소와 그 사이의 원소를 모두 포함하는 부분 수열이어야 합니다.
+부분 수열의 합은 k입니다.
+합이 k인 부분 수열이 여러 개인 경우 길이가 짧은 수열을 찾습니다.
+길이가 짧은 수열이 여러 개인 경우 앞쪽(시작 인덱스가 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Array">#Array</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%88%AC%20%ED%8F%AC%EC%9D%B8%ED%84%B0">#투 포인터</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B0%EC%97%B4%EC%9D%98%20%ED%95%A9">#배열의 합</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EA%B3%BC%EC%A0%9C-%EC%A7%84%ED%96%89%ED%95%98%EA%B8%B0">
+          [알고리즘/Swift] 과제 진행하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 12, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 11 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/04/12/Programmers-%EA%B3%BC%EC%A0%9C-%EC%A7%84%ED%96%89%ED%95%98%EA%B8%B0">
+        <p>
+        문제
+과제를 받은 루는 다음과 같은 순서대로 과제를 하려고 계획을 세웠습니다.
+
+과제는 시작하기로 한 시각이 되면 시작합니다.
+새로운 과제를 시작할 시각이 되었을 때, 기존에 진행 중이던 과제가 있다면 진행 중이던 과제를 멈추고 새로운 과제를 시작합니다.
+진행중이던 과제를 끝냈을 때, 잠시 멈춘 과제가 있다면, 멈춰둔 과제를 이어서 진행합니다.
+만약,... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Array">#Array</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#stack">#stack</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Last-in-First-Out">#Last-in-First-Out</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/04/11/Swift-selfvsSelf">
+          [Swift] self vs Self 비교
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 11, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/04/11/Swift-selfvsSelf">
+        <p>
+        self와 Self 비교
+
+생성자를 다루면서 자주 사용했었던 self와 간간히 나오는 Self의 차이점을 비교해보겠다
+self
+
+  self는 인스턴스를 가리킨다!!
+
+
+
+  self는 자기 자신의 인스턴스를 가리킨다고 한다
+  다양한 예시를 보며 self가 쓰이는 경우를 알아보자
+
+
+
+  생성자 내부에서 사용    
+클래스 or 구조체의 생성자에서 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#self">#self</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Self">#Self</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4">#인스턴스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%83%80%EC%9E%85">#타입</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/04/06/Baekjoon-3687">
+          [알고리즘/Swift] 3687 성냥개비
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 06, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/04/06/Baekjoon-3687">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크:
+    
+      3687 성냥개비
+    
+  
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      다이나믹 알고리즘
+      그리디 알고리즘
+    
+  
+
+
+ 
+
+
+
+
+풀이
+해당 문제는 min_dp 100개의 배열을 사용해서 해당 인덱스만큼의 성냥개비 개수로 만들 수... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">#그래프 이론</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%ED%83%90%EC%83%89">#그래프 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%84%88%EB%B9%84%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#너비 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B9%8A%EC%9D%B4%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#깊이 우선 탐색</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/04/03/Swift-App-Sandbox">
+          [Swift] App SandBox의 구조와 역할
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 03, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/04/03/Swift-App-Sandbox">
+        <p>
+        iOS 앱 샌드박스(App SandBox)
+
+
+  샌드박스 란 어린아이를 보호하기 위해 모래통에서만 놀도록 하는데서 유래한 접근 보안 모델
+  iOS 에서는 하나의 앱마다 sandbox를 두고 공유되지 않도록 하여 접근에 대해 보호함
+  sandbox 내의 파일만 정보를 주고 받을 수 있도록 함
+  전략
+    
+      앱이 시스템과 상호 작용하는... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#App%20Bundle">#App Bundle</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#SandBox">#SandBox</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Bundle%20Container">#Bundle Container</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Data%20Container">#Data Container</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#iCloud%20Container">#iCloud Container</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/04/01/Baekjoon-14226">
+          [알고리즘/Swift] 14226 이모티콘
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 01, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/04/01/Baekjoon-14226">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크:
+    
+      14226 이모티콘
+    
+  
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      그래프 이론
+      그래프 탐색
+      너비 우선 탐색
+    
+  
+
+
+ 
+
+
+
+
+풀이
+(1(초기 화면 개수), 0(초기 클립보드 개수), 0(연산 횟수)) 튜플... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">#그래프 이론</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%ED%83%90%EC%83%89">#그래프 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%84%88%EB%B9%84%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#너비 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B9%8A%EC%9D%B4%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#깊이 우선 탐색</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/31/Swift-Type-Casting">
+          [Swift] 타입 캐스팅
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 31, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 13 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/31/Swift-Type-Casting">
+        <p>
+        타입 캐스팅
+
+is 연산자(type check operator)
+
+
+  인스턴스의 타입을 검사함
+  인스턴스 is 타입 형태로 사용 (이항 연산자)
+  상속은 저장속성 확장 개념이기 때문에 하위 클래스가 상위 클래스의 타입일 수는 있지만, 상위 클래스가 하위 클래스 타입일 수는 없다.
+
+
+(메모리 관점에서 하위 클래스의 인스턴스는 상위 클래스의 속성을... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Type%20Casting">#Type Casting</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#is/as">#is/as</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Down%20Casting">#Down Casting</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Up%20Casting">#Up Casting</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%8B%A4%ED%98%95%EC%84%B1">#다형성</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Any">#Any</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#AnyObject">#AnyObject</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/29/Baekjoon-13549-13913">
+          [알고리즘/Swift] 13549,13913 숨바꼭질 3,4
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 29, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 9 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/29/Baekjoon-13549-13913">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크:
+    
+      13549 숨바꼭질 3
+      13913 숨바꼭질 4
+    
+  
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      그래프 이론
+      그래프 탐색
+      너비 우선 탐색
+      다익스트라
+    
+  
+
+
+ 
+ 두 문제가 숨바꼭질 2 문... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">#그래프 이론</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%ED%83%90%EC%83%89">#그래프 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%84%88%EB%B9%84%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#너비 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B9%8A%EC%9D%B4%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#깊이 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC">#다익스트라</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/28/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue">
+          [Swift] Queue
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 28, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/28/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue">
+        <p>
+        Queue
+
+  Queue란, 한쪽 끝에서 삽입, 한쪽 끝에서 삭제가 이루어지는 유한 순서 리스트이다
+
+  
+    First-in-First-out의 선입선출 방식
+    먼저 들어간 원소가 먼저 나가게 되는 구조
+    음식점 대기줄, CPU의 테스크 스케줄링등이 Queue의 방식의 예
+    BFS에서도 Queue를 사용하여 탐색해야 하는 노드의... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0">#자료구조</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#queue">#queue</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#stack">#stack</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/28/Swift-Property">
+          [Swift] 프로퍼티
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 28, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/28/Swift-Property">
+        <p>
+        속성과 메서드
+
+구조체와 클래스에는 속성(프로퍼티)와 메서드가 존재한다
+
+속성은 두 타입에서 동일! 메서드에서는 약간의 차이가 있음
+
+
+&gt; 💡 속성 : 구조체/클래스의 변수
+
+
+
+
+  저장 속성
+    
+      지연 속성
+    
+  
+  계산 속성
+  타입 속성
+    
+      타입 저장 속성
+      타입 계산 속성
+    
+  
+ ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Property">#Property</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Value%20Property">#Value Property</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Reference%20Property">#Reference Property</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+          [알고리즘/Swift] 12851 숨바꼭질 2
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 27, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 12851 숨바꼭질 2
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      그래프 이론
+      그래프 탐색
+      너비 우선 탐색
+    
+  
+
+
+ 
+
+
+
+풀이
+이전 문제인 A-&gt;B와 유사한 방식으로 풀었으나, 시간초과가 발생하였다.  
+그 이유는 removeF... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">#그래프 이론</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%ED%83%90%EC%83%89">#그래프 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%84%88%EB%B9%84%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#너비 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B9%8A%EC%9D%B4%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#깊이 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#BFS">#BFS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DFS">#DFS</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Swift-ValueType-ReferenceType">
+          [Swift] 값 타입과 참조 타입
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 21, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/21/Swift-ValueType-ReferenceType">
+        <p>
+        값 타입과 참조 타입
+
+
+  
+    
+      값 타입(Value Type)
+      참조 타입(Reference Type)
+    
+  
+  
+    
+      구조체, 열거형, 튜플
+      클래스, 클로저
+    
+  
+
+
+값 타입
+
+
+  구조체, 열거형, 튜플 타입 자체는 데이터 메모리 영역 에서 생성된다
+  스택 메모리 영역 에 인스... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Value%20Type">#Value Type</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Reference%20Type">#Reference Type</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+          [알고리즘/Swift] 16953 A -&gt; B
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 21, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 16953 A -&gt; B
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      그래프 이론
+      그리디 알고리즘
+      그래프 탐색
+      너비 우선 탐색
+    
+  
+
+
+
+
+
+
+
+풀이
+숫자 A에서 B로 만드려면 2를 곱하기와 맨 뒷 자리에 1 붙이기를 반복해... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">#그래프 이론</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%ED%83%90%EC%83%89">#그래프 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%84%88%EB%B9%84%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#너비 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B9%8A%EC%9D%B4%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#깊이 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#BFS">#BFS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DFS">#DFS</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+          [알고리즘/Swift] 2606 바이러스
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 17, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 2606 바이러스
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      그래프 이론
+      그래프 탐색
+      너비 우선 탐색
+    
+  
+
+
+
+
+
+풀이
+해당 문제는 그래프에서 쌍방향으로 연결되어 있는 노드의 개수를 카운트하는 것으로 이해하였다  
+나는 이 문제를 BF... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">#그래프 이론</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%ED%83%90%EC%83%89">#그래프 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%84%88%EB%B9%84%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#너비 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B9%8A%EC%9D%B4%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#깊이 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#BFS">#BFS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DFS">#DFS</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+          [알고리즘/Swift] 2178 미로 탐색
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 15, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 2178 미로 탐색
+  제출 언어: Swift
+  알고리즘 분류:
+  그래프 이론
+  그래프 탐색
+  너비 우선 탐색
+
+
+
+
+
+
+풀이
+
+BFS
+모든 경로를 방문하는 것이 아니고 최단 거리를 찾는 문제이므로, 너비 우선 탐색으로 문제를 풀어야만 했다 
+그냥 BFS 문제처럼 방문해야 하는 노드... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">#그래프 이론</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%ED%83%90%EC%83%89">#그래프 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%84%88%EB%B9%84%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#너비 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B9%8A%EC%9D%B4%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#깊이 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#BFS">#BFS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DFS">#DFS</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/12/Delegate-Pattern">
+          [Design Pattern] 델리게이트 패턴이란?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 12, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/12/Delegate-Pattern">
+        <p>
+        Delegate Pattern
+
+
+  💡 특정 다른 클래스에 있는 어떠한 행동을 하고 싶을 때,  
+상속을 사용하는 대신 delegate라는 위임자를 선언하여 다른 클래스의 행동을 재사용하도록 하는 것.  
+이때, 위임할 클래스에 위임한 내용을 수신받을 클래스의 객체를 참조하도록 해줘야됨.
+
+
+“Delegate는 어떤 객체가 해야 하는 일을 부분적으로... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Delegate">#Delegate</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Delegate%20Pattern">#Delegate Pattern</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Design%20Pattern">#Design Pattern</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Swift-Function">
+          [Swift] 함수
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 09, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 13 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/09/Swift-Function">
+        <p>
+        함수
+swift문법에서 평소에 쓰던 함수에 대해 메모리 구조 혹은 @discardableResult과 같은 새로운 개념도 알게 되었고, 헷갈렸던 부분도 더욱 구체적으로 알게되었다 
+배운 내용들을 정리하고 예제도 만들어보고 내 생각도 덧붙이면서 지식을 공유하고자 한다 
+
+
+  함수는 특정한 기능을 하는 코드의 모음이고, 입력과 출력이 존재할 수 있다
+
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Function">#Function</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+          [알고리즘/Swift] 1303 전쟁 - 전투
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 09, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 1303 전쟁 - 전투
+  제출 언어: Swift
+  알고리즘 분류:
+  그래프 이론
+  그래프 탐색
+  너비 우선 탐색
+  깊이 우선 탐색
+
+
+
+
+
+
+풀이
+기본 BFS, DFS문제에 마지막 병사의 수를 제곱해서 더해주는 부분만 처리해주면 되는 문제였다   
+나는 visited 2차원 배열... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">#그래프 이론</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%ED%83%90%EC%83%89">#그래프 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%84%88%EB%B9%84%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#너비 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B9%8A%EC%9D%B4%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">#깊이 우선 탐색</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#BFS">#BFS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DFS">#DFS</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/28/Baekjoon-1038">
+          [알고리즘/Swift] 1038 감소하는 수
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 28, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/28/Baekjoon-1038">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 1038 감소하는 수
+  제출 언어: Swift
+  알고리즘 분류:
+  브루트포스 알고리즘
+  백트래킹
+
+
+
+
+
+
+풀이
+이 문제를 한참 읽어도 이해가 가지 않았는데 이해한 바로는    
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 21, 30, 31.. 등 처럼 자리... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#브루트포스 알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%ED%8A%B8%EB%9E%98%ED%82%B9">#백트래킹</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/27/Swift-Variables-Constants">
+          [Swift] 변수와 상수
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 27, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/27/Swift-Variables-Constants">
+        <p>
+        변수와 상수
+
+  메모리에 값(데이터)을 저장한다
+  선언한 변수의 이름은 식별자이므로 한 영역에 하나의 이름만 사용한다
+  소문자로 시작, 중간에 대문자 혹은 숫자가 들어가도 된다
+
+
+변수
+var age = 15
+//age라는 변수를 선언하고 그 변수에 15라는 값을 저장한다
+
+var age2 : Int
+age2 = 15
+//변수를 먼저 선언하여 메... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Variables">#Variables</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Constants">#Constants</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667">
+          [알고리즘/Swift] 2667 단지번호붙이기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 22, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 10 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 2667 단지번호붙이기
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      그래프 이론
+      그래프 탐색
+      너비 우선 탐색
+      깊이 우선 탐색
+    
+  
+
+
+
+
+
+
+풀이
+그래프 이론
+
+  그래프는 정점과 그 정점들을 연결하는 간선으로 이루어진 자료구조... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">#그래프 이론</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%81%90">#큐</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#BFS">#BFS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DFS">#DFS</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/21/Baekjoon-2294">
+          [알고리즘/Swift] 2294 동전 2
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 21, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/21/Baekjoon-2294">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 2294 동전 2
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      다이나믹 프로그래밍
+    
+  
+
+
+
+
+
+
+풀이
+다이나믹 프로그래밍
+
+  전체 문제의 최적해가 부분 문제의 최적해로부터 만들어지는 알고리즘이다
+
+
+
+  하나의 문제를 단 한 번의 연산으로 해결하기 위해, ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D">#다이나믹 프로그래밍</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/20/Baekjoon-2293">
+          [알고리즘/Swift] 2293 동전 1
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 20, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/20/Baekjoon-2293">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 2293 동전 1
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      다이나믹 프로그래밍
+    
+  
+
+
+
+
+
+
+
+풀이
+다이나믹 프로그래밍
+
+  전체 문제의 최적해가 부분 문제의 최적해로부터 만들어지는 알고리즘이다
+
+
+
+  하나의 문제를 단 한 번의 연산으로 해결하기 위해,... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D">#다이나믹 프로그래밍</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/17/Baekjoon-3085">
+          [알고리즘/Swift] 3085 사탕 게임
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 17, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 9 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/17/Baekjoon-3085">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 3085 사탕 게임
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      구현
+      브루스포스 알고리즘
+    
+  
+
+
+
+
+
+
+
+풀이
+브루스 포스 알고리즘
+
+  Brute(무식한) Force 알고리즘 : 모든 가능한 경우의 수를 모두 탐색하며 요구 조건에 충족하는 결과만... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B8%8C%EB%A3%A8%EC%8A%A4%ED%8F%AC%EC%8A%A4%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#브루스포스 알고리즘</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789">
+          [알고리즘/Swift] 1789 수들의 합
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 16, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 1789 수들의 합
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      수학
+      그리디 이론
+    
+  
+
+
+
+
+
+
+
+풀이
+그리디 이론
+그리디 이론에 대한 설명은 그리디 알고리즘에 정리해놨으므로 생략하겠다  
+복잡하게 생각하지 않고 단순하게 while문을 사용하여 구... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%A6%AC%EB%94%94">#그리디</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%88%98%ED%95%99">#수학</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#while">#while</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/15/Baekjoon-2252">
+          [알고리즘/Swift] 2252 줄 세우기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 15, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/15/Baekjoon-2252">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 2252  줄 세우기
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      그래프 이론
+      위상 정렬
+    
+  
+
+
+
+
+
+
+
+풀이
+위상 정렬
+
+  그래프 내의 모든 정점(node)를 선형으로 정렬할 때 사용한다
+  cycle이 없는 조건일 경우 사용한다
+  모든 간선... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">#그래프 이론</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%9C%84%EC%83%81%20%EC%A0%95%EB%A0%AC">#위상 정렬</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/14/class&amp;struct">
+          [Swift] 클래스와 구조체
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 14, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 10 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/14/class&amp;struct">
+        <p>
+        1. 클래스와 구조체
+
+
+  같은 데이터들을 가지고 있는  데이터 묶음을 정의해두는 틀
+  동일한 종류의 값들 (이름, 나이, 성별 등)을 가지고 있는 객체들을 생성할 때, 공통으로 사용되는 부분을 미리 정의해놓는것
+  즉, 객체를 생성하기 위한 설계도라고 할 수 있다
+  사용자 정의 타입 : String, Int와 같은 타입을 사용자가 정의한다 → ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#class">#class</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#struct">#struct</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/13/Baekjoon-1197">
+          [알고리즘/Swift] 1197 최소 스패닝 트리
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 13, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/13/Baekjoon-1197">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 1197 최소 스패닝 트리
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      그래프 이론
+      최소 스패닝 트리
+    
+  
+
+
+
+
+
+
+
+풀이
+최소 스패닝 트리
+
+  그래프 내의 모든 node들을 최소의 간선 비용으로 연결하는 트리이다
+  cycle이 없는 조건일 경... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84">#그래프</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%B5%9C%EC%86%8C%20%EC%8A%A4%ED%8C%A8%EB%8B%9D%20%ED%8A%B8%EB%A6%AC">#최소 스패닝 트리</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/10/Baekjoon-1916">
+          [알고리즘/Swift] 1916 최소비용 구하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 10, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/10/Baekjoon-1916">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 1916 최소비용 구하기
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      그래프 이론
+      데이크스트라
+    
+  
+
+
+
+
+
+
+
+풀이
+DIJKSTRA
+
+  Negative Cycle이 없는 directed graph에서만 사용 가능하다
+  시작 node에서 다른 n... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%9E%98%ED%94%84">#그래프</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DIJKSTRA">#DIJKSTRA</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/09/Baekjoon-1806">
+          [알고리즘/Swift] 1806 부분합
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 09, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/09/Baekjoon-1806">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 1806 부분합
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      누적 합
+      두 포인터
+    
+  
+
+
+
+
+
+
+
+풀이
+투포인터 알고리즘
+
+  1차원 리스트에 순차적으로 접근해야 할 때 두 개의 점의 위치를 기록하면서 처리하는 알고리즘이다
+  정렬되어 있는 두 li... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%88%84%EC%A0%81%20%ED%95%A9">#누적 합</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%91%90%20%ED%8F%AC%EC%9D%B8%ED%84%B0">#두 포인터</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/08/Baekjoon-1700">
+          [알고리즘/Swift] 1700 멀티탭 스케줄링
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 08, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/08/Baekjoon-1700">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 1700 멀티탭 스케줄링
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      그리디 알고리즘
+    
+  
+
+
+
+
+
+
+풀이
+그리디 알고리즘
+
+  Greedy는 ‘탐욕스러운’이란 뜻으로, 선택의 순간마다 당장 주어진 상황중 최선의 solution이라고 판단되는 것을 선택하는 알... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B7%B8%EB%A6%AC%EB%94%94">#그리디</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/06/Baekjoon-14719">
+          [알고리즘/Swift] 14719 빗물
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 06, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/06/Baekjoon-14719">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 14719번 빗물
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      구현
+      시뮬레이션
+    
+  
+
+
+
+
+문제
+2차원 세계에 블록이 쌓여있다. 비가 오면 블록 사이에 빗물이 고인다. 
+
+
+
+비는 충분히 많이 온다. 고이는 빗물의 총량은 얼마일까?
+입력
+첫 번째 줄... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98">#시뮬레이션</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/03/Baekjoon-2504">
+          [알고리즘/Swift] 2504 괄호의 값
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 03, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/03/Baekjoon-2504">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 2504번 괄호의 값
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      구현
+      자료 구조
+      스택
+    
+  
+
+
+
+
+문제
+4개의 기호 ‘(’, ‘)’, ‘[’, ‘]’를 이용해서 만들어지는 괄호열 중에서 올바른 괄호열이란 다음과 같이 정의된다.
+
+한 쌍의... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%8A%A4%ED%83%9D">#스택</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0">#자료구조</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/02/Baekjoon-14888">
+          [알고리즘/Swift] 14888 연산자 끼워넣기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 02, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/02/Baekjoon-14888">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 14888번 연산자 끼워넣기
+  제출 언어: Swift
+  알고리즘 분류:
+    
+      브루스포스
+      백트래킹
+      DFS
+    
+  
+
+
+
+
+문제
+N개의 수로 이루어진 수열 A1, A2, …, AN이 주어진다. 또, 수와 수 사이에 끼워넣을 수 있는 N-1개의 연산자... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#BOJ">#BOJ</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DFS">#DFS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+          [Project] Account Book
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 01, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+        <p>
+        Introduce
+간단한 앱을 구현하고 다양한 기능들을 추가하며 앱 생성 시 어려웠던 점들이나 알게된 점들을 기록해보고자 글을 쓰기로 하였다
+
+Account Book
+이번 프로젝트는 가계부 구현하기이다  
+사용자에게 다양한 정보를 입력받아서 가계부 list에 추가한다 
+각 가계부 정보들을, 금액, 메모, 카테고리등 다양한 종류의 데이터를 갖는다
+
+  ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#SwiftUI">#SwiftUI</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Toy%20Project">#Toy Project</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#View%20&amp;%20View%20Model">#View &amp; View Model</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#State">#State</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Binding">#Binding</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#UserDefaults">#UserDefaults</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Programmers-320">
+          [알고리즘/Swift] 0201 320개 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 01, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/02/01/Programmers-320">
+        <p>
+        문제
+훈련된 초밥 장인이 한 번 초밥을 쥘 때 담는 밥알은 320개라고 알려져 있다. 
+일식집에서 아르바이트를 하는 준식이는 N 개의 초밥을 열심히 만들어 보았지만 각 초밥에 담긴 밥알의 개수가 제각각이었다.  
+이 중에서 그나마 밥알의 개수가 320개에 가장 가까운 초밥 하나를 손님에게 내놓으려고 한다. 준식이는 몇 번째 초밥을 내놓아야 할까?
+
+입... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Array">#Array</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/31/Programmers-Lipogram">
+          [알고리즘/Swift] 0131 리포그램 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 31, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/31/Programmers-Lipogram">
+        <p>
+        문제
+리포그램(lipogram)은 팬그램(pangram)과 반대되는 개념으로, 알파벳의 일부 글자를 사용하지 않고 만든 문장이다. 주어진 문자열이 리포그램인지 확인해보자.
+
+입력
+첫째 줄에 알파벳 소문자로 이루어진 문자열 S (1 ≤ |S| ≤ 100) 가 주어진다. S 는 공백 또는 알파벳 대소문자로 이루어진 문자열이다.
+
+출력
+주어진 문자열 S 가... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Array">#Array</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/30/Programmers-Pangram1">
+          [알고리즘/Swift] 0130 팬그램 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 30, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/30/Programmers-Pangram1">
+        <p>
+        문제
+팬그램(pangram)은 알파벳의 모든 글자를 사용해 만든 문장이다. 주어진 문자열이 팬그램인지 확인해보자.
+
+입력
+첫째 줄에 알파벳 소문자로 이루어진 문자열 S (1 ≤ |S| ≤ 100) 가 주어진다. S 는 공백 또는 알파벳 대소문자로 이루어진 문자열이다.
+
+출력
+주어진 문자열 S 가 팬그램이라면 YES 를 그렇지 않다면 NO 를 출력한다.... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Array">#Array</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/27/Programmers-Snow1">
+          [알고리즘/Swift] 0127 제설 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 27, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/27/Programmers-Snow1">
+        <p>
+        문제
+준식이는 밤새 집 앞 마당에 쌓인 눈을 치우려고 한다. 집 앞 마당은 N × N 크기의 행렬로 생각할 수 있고, 모든 칸에는 눈이 쌓여있는 상태다.
+
+준식이는 바쁘기 때문에 (r1, c1), (r2, c2) 를 꼭짓점으로 하는 직사각형 부분만 눈을 치우려고 한다. 눈을 치우고 난 후에 마당의 상태는 어떻게 되었을까?
+
+입력
+첫째 줄에 정수 N (... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Array">#Array</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/26/Programmers-Buildings">
+          [알고리즘/Swift] 0126 빌딩 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 26, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/26/Programmers-Buildings">
+        <p>
+        문제
+윷대전시에는 빌딩 N 개가 한 줄로 세워져 있는 곳이 있다. 
+한 줄로 선 빌딩의 왼편이나 오른편에 서서 빌딩을 관찰하면, 어떤 빌딩은 앞선 빌딩에 가려져 보이지 않을 수 있다. 
+엄밀히 정의하면, i 번째 빌딩을 보기 위해서는 관측자와 i 번째 빌딩 사이에 있는 모든 빌딩이 i 번째 빌딩보다 높이가 낮아야 한다.
+
+
+위 그림은 빌딩의 높이가 [... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Array">#Array</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#dp">#dp</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/25/Programmers-New-year-money-1">
+          [알고리즘/Swift] 0125 세뱃돈 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 25, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/25/Programmers-New-year-money-1">
+        <p>
+        문제
+준식이와 친구들이 모여 이번 설에 받은 세뱃돈을 자랑하기 시작했다. 
+준식이를 포함한 친구들은 총 N 명이고, i 번째 사람이 받은 세뱃돈은 A[i] (1 ≤ A[i] ≤ 100) 만 원이다. 
+i (1 ≤ i ≤ N) 번째 사람을 기준으로 자기 자신보다 세뱃돈을 덜 받은 사람의 수와, 더 받은 사람의 수를 구해보자.
+
+입력
+첫째 줄에 준식이를 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Array">#Array</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic">
+          [Project] Caffeine Holic
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 23, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 13 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic">
+        <p>
+        Introduce
+CNU SW academy에서 실습한 미니 프로젝트를 소개하고 복습하는 과정을 포스팅하려고 한다
+실습 프로젝트를 수행하면서 Swift 문법에 대해서도 자세히 알게 되었고 앱 개발 기술도 습득할 수 있었다   
+다시 앱을 혼자서 구현해보면서 배운 점들을 상기시키고 추가할 점들이나 문제점 개선을 해보며 기록해려고 한다
+
+Caffeine ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#SwiftUI">#SwiftUI</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Project">#Project</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#View%20&amp;%20View%20Model">#View &amp; View Model</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Clone%20Coding">#Clone Coding</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/22/Swift-TimeComplexity">
+          [Swift] Time Complexity
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 22, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/22/Swift-TimeComplexity">
+        <p>
+        Time Complexity
+알고리즘 문제를 풀 경우나 앱을 개발할 때에도 시간 복잡도 고려는 매우 중요하다 
+코드의 위치만 바꾸어 주더라도 코드의 시간 복잡도를 대폭 줄일 수도 있다 
+또한 같은 결과를 출력하는 함수로 대체해주는 것도 시간복잡도를 줄이는 좋은 방법이다 
+한번 정리해놓으면 잊지 않을 것 같아 포스팅해보기로 하였다
+
+Array
+
+
+  
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/22/Codility-TapeEquilibrium">
+          [알고리즘/Swift] Codility - TapeEquilibrium 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 22, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/22/Codility-TapeEquilibrium">
+        <p>
+        문제
+
+  [Codility] https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/ 
+A non-empty array A consisting of N integers is given. Array A represents numbers on a tape.
+
+
+Any... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Dictionary">#Dictionary</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Codility">#Codility</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/20/Yut-nori">
+          [알고리즘/Swift] 0120 윷놀이 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 20, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/20/Yut-nori">
+        <p>
+        문제
+윷놀이는 한국의 전통 놀이 중 하나로, 종이에 그린 말판과 한 쪽만 평평하게 깎은 납작하고 둥근 나무 막대기(윷) 4개로 즐기는 놀이이다.
+
+윷놀이에서 말을 이동시키기 위해서는 윷 4개를 바닥에 던져야하고, 앞을 보는 윷의 개수에 따라서 이를 부르는 명칭과 말이 얼마만큼 이동할 수 있는지가 정해진다.
+
+도개걸윷모는 앞을 보는 윷의 개수가 각각 1... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Dictionary">#Dictionary</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/19/Programmers-Spot-the-Spy">
+          [알고리즘/Swift] 0119 스파이를 찾아라! 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 19, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/19/Programmers-Spot-the-Spy">
+        <p>
+        문제
+준식이는 수열 A[1], A[2], …, A[N] (N ≥ 3) 을 가지고 있다. 이 수열에서 단 한 개의 수를 제외하고 나머지 수는 모두 같다. 그 수는 수열에서 몇 번째에 위치할까?
+
+입력
+첫째 줄에 테스트 케이스의 개수 T 가 주어진다.
+각 테스트 케이스의 첫째 줄에 수열의 길이 N (3 ≤ N ≤ 100)이 주어진다.
+둘째 줄에 A[1],... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B0%EC%97%B4">#배열</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%9E%90%EC%97%B4">#문자열</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/18/Programmers-Song2">
+          [알고리즘/Swift] 0118 지금 무슨 노래 듣고 있어요?2
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 18, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/18/Programmers-Song2">
+        <p>
+        문제
+현진이는 길거리를 걸을 때 에어팟으로 노래를 듣는다. 현진이는 자신만의 플레이 리스트가 있기 때문에 집을 나설 때 마다 플레이 리스트의 노래를 순서대로 이어서 듣고, 모든 플레이 리스트를 들었다면 처음부터 다시 반복 재생해서 듣는다. 
+현진이의 플레이 리스트는 N 개의 곡으로 이루어져 있다. 각각의 곡의 길이(초)를 B[1], B[2], … , ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Dynamic%20Programming">#Dynamic Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B0%EC%97%B4">#배열</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%9E%90%EC%97%B4">#문자열</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/17/tuple">
+          [Swift] Tuple
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 17, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/17/tuple">
+        <p>
+        tuple
+
+let n = readLine()!.split(separator : " ").map{Int(String($0))!}
+let (N,M) = (n[0],n[1])
+
+swift로 알고리즘 풀이를 하다보면 위에서와 같이 ( )로 변수를 감싼 형태를 자주 사용하게 되는데 
+정확히 정의를 모르고 사용하고 있어서 인터넷에 찾아보았다
+
+
+  tuple?... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/17/Programmers-adv2">
+          [알고리즘/Swift] 0117 준식이의 모험2
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 17, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/17/Programmers-adv2">
+        <p>
+        문제
+준식이의 모엄 은 준식이가 2차원 N × M 격자 세상에서 떠나는 모험을 주제로 한 게임이다. 당신은 이 게임의 개발자가 되었다.
+준식이는 2차원 N × M 격자 세상의 어딘가에 위치해 있다. 플레이어는 L , R , U , D 입력을 통해 준식이를 왼쪽, 오른쪽, 위, 아래 칸으로 이동시킬 수 있다. 하지만 만약 이동하려는 칸이 격자 바깥이거나... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B0%EC%97%B4">#배열</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%9E%90%EC%97%B4">#문자열</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Programmers-adv1">
+          [알고리즘/Swift] 0116 준식이의 모험1
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 16, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/16/Programmers-adv1">
+        <p>
+        문제
+준식이의 모엄 은 준식이가 2차원 N × M 격자 세상에서 떠나는 모험을 주제로 한 게임이다. 당신은 이 게임의 개발자가 되었다.
+준식이는 2차원 N × M 격자 세상의 어딘가에 위치해 있다. 플레이어는 L , R , U , D 입력을 통해 준식이를 왼쪽, 오른쪽, 위, 아래 칸으로 이동시킬 수 있다. 하지만 만약 이동하려는 칸이 격자 바깥이거나... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">#프로그래머스</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B0%EC%97%B4">#배열</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%9E%90%EC%97%B4">#문자열</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EA%B5%AC%ED%98%84">#구현</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Minimize-Cost-Function">
+          [Machine Learning] Linear Regression Cost Function 최소화
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 16, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/16/Minimize-Cost-Function">
+        <p>
+        머신러닝과 딥러닝에 대해 공부해보려고 합니다 
+모두를 위한 머신러닝/딥러닝 강의를 수강하고 배운 것들을 정리해보겠습니다 
+[참고] (https://hunkim.github.io/ml/)
+
+Cost Function 최소화
+Hypothesis and Cost
+H(x) = Wx + b
+
+  cost를 최소화하는 W와 b의 값을 우리가 가지고 있는 데이터를 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Machine%20Learning">#Machine Learning</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Deep%20Learning">#Deep Learning</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#AI">#AI</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Tensorflow">#Tensorflow</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Python">#Python</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Regression">
+          [Machine Learning] Linear Regression
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 15, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/15/Regression">
+        <p>
+        머신러닝과 딥러닝에 대해 공부해보려고 합니다 
+모두를 위한 머신러닝/딥러닝 강의를 수강하고 배운 것들을 정리해보겠습니다 
+[참고] (https://hunkim.github.io/ml/)
+
+Linear Regression
+Regression
+
+  
+    Training Data
+
+    
+      
+        
+          x
+       ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Machine%20Learning">#Machine Learning</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Deep%20Learning">#Deep Learning</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#AI">#AI</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Tensorflow">#Tensorflow</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Python">#Python</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Machine-Deep-Learning">
+          [Machine Learning] 머신러닝의 개념과 용어
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 15, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/15/Machine-Deep-Learning">
+        <p>
+        머신러닝과 딥러닝에 대해 공부해보려고 합니다 
+모두를 위한 머신러닝/딥러닝 강의를 수강하고 배운 것들을 정리해보겠습니다 
+[참고] (https://hunkim.github.io/ml/)
+
+Machine Learning Basic
+
+Machine Learning
+
+explicit programming -&gt; 각 환경에서의 출력을 명시해놓음
+
+  ex... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Machine%20Learning">#Machine Learning</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Deep%20Learning">#Deep Learning</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#AI">#AI</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Tensorflow">#Tensorflow</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Python">#Python</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/10/Swift-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0">
+          [Swift] 문자열 다루기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 10, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/10/Swift-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0">
+        <p>
+        Swift 문자열 다루기
+이왕 iOS 개발자 되기로 맘 먹은 김에 Swift 공부도 할 겸 해서   
+이제부터 알고리즘 풀이를 Swift로 해보려고 마음 먹었다 👊👊 
+import, print와 같은 내장 함수들이 python 과 유사했지만 
+역시 자료형에 민감한 언어이다 보니 신경써야 할 부분이 많았다 
+특히 문자열에서 특정 문자에 접근하는 것 골치... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Algorithm">#Algorithm</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Problem%20Solving">#Problem Solving</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#String">#String</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/03/Data-Analysis-Outline">
+          [Machine_Learning] 데이터분석 - 개요
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 03, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/03/Data-Analysis-Outline">
+        <p>
+        1. 데이터 분류
+
+
+  데이터들이 점점 많아지면서 데이터를 이해하고 분석하는 능력은 매우 중요하다  
+학교에서 배운 데이터 분석 관련 내용들을 정리해보겠다
+
+
+데이터의 다양한 종류
+
+  Structured or Unstructured
+    
+      구조화가 되어있는가
+    
+  
+  i.i.d. data or non-i.i.d. data (i... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Data_Analysis">#Data_Analysis</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Machine_Learning">#Machine_Learning</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#AI">#AI</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Python">#Python</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2023/01/02/Swift-programming-1">
+          [Swift] Swift 기본 문법 - 변수 &amp; 상수와 반복문
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 02, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2023/01/02/Swift-programming-1">
+        <p>
+        Swift문법
+Swift 언어 공부를 시작하며 여태까지 배운 언어들과의 차이점 위주로 정리하려 한다.
+
+변수와 상수
+
+선언
+
+  Swift는 함수형 프로그래밍의 패러다임을 채용한 언어임 -&gt; 불변 객체를 굉장히 중요시 한다.
+
+
+대부분 상수나 변수 선언 시에 타입을 꼭 명시해준다.
+//변수의 선언
+var integer : Int = 5
+
+//상수... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#iOS">#iOS</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/2022/12/31/boj1260">
+          [백준/Python] 1260번 DFS와 BFS 풀이
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 31, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/2022/12/31/boj1260">
+        <p>
+        문제 정보
+
+  문제 출처: 백준 온라인 저지
+  문제 링크: 1260번 DFS와 BFS
+  제출 언어: Python
+
+
+
+
+풀이
+
+문제
+그래프를 DFS로 탐색한 결과와 BFS로 탐색한 결과를 출력하는 프로그램을 작성하시오.
+단, 방문할 수 있는 정점이 여러 개인 경우에는 정점 번호가 작은 것을 먼저 방문하고, 더 이상 방문할 수 있는 점이 없는 경우... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%B0%B1%EC%A4%80">#백준</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#BOJ">#BOJ</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">#문제풀이</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#BFS">#BFS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DFS">#DFS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">#알고리즘</a>
+</div>
+    </li>
+</ul>
+
+  <!-- Pagination links -->
+</div>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="common-list">
+  <ul>
+    <li>
+      <a href="/jekyll-theme-yat/index.html">
+        All<span>58</span>
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Algorithm">
+          Algorithm <span>37</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Design">
+          Design <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Machine_Learning">
+          Machine_Learning <span>4</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Pattern">
+          Pattern <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Project">
+          Project <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Swift">
+          Swift <span>14</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Github Blog 2022-2023 Lee su-min</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

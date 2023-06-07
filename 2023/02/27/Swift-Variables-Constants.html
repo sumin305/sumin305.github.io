@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[Swift] 변수와 상수 | soom.log</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="[Swift] 변수와 상수">
+<meta name="author" content="Lee su-min">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="변수와 상수 메모리에 값(데이터)을 저장한다 선언한 변수의 이름은 식별자이므로 한 영역에 하나의 이름만 사용한다 소문자로 시작, 중간에 대문자 혹은 숫자가 들어가도 된다">
+<meta property="og:description" content="변수와 상수 메모리에 값(데이터)을 저장한다 선언한 변수의 이름은 식별자이므로 한 영역에 하나의 이름만 사용한다 소문자로 시작, 중간에 대문자 혹은 숫자가 들어가도 된다">
+<link rel="canonical" href="https://hanabzu.github.io/jekyll-theme-yat/2023/02/27/Swift-Variables-Constants">
+<meta property="og:url" content="https://hanabzu.github.io/jekyll-theme-yat/2023/02/27/Swift-Variables-Constants">
+<meta property="og:site_name" content="soom.log">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-02-27T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[Swift] 변수와 상수">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Lee su-min"},"dateModified":"2023-02-27T00:00:00+00:00","datePublished":"2023-02-27T00:00:00+00:00","description":"변수와 상수 메모리에 값(데이터)을 저장한다 선언한 변수의 이름은 식별자이므로 한 영역에 하나의 이름만 사용한다 소문자로 시작, 중간에 대문자 혹은 숫자가 들어가도 된다","headline":"[Swift] 변수와 상수","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanabzu.github.io/jekyll-theme-yat/2023/02/27/Swift-Variables-Constants"},"url":"https://hanabzu.github.io/jekyll-theme-yat/2023/02/27/Swift-Variables-Constants"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://hanabzu.github.io/jekyll-theme-yat/feed.xml" title="soom.log">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #389092;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="soom.log" src="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png" onerror="this.style.display='none'">
+  soom.log
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags">TAGS</a>
+
+
+
+
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[Swift] 변수와 상수</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2023-02-27T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Feb 27, 2023
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Variables">#Variables</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Constants">#Constants</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="변수와-상수">변수와 상수</h2>
+<ul>
+  <li>메모리에 값(데이터)을 저장한다</li>
+  <li>선언한 변수의 이름은 식별자이므로 한 영역에 하나의 이름만 사용한다</li>
+  <li>소문자로 시작, 중간에 대문자 혹은 숫자가 들어가도 된다</li>
+</ul>
+
+<h3 id="변수">변수</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">age</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="c1">//age라는 변수를 선언하고 그 변수에 15라는 값을 저장한다</span>
+
+<span class="k">var</span> <span class="nv">age2</span> <span class="p">:</span> <span class="kt">Int</span>
+<span class="n">age2</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="c1">//변수를 먼저 선언하여 메모리 공간을 생성하고 값을 저장할 수도 있다  </span>
+
+<span class="k">var</span> <span class="nv">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="c1">//변수를 여러 개 한꺼번에 선언 가능하다</span>
+
+<span class="k">var</span> <span class="nv">yourName</span> <span class="o">=</span> <span class="n">age</span>
+<span class="c1">//새로운 변수를 선언하고 변수 값을 복사한다</span>
+</code></pre></div></div>
+
+<ul>
+  <li>String Interpolation (스트링 인터폴레이션) -&gt; 문자열 보간법</li>
+  <li>변수를 문자열처럼 출력할 경우 사용</li>
+  <li><code class="language-plaintext highlighter-rouge">"\(삽입할 변수)"</code></li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">name</span> <span class="o">=</span> <span class="s">"Hongildong"</span>
+<span class="k">var</span> <span class="nv">age</span> <span class="o">=</span> <span class="mi">55</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="s">"my name is </span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">, and my age is </span><span class="se">\(</span><span class="n">age</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="c1">//출력 "my name is Hongildong, and my age is 55"</span>
+</code></pre></div></div>
+
+<h3 id="상수">상수</h3>
+
+<ul>
+  <li>변하지 않는 데이터
+    <div class="language-swift highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">name2</span> <span class="o">=</span> <span class="s">"철수"</span>
+<span class="n">name2</span> <span class="o">=</span> <span class="s">"영희"</span>
+<span class="c1">//컴파일 에러</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="데이터-타입">데이터 타입</h2>
+<p><a href="https://sumin305.github.io/2023/01/02/Swift-programming-1#h-5-any--swift%EB%8A%94%EC%9D%98-%EB%AA%A8%EB%93%A0-%ED%83%80%EC%9E%85%EC%9D%84-%EC%A7%80%EC%B9%AD%ED%95%98%EB%8A%94-%ED%82%A4%EC%9B%8C%EB%93%9C">데이터 타입 정리</a></p>
+<ul>
+  <li>데이터 타입이 존재하는 이유
+    <blockquote>
+      <p>데이터를 메모리에 얼마 만큼의 크기와 형태로 저장할 것인지 약속하는 것 -&gt; 메모리 효율적으로 사용</p>
+    </blockquote>
+  </li>
+  <li>타입에 관한 키워드는 모두 대문자로 시작한다
+    <h3 id="데이터-타입의-종류">데이터 타입의 종류</h3>
+  </li>
+</ul>
+
+<h4 id="int">Int</h4>
+<ul>
+  <li>정수형 데이터 타입
+-<code class="language-plaintext highlighter-rouge">-5, -100, 0, 100</code> 등..</li>
+  <li><code class="language-plaintext highlighter-rouge">9223372036854775808 ~ 9223372036854775807</code></li>
+</ul>
+
+<h4 id="float">Float</h4>
+<ul>
+  <li>실수 타입</li>
+  <li>부동소수 타입 (flating-point)</li>
+  <li><code class="language-plaintext highlighter-rouge">-3.455, -9.5433, 0, 3.567, 8.987</code></li>
+  <li>소수점 표현 가능</li>
+  <li>소수점 포함 전체 <code class="language-plaintext highlighter-rouge">6</code>자리 정보를 저장</li>
+  <li><code class="language-plaintext highlighter-rouge">4 byte = 32 bit</code></li>
+  <li>더 작은 소수들을 담을 수 있다</li>
+</ul>
+
+<h4 id="double">Double</h4>
+<ul>
+  <li>실수 타입</li>
+  <li>소수점 표현 가능</li>
+  <li>소수점 포함 전체 <code class="language-plaintext highlighter-rouge">15</code>자리 정보를 저장</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">8 byte = 64 bit</code> (Float의 두배)</li>
+</ul>
+
+<h4 id="character">Character</h4>
+<ul>
+  <li>하나의 문자 저장</li>
+  <li>공백 문자를 담을 수 없다</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">"A", "b", "글", " "</code> 등..
+    <h4 id="string">String</h4>
+  </li>
+  <li>문자열을 저장</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">"Abcd", "b", "글자열", ""</code> 등..</li>
+</ul>
+
+<h4 id="bool">Bool</h4>
+<ul>
+  <li>true 혹은 false값 저장</li>
+</ul>
+
+<h4 id="기타">기타</h4>
+<ul>
+  <li>UInt, UInt64, Int32..</li>
+</ul>
+
+<h3 id="타입-주석">타입 주석</h3>
+<p>(Type Annotation)</p>
+<ul>
+  <li>변수를 선언하면서 타입도 명확하게 지정해주는 방식</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">num</span> <span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="c1">//정식 문법 -&gt; 데이터 타입을 기입해준다</span>
+
+<span class="k">var</span> <span class="nv">num2</span> <span class="p">:</span> <span class="kt">Int</span> <span class="c1">// 변수를 선언, 타입 선언 *메모리 공간 생성</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1">// 값을 저장 (초기화)   </span>
+</code></pre></div></div>
+
+<h3 id="타입-추론">타입 추론</h3>
+<p>(Type Inference)</p>
+<ul>
+  <li>타입을 지정하지 않아도 컴파일러가 타입을 유추하여 알아서 알맞는 타입으로 저장하는 방식</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">one</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">var</span> <span class="nv">two</span> <span class="o">=</span> <span class="s">"2"</span>
+<span class="k">var</span> <span class="nv">three</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">one</span><span class="p">))</span>
+<span class="c1">//Int 출력</span>
+</code></pre></div></div>
+<h3 id="타입-안정성">타입 안정성</h3>
+<p>(Type Safety)</p>
+<ul>
+  <li>스위프트는 데이터 타입을 엄격하게 분리하여 사용한다
+    <blockquote>
+      <p>다른 데이터 타입끼리 계산할 수 없다</p>
+    </blockquote>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">num</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="k">let</span> <span class="nv">double</span> <span class="o">=</span> <span class="mf">12.4</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="mf">33.6</span>
+<span class="c1">//메모리 공간의 크기가 달라 호환되지 않음 -&gt; 컴파일 에러</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="n">double</span><span class="p">)</span>
+<span class="c1">//컴파일 에러</span>
+</code></pre></div></div>
+
+<h3 id="타입형-변환">타입(형) 변환</h3>
+<p>(Type Conversion)</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">바꿀 타입(변환하려는 변수)</code></li>
+  <li>데이터 타입 변환에 실패하거나 데이터가 유실될 수 있다는 점 주의
+    <blockquote>
+      <p>타입 변환에 실패했을 경우에는 nil값 return</p>
+    </blockquote>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">str</span> <span class="o">=</span> <span class="s">"123"</span>
+<span class="k">let</span> <span class="nv">num</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="c1">//Optional(123) 출력</span>
+
+<span class="k">let</span> <span class="nv">str1</span> <span class="o">=</span> <span class="s">"123.4"</span>
+<span class="k">let</span> <span class="nv">num1</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+<span class="c1">//nil 출력</span>
+
+<span class="k">let</span> <span class="nv">double</span> <span class="o">=</span> <span class="mf">123.45</span>
+<span class="k">let</span> <span class="nv">num2</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>
+<span class="c1">//123출력</span>
+<span class="c1">//소수점 버림</span>
+
+</code></pre></div></div>
+<h3 id="타입애일리어스">타입애일리어스</h3>
+<p>(Type Alias)</p>
+<ul>
+  <li>기존에 선언되어있는 타입이나 내가 만든 타입에서 새로운 별칭을 붙여 코드 가독성을 높이는 문법</li>
+  <li>치환과 유사</li>
+  <li>어떤 형태든 치환이 가능</li>
+  <li>코드가 짧아져 문법이 간단해짐</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">Name</span> <span class="o">=</span> <span class="kt">String</span>
+<span class="k">let</span> <span class="nv">name</span> <span class="p">:</span> <span class="kt">Name</span> <span class="o">=</span> <span class="s">"leesumin"</span>
+<span class="c1">//Name 타입은 String타입과 동일</span>
+
+<span class="kd">typealias</span> <span class="kt">Something</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span>
+
+<span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="nv">completionHandler</span> <span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//~~</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">someFunction2</span><span class="p">(</span><span class="nv">completionHandler</span> <span class="p">:</span> <span class="kt">Something</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//~~</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667" title="[알고리즘/Swift] 2667 단지번호붙이기">[알고리즘/Swift] 2667 단지번호붙이기</a><a class="next" href="/jekyll-theme-yat/2023/02/28/Baekjoon-1038" title="[알고리즘/Swift] 1038 감소하는 수">[알고리즘/Swift] 1038 감소하는 수</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/2023/01/19/Programmers-Spot-the-Spy" title="[알고리즘/Swift] 1038 감소하는 수">[알고리즘/Swift] 0119 스파이를 찾아라! </a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/01/31/Programmers-Lipogram" title="[알고리즘/Swift] 1038 감소하는 수">[알고리즘/Swift] 0131 리포그램 </a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/01/10/Swift-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0" title="[알고리즘/Swift] 1038 감소하는 수">[Swift] 문자열 다루기</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/03/12/Delegate-Pattern" title="[알고리즘/Swift] 1038 감소하는 수">[Design Pattern] 델리게이트 패턴이란?</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Github Blog 2022-2023 Lee su-min</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

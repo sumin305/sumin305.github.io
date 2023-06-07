@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[Project] Account Book | soom.log</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="[Project] Account Book">
+<meta name="author" content="Lee su-min">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Introduce 간단한 앱을 구현하고 다양한 기능들을 추가하며 앱 생성 시 어려웠던 점들이나 알게된 점들을 기록해보고자 글을 쓰기로 하였다">
+<meta property="og:description" content="Introduce 간단한 앱을 구현하고 다양한 기능들을 추가하며 앱 생성 시 어려웠던 점들이나 알게된 점들을 기록해보고자 글을 쓰기로 하였다">
+<link rel="canonical" href="https://hanabzu.github.io/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+<meta property="og:url" content="https://hanabzu.github.io/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+<meta property="og:site_name" content="soom.log">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-02-01T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[Project] Account Book">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Lee su-min"},"dateModified":"2023-02-01T00:00:00+00:00","datePublished":"2023-02-01T00:00:00+00:00","description":"Introduce 간단한 앱을 구현하고 다양한 기능들을 추가하며 앱 생성 시 어려웠던 점들이나 알게된 점들을 기록해보고자 글을 쓰기로 하였다","headline":"[Project] Account Book","mainEntityOfPage":{"@type":"WebPage","@id":"https://hanabzu.github.io/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book"},"url":"https://hanabzu.github.io/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://hanabzu.github.io/jekyll-theme-yat/feed.xml" title="soom.log">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #389092;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="soom.log" src="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png" onerror="this.style.display='none'">
+  soom.log
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags">TAGS</a>
+
+
+
+
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[Project] Account Book</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2023-02-01T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Feb 01, 2023
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Swift">#Swift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#SwiftUI">#SwiftUI</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Toy%20Project">#Toy Project</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#View%20&amp;%20View%20Model">#View &amp; View Model</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#State">#State</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Binding">#Binding</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#UserDefaults">#UserDefaults</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="introduce">Introduce</h2>
+<p>간단한 앱을 구현하고 다양한 기능들을 추가하며 앱 생성 시 어려웠던 점들이나 알게된 점들을 기록해보고자 글을 쓰기로 하였다</p>
+
+<h3 id="account-book">Account Book</h3>
+<p>이번 프로젝트는 가계부 구현하기이다  <br>
+사용자에게 다양한 정보를 입력받아서 가계부 list에 추가한다 <br>
+각 가계부 정보들을, 금액, 메모, 카테고리등 다양한 종류의 데이터를 갖는다</p>
+<ul>
+  <li>메인화면 상단에는 정보들을 입력받는 버튼과 전체 삭제버튼</li>
+  <li>중앙에는 가계부 list</li>
+  <li>하단에는 Category별로 list를 필터링하여 나타낼 수 있는 picker와</li>
+  <li>총 지출, 수입, 총 자산 등 현재 상황을 나타내주는 Text칸이 있다</li>
+  <li>이 칸은 list에 정보가 업데이트될 때마다 변한다 <br>
+<img width="257" alt="image" src="https://user-images.githubusercontent.com/110437548/216274396-382fb337-0ef3-49ae-8cbf-6268fe485d1e.png">
+</li>
+</ul>
+
+<hr>
+<h2 id="view">View</h2>
+<h3 id="sheet">sheet</h3>
+<blockquote>
+  <p>sheet는 임시적인 작업 뷰를 띄우고 싶을 때 사용한다    <br>
+상단의 버튼을 누르면 데이터를 추가하는 뷰를 띄우도록 sheet를 이용하였다   <br>
+다음은 sheet의 정의이다</p>
+  <div class="language-swift highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="n">sheet</span><span class="o">&lt;</span><span class="kt">Content</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">isPresented</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="nv">onDismiss</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">content</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Content</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span> <span class="k">where</span> <span class="kt">Content</span> <span class="p">:</span> <span class="kt">View</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/110437548/216276667-69fbadfe-271c-4571-9dfd-effc797906a3.gif" alt="Simulator Screen Recording - iPhone 14 Pro - 2023-02-02 at 17 51 43"></p>
+
+<ul>
+  <li>
+    <p>isPresented: Binding<bool> 매개변수로 sheet을 띄우고, 해제할 수 있다   
+보통 body밖에 `@State`로 SwiftUI가 참조하도록 bool함수를 선언하여 isPresented에 따라서 swiftUI가 sheet을 나타내거나 없애도록 한다       
+<br></bool></p>
+  </li>
+  <li>sheet 지우는 경우
+    <ul>
+      <li>돌아가기 버튼을 누른 경우 : Dismiss()</li>
+      <li>데이터를 추가하는 경우 : isPresented
+이 두가지이다  <br>
+Dismiss()는 <code class="language-plaintext highlighter-rouge">@Environment(\.dismiss) private var dismiss</code>을 선언하여 사용하는데 이것은 dismiss의 정의를 살펴보면  <code class="language-plaintext highlighter-rouge">extension EnvironmentValues</code>에 정의되어 있다</li>
+    </ul>
+  </li>
+  <li>프로젝트내에 활용한 sheet content-&gt;  <code class="language-plaintext highlighter-rouge">InputAccountModal</code> View를 나타내도록 했다
+    <div class="language-swift highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="nf">sheet</span><span class="p">(</span><span class="nv">isPresented</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="err">$</span><span class="n">isShowModal</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">InputAccountModal</span><span class="p">(</span><span class="nv">isPresented</span><span class="p">:</span>  <span class="k">self</span><span class="o">.</span><span class="err">$</span><span class="n">isShowModal</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="on-delete">On Delete</h3>
+<blockquote>
+  <p>list View에서 ForEach를 통해 행 그룹을 열거해 목록을 작성할 때, 각각의 항목을 삭제하고 싶은 경우에 사용한다</p>
+</blockquote>
+
+<p>다음은 On Delete의 정의이다</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">onDelete</span><span class="p">(</span><span class="n">perform</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Optional</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">IndexSet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">DynamicViewContent</span>
+</code></pre></div></div>
+<p>이렇게 onDelete로 perform의 인자로 클로저나 함수를 넣어주는데, 이 클로저나 함수는 삭제하는 해당 항목의 <code class="language-plaintext highlighter-rouge">IndexSet</code>을 받아올 수 있다 <br>
+아래는 내가 작성한 코드이다</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">deleteItem</span><span class="p">(</span><span class="n">at</span> <span class="nv">offsets</span><span class="p">:</span> <span class="kt">IndexSet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">dataManager</span><span class="o">.</span><span class="n">acDataList</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">atOffsets</span><span class="p">:</span> <span class="n">offsets</span><span class="p">)</span>
+    <span class="p">}</span>
+ <span class="kt">List</span><span class="p">{</span>
+    <span class="kt">ForEach</span><span class="p">(</span><span class="kt">Array</span><span class="p">(</span><span class="n">dataManager</span><span class="o">.</span><span class="nf">getList</span><span class="p">(</span><span class="kt">Category</span><span class="p">:</span> <span class="n">acCategory</span><span class="p">)</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()),</span> <span class="nv">id</span><span class="p">:\</span><span class="o">.</span><span class="n">offset</span><span class="p">)</span> <span class="p">{</span><span class="n">idx</span><span class="p">,</span> <span class="n">data</span> <span class="k">in</span>
+           <span class="kt">AccountRow</span><span class="p">(</span><span class="nv">accountData</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+     <span class="p">}</span><span class="o">.</span><span class="nf">onDelete</span><span class="p">(</span><span class="nv">perform</span><span class="p">:</span> <span class="n">deleteItem</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="nf">listStyle</span><span class="p">(</span><span class="kt">PlainListStyle</span><span class="p">())</span>
+</code></pre></div></div>
+<p>dataManager등은 아직 소개하지 않았지만 코드를 통해 삭제하려는 IndexSet을 받아와서 리스트의 해당 항목을 삭제할 수 있음을 알 수 있다 <br>
+이렇게 View에서는 sheet View와 List Foreach의 OnDelete 함수를 사용해보고 그 정의를 조사해보았다</p>
+
+<hr>
+<h2 id="view-model">View Model</h2>
+<p>사용자가 데이터를 추가 혹은 삭제한 후 앱을 껐다 키면 그 변화된 데이터 상태가 유지되어 있어야 한다
+나는 서버까지는 필요없는 작은 미니 프로젝트이고 앱이 활동할 때만 앱 내에 데이터를 저장하면 되므로 <code class="language-plaintext highlighter-rouge">User Default</code>를 사용하여 이러한 데이터들을 저장하였다</p>
+
+<h3 id="user-default">User Default</h3>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">사용자의 기본 데이터베이스에 대한 인터페이스</code>로, 앱을 실행할 때마다 키-값 쌍을 영구적으로 저장할 수 있다</p>
+  <ul>
+    <li>Default : 일반적으로 앱을 시작할 때 앱의 기본 상태 또는 기본적으로 작동하는 방법을 결정하는 데 사용되는 Parameter들을 가리킨다</li>
+    <li>앱은 사용자의 기본 데이터베이스에 있는 <code class="language-plaintext highlighter-rouge">Parameter Set</code>에 값을 할당하여 이러한 환경설정을 저장한다</li>
+  </ul>
+</blockquote>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">AccountDataManager</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+   <span class="kd">static</span> <span class="k">let</span> <span class="nv">ACCOUNT_DATA_LIST_KEY</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"ACCOUNT_DATA_LIST_KEY"</span>
+  
+  <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="kt">AccountDataManager</span><span class="o">.</span><span class="kt">ACCOUNT_DATA_LIST_KEY</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">Data</span><span class="p">{</span>
+            <span class="k">let</span> <span class="nv">accountList</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span>
+            <span class="kt">PropertyListDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">([</span><span class="kt">AccountData</span><span class="p">]</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">list</span> <span class="o">=</span> <span class="n">accountList</span> <span class="p">{</span>
+                <span class="n">acDataList</span> <span class="o">=</span> <span class="n">list</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+   <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="kt">AccountData</span> <span class="nv">acData</span><span class="p">:</span> <span class="kt">AccountData</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">acData</span> <span class="p">{</span>
+            <span class="n">acDataList</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="nv">at</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span>
+            
+            <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="k">try</span><span class="p">?</span>
+                                      <span class="kt">PropertyListEncoder</span><span class="p">()</span><span class="o">.</span><span class="nf">encode</span><span class="p">(</span><span class="n">acDataList</span><span class="p">),</span>
+                                      <span class="nv">forKey</span><span class="p">:</span> <span class="kt">AccountDataManager</span><span class="o">.</span><span class="kt">ACCOUNT_DATA_LIST_KEY</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">synchronize</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">PropertyListDecoder().decode()</code>: 기본 속성 목록 형식을 사용하여 속성 목록을 디코딩하여 지정된 유형의 값을 반환한다 <br>
+하단에는 프로젝트에 User Default를 적용한 코드이다</li>
+  <li>
+    <p>key를 먼저 선언한 후, UserDefault에서 해당 key에 mapping되는 데이터를 가져와 원하는 데이터 형태로 decode한다</p>
+  </li>
+  <li>add함수는 사용자가 데이터 즉, 가계부에 특정 항목을 추가할 경우 호출되는 함수이다</li>
+  <li>받아온 추가할 데이터가 nil이 아닐 경우, 추가하는데 그 때 UserDefault에도 업데이트를 해줘야한다</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">PropertyListEncoder().encode(acDataList)</code> 아까는 decode()함수를 사용했었는데, 이번에는 입력받은 데이터를 User Default에 저장할 수 있는 데이터 형태로 encode하여 업데이트한다</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">UserDefaults.standard.synchronize()</code> : default 데이터 베이스로의 비동기적인 보류적인 업데이트를 기다리고 그 데이터가 디스크에 성공적으로 저장되면 true, 그렇지 않으면 false를 반환한다</li>
+  <li>해당 어플에서는 데이터를 추가할 경우 <code class="language-plaintext highlighter-rouge">UserDefaults.standard.synchronize()</code>에서 true를 반환할 경우 !을 붙여 그 반대값인 false를 sheet를 나타내는 여부를 결정하는 <code class="language-plaintext highlighter-rouge">isPresented</code>에 넣어주어 데이터 베이스에 저장이 완료되면 데이터 추가 화면인 sheet를 없애도록 하였다 <br>
+이렇게 설정을 해줌으로써 해당 데이터가 완전히 default 데이터 베이스 저장이 되었을 때 다음 동작을 수행할 수 있도록 해 좀 더 안전하게 코드를 짤 수 있다</li>
+</ul>
+
+<h2 id="takeaway">Takeaway</h2>
+<p>서버를 따로 설정하지 않아도 어플 내에 간단한 정보들이 저장되는 것은 앞으로 어플을 생성할 때 굉장히 필요한 기능인 것 같아서 더욱 연습해봐야겠다고 느꼈다 <br>
+초기에 코트를 짰을 때 데이터를 삭제할 경우에 UserDefault 업데이트를 해주지 않아서 어플을 껐다키면 삭제한 데이터가 다시 나타내는 버그 때문에 꽤나 오랜시간 코드를 붙잡고 고생을 했다 <br>
+하지만 그런 시간 덕분에 어느정도 UserDefault에 익숙해진 것 같아서 다행이다  <br>
+이렇게 코드를 쳐보고 분석하는 시간은 참 재밌는 것 같다 <br>
+앞으로도 자주 실습을 같이 하면서 문법 공부를 하는 시간을 가져야겠다</p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/2023/02/01/Programmers-320" title="[알고리즘/Swift] 0201 320개 ">[알고리즘/Swift] 0201 320개 </a><a class="next" href="/jekyll-theme-yat/2023/02/02/Baekjoon-14888" title="[알고리즘/Swift] 14888 연산자 끼워넣기">[알고리즘/Swift] 14888 연산자 끼워넣기</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/2023/01/17/tuple" title="[알고리즘/Swift] 14888 연산자 끼워넣기">[Swift] Tuple</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/01/22/Codility-TapeEquilibrium" title="[알고리즘/Swift] 14888 연산자 끼워넣기">[알고리즘/Swift] Codility - TapeEquilibrium </a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/04/06/Baekjoon-3687" title="[알고리즘/Swift] 14888 연산자 끼워넣기">[알고리즘/Swift] 3687 성냥개비</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/2023/02/13/Baekjoon-1197" title="[알고리즘/Swift] 14888 연산자 끼워넣기">[알고리즘/Swift] 1197 최소 스패닝 트리</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Github Blog 2022-2023 Lee su-min</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

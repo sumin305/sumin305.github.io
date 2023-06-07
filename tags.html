@@ -1,0 +1,4953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tags | soom.log</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="Tags">
+<meta name="author" content="Lee su-min">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="hanabzu Github Blog">
+<meta property="og:description" content="hanabzu Github Blog">
+<link rel="canonical" href="https://hanabzu.github.io/jekyll-theme-yat/tags">
+<meta property="og:url" content="https://hanabzu.github.io/jekyll-theme-yat/tags">
+<meta property="og:site_name" content="soom.log">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Tags">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Lee su-min"},"description":"hanabzu Github Blog","headline":"Tags","url":"https://hanabzu.github.io/jekyll-theme-yat/tags"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://hanabzu.github.io/jekyll-theme-yat/feed.xml" title="soom.log">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #389092;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="soom.log" src="assets/images/icons8-%E1%84%90%E1%85%A6%E1%84%85%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7-30.png" onerror="this.style.display='none'">
+  soom.log
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags">TAGS</a>
+
+
+
+
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="page-segments">
+  <ul class="page-segments-list">
+    
+    <h2 id="AI" class="segment-name">AI</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Minimize-Cost-Function">
+    [Machine Learning] Linear Regression Cost Function 최소화
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Regression">
+    [Machine Learning] Linear Regression
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Machine-Deep-Learning">
+    [Machine Learning] 머신러닝의 개념과 용어
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/03/Data-Analysis-Outline">
+    [Machine_Learning] 데이터분석 - 개요
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Algorithm" class="segment-name">Algorithm</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 10, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/10/Swift-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0">
+    [Swift] 문자열 다루기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Any" class="segment-name">Any</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/31/Swift-Type-Casting">
+    [Swift] 타입 캐스팅
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="AnyObject" class="segment-name">AnyObject</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/31/Swift-Type-Casting">
+    [Swift] 타입 캐스팅
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="App Bundle" class="segment-name">App Bundle</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/03/Swift-App-Sandbox">
+    [Swift] App SandBox의 구조와 역할
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Array" class="segment-name">Array</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9">
+    [알고리즘/Swift] 연속된 부분 수열의 합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EA%B3%BC%EC%A0%9C-%EC%A7%84%ED%96%89%ED%95%98%EA%B8%B0">
+    [알고리즘/Swift] 과제 진행하기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Programmers-320">
+    [알고리즘/Swift] 0201 320개 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/31/Programmers-Lipogram">
+    [알고리즘/Swift] 0131 리포그램 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 30, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/30/Programmers-Pangram1">
+    [알고리즘/Swift] 0130 팬그램 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/27/Programmers-Snow1">
+    [알고리즘/Swift] 0127 제설 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 26, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/26/Programmers-Buildings">
+    [알고리즘/Swift] 0126 빌딩 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 25, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/25/Programmers-New-year-money-1">
+    [알고리즘/Swift] 0125 세뱃돈 
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="BFS" class="segment-name">BFS</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+    [알고리즘/Swift] 12851 숨바꼭질 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+    [알고리즘/Swift] 16953 A -&gt; B
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+    [알고리즘/Swift] 2606 바이러스
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+    [알고리즘/Swift] 2178 미로 탐색
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+    [알고리즘/Swift] 1303 전쟁 - 전투
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667">
+    [알고리즘/Swift] 2667 단지번호붙이기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Dec 31, 2022</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2022/12/31/boj1260">
+    [백준/Python] 1260번 DFS와 BFS 풀이
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="BOJ" class="segment-name">BOJ</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 02, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/02/Baekjoon-14888">
+    [알고리즘/Swift] 14888 연산자 끼워넣기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Dec 31, 2022</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2022/12/31/boj1260">
+    [백준/Python] 1260번 DFS와 BFS 풀이
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Binding" class="segment-name">Binding</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+    [Project] Account Book
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Bundle Container" class="segment-name">Bundle Container</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/03/Swift-App-Sandbox">
+    [Swift] App SandBox의 구조와 역할
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Clone Coding" class="segment-name">Clone Coding</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 23, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic">
+    [Project] Caffeine Holic
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Codility" class="segment-name">Codility</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/22/Codility-TapeEquilibrium">
+    [알고리즘/Swift] Codility - TapeEquilibrium 
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Constants" class="segment-name">Constants</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/27/Swift-Variables-Constants">
+    [Swift] 변수와 상수
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="DFS" class="segment-name">DFS</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+    [알고리즘/Swift] 12851 숨바꼭질 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+    [알고리즘/Swift] 16953 A -&gt; B
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+    [알고리즘/Swift] 2606 바이러스
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+    [알고리즘/Swift] 2178 미로 탐색
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+    [알고리즘/Swift] 1303 전쟁 - 전투
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667">
+    [알고리즘/Swift] 2667 단지번호붙이기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 02, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/02/Baekjoon-14888">
+    [알고리즘/Swift] 14888 연산자 끼워넣기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Dec 31, 2022</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2022/12/31/boj1260">
+    [백준/Python] 1260번 DFS와 BFS 풀이
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="DIJKSTRA" class="segment-name">DIJKSTRA</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 10, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/10/Baekjoon-1916">
+    [알고리즘/Swift] 1916 최소비용 구하기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Data Container" class="segment-name">Data Container</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/03/Swift-App-Sandbox">
+    [Swift] App SandBox의 구조와 역할
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Data_Analysis" class="segment-name">Data_Analysis</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/03/Data-Analysis-Outline">
+    [Machine_Learning] 데이터분석 - 개요
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Deep Learning" class="segment-name">Deep Learning</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Minimize-Cost-Function">
+    [Machine Learning] Linear Regression Cost Function 최소화
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Regression">
+    [Machine Learning] Linear Regression
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Machine-Deep-Learning">
+    [Machine Learning] 머신러닝의 개념과 용어
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Delegate" class="segment-name">Delegate</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/12/Delegate-Pattern">
+    [Design Pattern] 델리게이트 패턴이란?
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Delegate Pattern" class="segment-name">Delegate Pattern</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/12/Delegate-Pattern">
+    [Design Pattern] 델리게이트 패턴이란?
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Design Pattern" class="segment-name">Design Pattern</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/12/Delegate-Pattern">
+    [Design Pattern] 델리게이트 패턴이란?
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Dictionary" class="segment-name">Dictionary</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/22/Codility-TapeEquilibrium">
+    [알고리즘/Swift] Codility - TapeEquilibrium 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 20, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/20/Yut-nori">
+    [알고리즘/Swift] 0120 윷놀이 
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Down Casting" class="segment-name">Down Casting</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/31/Swift-Type-Casting">
+    [Swift] 타입 캐스팅
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Dynamic Programming" class="segment-name">Dynamic Programming</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 18, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/18/Programmers-Song2">
+    [알고리즘/Swift] 0118 지금 무슨 노래 듣고 있어요?2
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Function" class="segment-name">Function</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Swift-Function">
+    [Swift] 함수
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Last-in-First-Out" class="segment-name">Last-in-First-Out</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EA%B3%BC%EC%A0%9C-%EC%A7%84%ED%96%89%ED%95%98%EA%B8%B0">
+    [알고리즘/Swift] 과제 진행하기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Machine Learning" class="segment-name">Machine Learning</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Minimize-Cost-Function">
+    [Machine Learning] Linear Regression Cost Function 최소화
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Regression">
+    [Machine Learning] Linear Regression
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Machine-Deep-Learning">
+    [Machine Learning] 머신러닝의 개념과 용어
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Machine_Learning" class="segment-name">Machine_Learning</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/03/Data-Analysis-Outline">
+    [Machine_Learning] 데이터분석 - 개요
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Problem Solving" class="segment-name">Problem Solving</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9">
+    [알고리즘/Swift] 연속된 부분 수열의 합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EA%B3%BC%EC%A0%9C-%EC%A7%84%ED%96%89%ED%95%98%EA%B8%B0">
+    [알고리즘/Swift] 과제 진행하기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Programmers-320">
+    [알고리즘/Swift] 0201 320개 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/31/Programmers-Lipogram">
+    [알고리즘/Swift] 0131 리포그램 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 30, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/30/Programmers-Pangram1">
+    [알고리즘/Swift] 0130 팬그램 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/27/Programmers-Snow1">
+    [알고리즘/Swift] 0127 제설 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 26, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/26/Programmers-Buildings">
+    [알고리즘/Swift] 0126 빌딩 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 25, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/25/Programmers-New-year-money-1">
+    [알고리즘/Swift] 0125 세뱃돈 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/22/Codility-TapeEquilibrium">
+    [알고리즘/Swift] Codility - TapeEquilibrium 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 20, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/20/Yut-nori">
+    [알고리즘/Swift] 0120 윷놀이 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 19, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/19/Programmers-Spot-the-Spy">
+    [알고리즘/Swift] 0119 스파이를 찾아라! 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 18, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/18/Programmers-Song2">
+    [알고리즘/Swift] 0118 지금 무슨 노래 듣고 있어요?2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/17/Programmers-adv2">
+    [알고리즘/Swift] 0117 준식이의 모험2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Programmers-adv1">
+    [알고리즘/Swift] 0116 준식이의 모험1
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 10, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/10/Swift-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0">
+    [Swift] 문자열 다루기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Project" class="segment-name">Project</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 23, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic">
+    [Project] Caffeine Holic
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Property" class="segment-name">Property</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/28/Swift-Property">
+    [Swift] 프로퍼티
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Python" class="segment-name">Python</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Minimize-Cost-Function">
+    [Machine Learning] Linear Regression Cost Function 최소화
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Regression">
+    [Machine Learning] Linear Regression
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Machine-Deep-Learning">
+    [Machine Learning] 머신러닝의 개념과 용어
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/03/Data-Analysis-Outline">
+    [Machine_Learning] 데이터분석 - 개요
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Reference Property" class="segment-name">Reference Property</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/28/Swift-Property">
+    [Swift] 프로퍼티
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Reference Type" class="segment-name">Reference Type</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Swift-ValueType-ReferenceType">
+    [Swift] 값 타입과 참조 타입
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="SandBox" class="segment-name">SandBox</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/03/Swift-App-Sandbox">
+    [Swift] App SandBox의 구조와 역할
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Self" class="segment-name">Self</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 11, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/11/Swift-selfvsSelf">
+    [Swift] self vs Self 비교
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="State" class="segment-name">State</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+    [Project] Account Book
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="String" class="segment-name">String</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 10, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/10/Swift-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0">
+    [Swift] 문자열 다루기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Swift" class="segment-name">Swift</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 11, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/11/Swift-selfvsSelf">
+    [Swift] self vs Self 비교
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/03/Swift-App-Sandbox">
+    [Swift] App SandBox의 구조와 역할
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/31/Swift-Type-Casting">
+    [Swift] 타입 캐스팅
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/28/Swift-Property">
+    [Swift] 프로퍼티
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Swift-ValueType-ReferenceType">
+    [Swift] 값 타입과 참조 타입
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/12/Delegate-Pattern">
+    [Design Pattern] 델리게이트 패턴이란?
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Swift-Function">
+    [Swift] 함수
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/27/Swift-Variables-Constants">
+    [Swift] 변수와 상수
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 14, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/14/class&amp;struct">
+    [Swift] 클래스와 구조체
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+    [Project] Account Book
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 23, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic">
+    [Project] Caffeine Holic
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/22/Swift-TimeComplexity">
+    [Swift] Time Complexity
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/17/tuple">
+    [Swift] Tuple
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 10, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/10/Swift-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%8B%A4%EB%A3%A8%EA%B8%B0">
+    [Swift] 문자열 다루기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 02, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/02/Swift-programming-1">
+    [Swift] Swift 기본 문법 - 변수 &amp; 상수와 반복문
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="SwiftUI" class="segment-name">SwiftUI</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+    [Project] Account Book
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 23, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic">
+    [Project] Caffeine Holic
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Tensorflow" class="segment-name">Tensorflow</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Minimize-Cost-Function">
+    [Machine Learning] Linear Regression Cost Function 최소화
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Regression">
+    [Machine Learning] Linear Regression
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/15/Machine-Deep-Learning">
+    [Machine Learning] 머신러닝의 개념과 용어
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Toy Project" class="segment-name">Toy Project</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+    [Project] Account Book
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Type Casting" class="segment-name">Type Casting</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/31/Swift-Type-Casting">
+    [Swift] 타입 캐스팅
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Up Casting" class="segment-name">Up Casting</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/31/Swift-Type-Casting">
+    [Swift] 타입 캐스팅
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="UserDefaults" class="segment-name">UserDefaults</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+    [Project] Account Book
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Value Property" class="segment-name">Value Property</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/28/Swift-Property">
+    [Swift] 프로퍼티
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Value Type" class="segment-name">Value Type</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Swift-ValueType-ReferenceType">
+    [Swift] 값 타입과 참조 타입
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="Variables" class="segment-name">Variables</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/27/Swift-Variables-Constants">
+    [Swift] 변수와 상수
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="View &amp; View Model" class="segment-name">View &amp; View Model</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Toy-Project-Account-Book">
+    [Project] Account Book
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 23, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/23/Clone-Caffeine-Holic">
+    [Project] Caffeine Holic
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="class" class="segment-name">class</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 14, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/14/class&amp;struct">
+    [Swift] 클래스와 구조체
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="dp" class="segment-name">dp</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 26, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/26/Programmers-Buildings">
+    [알고리즘/Swift] 0126 빌딩 
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="iCloud Container" class="segment-name">iCloud Container</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/03/Swift-App-Sandbox">
+    [Swift] App SandBox의 구조와 역할
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="iOS" class="segment-name">iOS</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 02, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/02/Swift-programming-1">
+    [Swift] Swift 기본 문법 - 변수 &amp; 상수와 반복문
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="is/as" class="segment-name">is/as</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/31/Swift-Type-Casting">
+    [Swift] 타입 캐스팅
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="queue" class="segment-name">queue</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/28/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue">
+    [Swift] Queue
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="self" class="segment-name">self</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 11, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/11/Swift-selfvsSelf">
+    [Swift] self vs Self 비교
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="stack" class="segment-name">stack</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EA%B3%BC%EC%A0%9C-%EC%A7%84%ED%96%89%ED%95%98%EA%B8%B0">
+    [알고리즘/Swift] 과제 진행하기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/28/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue">
+    [Swift] Queue
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="struct" class="segment-name">struct</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 14, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/14/class&amp;struct">
+    [Swift] 클래스와 구조체
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="while" class="segment-name">while</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789">
+    [알고리즘/Swift] 1789 수들의 합
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="구현" class="segment-name">구현</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9">
+    [알고리즘/Swift] 연속된 부분 수열의 합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EA%B3%BC%EC%A0%9C-%EC%A7%84%ED%96%89%ED%95%98%EA%B8%B0">
+    [알고리즘/Swift] 과제 진행하기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/17/Baekjoon-3085">
+    [알고리즘/Swift] 3085 사탕 게임
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789">
+    [알고리즘/Swift] 1789 수들의 합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/15/Baekjoon-2252">
+    [알고리즘/Swift] 2252 줄 세우기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 13, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/13/Baekjoon-1197">
+    [알고리즘/Swift] 1197 최소 스패닝 트리
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 10, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/10/Baekjoon-1916">
+    [알고리즘/Swift] 1916 최소비용 구하기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/09/Baekjoon-1806">
+    [알고리즘/Swift] 1806 부분합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 08, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/08/Baekjoon-1700">
+    [알고리즘/Swift] 1700 멀티탭 스케줄링
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/06/Baekjoon-14719">
+    [알고리즘/Swift] 14719 빗물
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/03/Baekjoon-2504">
+    [알고리즘/Swift] 2504 괄호의 값
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Programmers-320">
+    [알고리즘/Swift] 0201 320개 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/31/Programmers-Lipogram">
+    [알고리즘/Swift] 0131 리포그램 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 30, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/30/Programmers-Pangram1">
+    [알고리즘/Swift] 0130 팬그램 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/27/Programmers-Snow1">
+    [알고리즘/Swift] 0127 제설 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 26, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/26/Programmers-Buildings">
+    [알고리즘/Swift] 0126 빌딩 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 25, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/25/Programmers-New-year-money-1">
+    [알고리즘/Swift] 0125 세뱃돈 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/22/Codility-TapeEquilibrium">
+    [알고리즘/Swift] Codility - TapeEquilibrium 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 20, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/20/Yut-nori">
+    [알고리즘/Swift] 0120 윷놀이 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 19, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/19/Programmers-Spot-the-Spy">
+    [알고리즘/Swift] 0119 스파이를 찾아라! 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 18, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/18/Programmers-Song2">
+    [알고리즘/Swift] 0118 지금 무슨 노래 듣고 있어요?2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/17/Programmers-adv2">
+    [알고리즘/Swift] 0117 준식이의 모험2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Programmers-adv1">
+    [알고리즘/Swift] 0116 준식이의 모험1
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="그래프" class="segment-name">그래프</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 13, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/13/Baekjoon-1197">
+    [알고리즘/Swift] 1197 최소 스패닝 트리
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 10, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/10/Baekjoon-1916">
+    [알고리즘/Swift] 1916 최소비용 구하기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="그래프 이론" class="segment-name">그래프 이론</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/06/Baekjoon-3687">
+    [알고리즘/Swift] 3687 성냥개비
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/01/Baekjoon-14226">
+    [알고리즘/Swift] 14226 이모티콘
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 29, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/29/Baekjoon-13549-13913">
+    [알고리즘/Swift] 13549,13913 숨바꼭질 3,4
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+    [알고리즘/Swift] 12851 숨바꼭질 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+    [알고리즘/Swift] 16953 A -&gt; B
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+    [알고리즘/Swift] 2606 바이러스
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+    [알고리즘/Swift] 2178 미로 탐색
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+    [알고리즘/Swift] 1303 전쟁 - 전투
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667">
+    [알고리즘/Swift] 2667 단지번호붙이기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/15/Baekjoon-2252">
+    [알고리즘/Swift] 2252 줄 세우기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="그래프 탐색" class="segment-name">그래프 탐색</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/06/Baekjoon-3687">
+    [알고리즘/Swift] 3687 성냥개비
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/01/Baekjoon-14226">
+    [알고리즘/Swift] 14226 이모티콘
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 29, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/29/Baekjoon-13549-13913">
+    [알고리즘/Swift] 13549,13913 숨바꼭질 3,4
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+    [알고리즘/Swift] 12851 숨바꼭질 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+    [알고리즘/Swift] 16953 A -&gt; B
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+    [알고리즘/Swift] 2606 바이러스
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+    [알고리즘/Swift] 2178 미로 탐색
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+    [알고리즘/Swift] 1303 전쟁 - 전투
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="그리디" class="segment-name">그리디</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789">
+    [알고리즘/Swift] 1789 수들의 합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 08, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/08/Baekjoon-1700">
+    [알고리즘/Swift] 1700 멀티탭 스케줄링
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="깊이 우선 탐색" class="segment-name">깊이 우선 탐색</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/06/Baekjoon-3687">
+    [알고리즘/Swift] 3687 성냥개비
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/01/Baekjoon-14226">
+    [알고리즘/Swift] 14226 이모티콘
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 29, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/29/Baekjoon-13549-13913">
+    [알고리즘/Swift] 13549,13913 숨바꼭질 3,4
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+    [알고리즘/Swift] 12851 숨바꼭질 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+    [알고리즘/Swift] 16953 A -&gt; B
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+    [알고리즘/Swift] 2606 바이러스
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+    [알고리즘/Swift] 2178 미로 탐색
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+    [알고리즘/Swift] 1303 전쟁 - 전투
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="너비 우선 탐색" class="segment-name">너비 우선 탐색</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/06/Baekjoon-3687">
+    [알고리즘/Swift] 3687 성냥개비
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/01/Baekjoon-14226">
+    [알고리즘/Swift] 14226 이모티콘
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 29, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/29/Baekjoon-13549-13913">
+    [알고리즘/Swift] 13549,13913 숨바꼭질 3,4
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+    [알고리즘/Swift] 12851 숨바꼭질 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+    [알고리즘/Swift] 16953 A -&gt; B
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+    [알고리즘/Swift] 2606 바이러스
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+    [알고리즘/Swift] 2178 미로 탐색
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+    [알고리즘/Swift] 1303 전쟁 - 전투
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="누적 합" class="segment-name">누적 합</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/09/Baekjoon-1806">
+    [알고리즘/Swift] 1806 부분합
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="다이나믹 프로그래밍" class="segment-name">다이나믹 프로그래밍</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/21/Baekjoon-2294">
+    [알고리즘/Swift] 2294 동전 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 20, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/20/Baekjoon-2293">
+    [알고리즘/Swift] 2293 동전 1
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="다익스트라" class="segment-name">다익스트라</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 29, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/29/Baekjoon-13549-13913">
+    [알고리즘/Swift] 13549,13913 숨바꼭질 3,4
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="다형성" class="segment-name">다형성</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/31/Swift-Type-Casting">
+    [Swift] 타입 캐스팅
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="두 포인터" class="segment-name">두 포인터</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/09/Baekjoon-1806">
+    [알고리즘/Swift] 1806 부분합
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="문자열" class="segment-name">문자열</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 19, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/19/Programmers-Spot-the-Spy">
+    [알고리즘/Swift] 0119 스파이를 찾아라! 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 18, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/18/Programmers-Song2">
+    [알고리즘/Swift] 0118 지금 무슨 노래 듣고 있어요?2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/17/Programmers-adv2">
+    [알고리즘/Swift] 0117 준식이의 모험2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Programmers-adv1">
+    [알고리즘/Swift] 0116 준식이의 모험1
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="문제풀이" class="segment-name">문제풀이</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/06/Baekjoon-3687">
+    [알고리즘/Swift] 3687 성냥개비
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/01/Baekjoon-14226">
+    [알고리즘/Swift] 14226 이모티콘
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 29, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/29/Baekjoon-13549-13913">
+    [알고리즘/Swift] 13549,13913 숨바꼭질 3,4
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+    [알고리즘/Swift] 12851 숨바꼭질 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+    [알고리즘/Swift] 16953 A -&gt; B
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+    [알고리즘/Swift] 2606 바이러스
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+    [알고리즘/Swift] 2178 미로 탐색
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+    [알고리즘/Swift] 1303 전쟁 - 전투
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/28/Baekjoon-1038">
+    [알고리즘/Swift] 1038 감소하는 수
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667">
+    [알고리즘/Swift] 2667 단지번호붙이기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/21/Baekjoon-2294">
+    [알고리즘/Swift] 2294 동전 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 20, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/20/Baekjoon-2293">
+    [알고리즘/Swift] 2293 동전 1
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/17/Baekjoon-3085">
+    [알고리즘/Swift] 3085 사탕 게임
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789">
+    [알고리즘/Swift] 1789 수들의 합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/15/Baekjoon-2252">
+    [알고리즘/Swift] 2252 줄 세우기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 13, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/13/Baekjoon-1197">
+    [알고리즘/Swift] 1197 최소 스패닝 트리
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 10, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/10/Baekjoon-1916">
+    [알고리즘/Swift] 1916 최소비용 구하기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/09/Baekjoon-1806">
+    [알고리즘/Swift] 1806 부분합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 08, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/08/Baekjoon-1700">
+    [알고리즘/Swift] 1700 멀티탭 스케줄링
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/06/Baekjoon-14719">
+    [알고리즘/Swift] 14719 빗물
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/03/Baekjoon-2504">
+    [알고리즘/Swift] 2504 괄호의 값
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 02, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/02/Baekjoon-14888">
+    [알고리즘/Swift] 14888 연산자 끼워넣기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Dec 31, 2022</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2022/12/31/boj1260">
+    [백준/Python] 1260번 DFS와 BFS 풀이
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="배열" class="segment-name">배열</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Jan 19, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/19/Programmers-Spot-the-Spy">
+    [알고리즘/Swift] 0119 스파이를 찾아라! 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 18, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/18/Programmers-Song2">
+    [알고리즘/Swift] 0118 지금 무슨 노래 듣고 있어요?2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/17/Programmers-adv2">
+    [알고리즘/Swift] 0117 준식이의 모험2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Programmers-adv1">
+    [알고리즘/Swift] 0116 준식이의 모험1
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="배열의 합" class="segment-name">배열의 합</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9">
+    [알고리즘/Swift] 연속된 부분 수열의 합
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="백준" class="segment-name">백준</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/06/Baekjoon-3687">
+    [알고리즘/Swift] 3687 성냥개비
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/01/Baekjoon-14226">
+    [알고리즘/Swift] 14226 이모티콘
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 29, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/29/Baekjoon-13549-13913">
+    [알고리즘/Swift] 13549,13913 숨바꼭질 3,4
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+    [알고리즘/Swift] 12851 숨바꼭질 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+    [알고리즘/Swift] 16953 A -&gt; B
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+    [알고리즘/Swift] 2606 바이러스
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+    [알고리즘/Swift] 2178 미로 탐색
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+    [알고리즘/Swift] 1303 전쟁 - 전투
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/28/Baekjoon-1038">
+    [알고리즘/Swift] 1038 감소하는 수
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667">
+    [알고리즘/Swift] 2667 단지번호붙이기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/21/Baekjoon-2294">
+    [알고리즘/Swift] 2294 동전 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 20, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/20/Baekjoon-2293">
+    [알고리즘/Swift] 2293 동전 1
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/17/Baekjoon-3085">
+    [알고리즘/Swift] 3085 사탕 게임
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789">
+    [알고리즘/Swift] 1789 수들의 합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/15/Baekjoon-2252">
+    [알고리즘/Swift] 2252 줄 세우기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 13, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/13/Baekjoon-1197">
+    [알고리즘/Swift] 1197 최소 스패닝 트리
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 10, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/10/Baekjoon-1916">
+    [알고리즘/Swift] 1916 최소비용 구하기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/09/Baekjoon-1806">
+    [알고리즘/Swift] 1806 부분합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 08, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/08/Baekjoon-1700">
+    [알고리즘/Swift] 1700 멀티탭 스케줄링
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/06/Baekjoon-14719">
+    [알고리즘/Swift] 14719 빗물
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/03/Baekjoon-2504">
+    [알고리즘/Swift] 2504 괄호의 값
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 02, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/02/Baekjoon-14888">
+    [알고리즘/Swift] 14888 연산자 끼워넣기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Dec 31, 2022</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2022/12/31/boj1260">
+    [백준/Python] 1260번 DFS와 BFS 풀이
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="백트래킹" class="segment-name">백트래킹</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/28/Baekjoon-1038">
+    [알고리즘/Swift] 1038 감소하는 수
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="브루스포스 알고리즘" class="segment-name">브루스포스 알고리즘</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/17/Baekjoon-3085">
+    [알고리즘/Swift] 3085 사탕 게임
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="브루트포스 알고리즘" class="segment-name">브루트포스 알고리즘</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/28/Baekjoon-1038">
+    [알고리즘/Swift] 1038 감소하는 수
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="비동기 프로그래밍" class="segment-name">비동기 프로그래밍</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/22/Swift-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%98-%EC%9D%B4%ED%95%B4">
+    [Swift] 비동기 프로그래밍이란
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="수학" class="segment-name">수학</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789">
+    [알고리즘/Swift] 1789 수들의 합
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="스택" class="segment-name">스택</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/03/Baekjoon-2504">
+    [알고리즘/Swift] 2504 괄호의 값
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="시뮬레이션" class="segment-name">시뮬레이션</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/06/Baekjoon-14719">
+    [알고리즘/Swift] 14719 빗물
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="쓰레드" class="segment-name">쓰레드</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/22/Swift-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%98-%EC%9D%B4%ED%95%B4">
+    [Swift] 비동기 프로그래밍이란
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="알고리즘" class="segment-name">알고리즘</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/06/Baekjoon-3687">
+    [알고리즘/Swift] 3687 성냥개비
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/01/Baekjoon-14226">
+    [알고리즘/Swift] 14226 이모티콘
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 29, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/29/Baekjoon-13549-13913">
+    [알고리즘/Swift] 13549,13913 숨바꼭질 3,4
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/27/Baekjoon-12851">
+    [알고리즘/Swift] 12851 숨바꼭질 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/21/Baekjoon-16953">
+    [알고리즘/Swift] 16953 A -&gt; B
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/17/Baekjoon-2606">
+    [알고리즘/Swift] 2606 바이러스
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/15/Baekjoon-2178">
+    [알고리즘/Swift] 2178 미로 탐색
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Mar 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/09/Baekjoon-1303">
+    [알고리즘/Swift] 1303 전쟁 - 전투
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/28/Baekjoon-1038">
+    [알고리즘/Swift] 1038 감소하는 수
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667">
+    [알고리즘/Swift] 2667 단지번호붙이기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 21, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/21/Baekjoon-2294">
+    [알고리즘/Swift] 2294 동전 2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 20, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/20/Baekjoon-2293">
+    [알고리즘/Swift] 2293 동전 1
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/17/Baekjoon-3085">
+    [알고리즘/Swift] 3085 사탕 게임
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/16/Baekjoon-1789">
+    [알고리즘/Swift] 1789 수들의 합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/15/Baekjoon-2252">
+    [알고리즘/Swift] 2252 줄 세우기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 13, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/13/Baekjoon-1197">
+    [알고리즘/Swift] 1197 최소 스패닝 트리
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 10, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/10/Baekjoon-1916">
+    [알고리즘/Swift] 1916 최소비용 구하기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 09, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/09/Baekjoon-1806">
+    [알고리즘/Swift] 1806 부분합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 08, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/08/Baekjoon-1700">
+    [알고리즘/Swift] 1700 멀티탭 스케줄링
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 06, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/06/Baekjoon-14719">
+    [알고리즘/Swift] 14719 빗물
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/03/Baekjoon-2504">
+    [알고리즘/Swift] 2504 괄호의 값
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 02, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/02/Baekjoon-14888">
+    [알고리즘/Swift] 14888 연산자 끼워넣기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Dec 31, 2022</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2022/12/31/boj1260">
+    [백준/Python] 1260번 DFS와 BFS 풀이
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="위상 정렬" class="segment-name">위상 정렬</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 15, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/15/Baekjoon-2252">
+    [알고리즘/Swift] 2252 줄 세우기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="인스턴스" class="segment-name">인스턴스</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 11, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/11/Swift-selfvsSelf">
+    [Swift] self vs Self 비교
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="자료구조" class="segment-name">자료구조</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Mar 28, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/03/28/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-queue">
+    [Swift] Queue
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 03, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/03/Baekjoon-2504">
+    [알고리즘/Swift] 2504 괄호의 값
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="작업" class="segment-name">작업</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/22/Swift-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%98-%EC%9D%B4%ED%95%B4">
+    [Swift] 비동기 프로그래밍이란
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="최소 스패닝 트리" class="segment-name">최소 스패닝 트리</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Feb 13, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/13/Baekjoon-1197">
+    [알고리즘/Swift] 1197 최소 스패닝 트리
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="큐" class="segment-name">큐</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/22/Swift-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%98-%EC%9D%B4%ED%95%B4">
+    [Swift] 비동기 프로그래밍이란
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/22/Baekjoon-2667">
+    [알고리즘/Swift] 2667 단지번호붙이기
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="타입" class="segment-name">타입</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 11, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/11/Swift-selfvsSelf">
+    [Swift] self vs Self 비교
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="투 포인터" class="segment-name">투 포인터</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9">
+    [알고리즘/Swift] 연속된 부분 수열의 합
+  </a>
+</span>
+ </li>
+        
+      
+    
+    <h2 id="프로그래머스" class="segment-name">프로그래머스</h2>
+      
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EC%97%B0%EC%86%8D%EB%90%9C-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9">
+    [알고리즘/Swift] 연속된 부분 수열의 합
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Apr 12, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/04/12/Programmers-%EA%B3%BC%EC%A0%9C-%EC%A7%84%ED%96%89%ED%95%98%EA%B8%B0">
+    [알고리즘/Swift] 과제 진행하기
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Feb 01, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/02/01/Programmers-320">
+    [알고리즘/Swift] 0201 320개 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 31, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/31/Programmers-Lipogram">
+    [알고리즘/Swift] 0131 리포그램 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 30, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/30/Programmers-Pangram1">
+    [알고리즘/Swift] 0130 팬그램 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 27, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/27/Programmers-Snow1">
+    [알고리즘/Swift] 0127 제설 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 26, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/26/Programmers-Buildings">
+    [알고리즘/Swift] 0126 빌딩 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 25, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/25/Programmers-New-year-money-1">
+    [알고리즘/Swift] 0125 세뱃돈 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 22, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/22/Codility-TapeEquilibrium">
+    [알고리즘/Swift] Codility - TapeEquilibrium 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 20, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/20/Yut-nori">
+    [알고리즘/Swift] 0120 윷놀이 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 19, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/19/Programmers-Spot-the-Spy">
+    [알고리즘/Swift] 0119 스파이를 찾아라! 
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 18, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/18/Programmers-Song2">
+    [알고리즘/Swift] 0118 지금 무슨 노래 듣고 있어요?2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 17, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/17/Programmers-adv2">
+    [알고리즘/Swift] 0117 준식이의 모험2
+  </a>
+</span>
+ </li>
+        
+      
+        
+        <li> 
+<span class="post-meta">Jan 16, 2023</span>
+<span>
+  <a class="post-link" href="/jekyll-theme-yat/2023/01/16/Programmers-adv1">
+    [알고리즘/Swift] 0116 준식이의 모험1
+  </a>
+</span>
+ </li>
+        
+      
+    
+  </ul>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="common-list">
+  <ul>
+    <li>
+      <a href="/jekyll-theme-yat/index.html">
+        All<span>58</span>
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-AI">
+          AI <span>4</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Algorithm">
+          Algorithm <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Any">
+          Any <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-AnyObject">
+          AnyObject <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-App%20Bundle">
+          App Bundle <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Array">
+          Array <span>8</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-BFS">
+          BFS <span>7</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-BOJ">
+          BOJ <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Binding">
+          Binding <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Bundle%20Container">
+          Bundle Container <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Clone%20Coding">
+          Clone Coding <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Codility">
+          Codility <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Constants">
+          Constants <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-DFS">
+          DFS <span>8</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-DIJKSTRA">
+          DIJKSTRA <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Data%20Container">
+          Data Container <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Data_Analysis">
+          Data_Analysis <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Deep%20Learning">
+          Deep Learning <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Delegate">
+          Delegate <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Delegate%20Pattern">
+          Delegate Pattern <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Design%20Pattern">
+          Design Pattern <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Dictionary">
+          Dictionary <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Down%20Casting">
+          Down Casting <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Dynamic%20Programming">
+          Dynamic Programming <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Function">
+          Function <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Last-in-First-Out">
+          Last-in-First-Out <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Machine%20Learning">
+          Machine Learning <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Machine_Learning">
+          Machine_Learning <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Problem%20Solving">
+          Problem Solving <span>15</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Project">
+          Project <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Property">
+          Property <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Python">
+          Python <span>4</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Reference%20Property">
+          Reference Property <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Reference%20Type">
+          Reference Type <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-SandBox">
+          SandBox <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Self">
+          Self <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-State">
+          State <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-String">
+          String <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Swift">
+          Swift <span>15</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-SwiftUI">
+          SwiftUI <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Tensorflow">
+          Tensorflow <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Toy%20Project">
+          Toy Project <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Type%20Casting">
+          Type Casting <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Up%20Casting">
+          Up Casting <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-UserDefaults">
+          UserDefaults <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Value%20Property">
+          Value Property <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Value%20Type">
+          Value Type <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-Variables">
+          Variables <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-View%20&amp;%20View%20Model">
+          View &amp; View Model <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-class">
+          class <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-dp">
+          dp <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-iCloud%20Container">
+          iCloud Container <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-iOS">
+          iOS <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-is/as">
+          is/as <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-queue">
+          queue <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-self">
+          self <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-stack">
+          stack <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-struct">
+          struct <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-while">
+          while <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EA%B5%AC%ED%98%84">
+          구현 <span>23</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EA%B7%B8%EB%9E%98%ED%94%84">
+          그래프 <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0">
+          그래프 이론 <span>10</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EA%B7%B8%EB%9E%98%ED%94%84%20%ED%83%90%EC%83%89">
+          그래프 탐색 <span>8</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EA%B7%B8%EB%A6%AC%EB%94%94">
+          그리디 <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EA%B9%8A%EC%9D%B4%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">
+          깊이 우선 탐색 <span>8</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%84%88%EB%B9%84%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89">
+          너비 우선 탐색 <span>8</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%88%84%EC%A0%81%20%ED%95%A9">
+          누적 합 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D">
+          다이나믹 프로그래밍 <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC">
+          다익스트라 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%8B%A4%ED%98%95%EC%84%B1">
+          다형성 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%91%90%20%ED%8F%AC%EC%9D%B8%ED%84%B0">
+          두 포인터 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%AC%B8%EC%9E%90%EC%97%B4">
+          문자열 <span>4</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4">
+          문제풀이 <span>23</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%B0%B0%EC%97%B4">
+          배열 <span>4</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%B0%B0%EC%97%B4%EC%9D%98%20%ED%95%A9">
+          배열의 합 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%B0%B1%EC%A4%80">
+          백준 <span>23</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%B0%B1%ED%8A%B8%EB%9E%98%ED%82%B9">
+          백트래킹 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%B8%8C%EB%A3%A8%EC%8A%A4%ED%8F%AC%EC%8A%A4%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">
+          브루스포스 알고리즘 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">
+          브루트포스 알고리즘 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EB%B9%84%EB%8F%99%EA%B8%B0%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D">
+          비동기 프로그래밍 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EC%88%98%ED%95%99">
+          수학 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EC%8A%A4%ED%83%9D">
+          스택 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98">
+          시뮬레이션 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EC%93%B0%EB%A0%88%EB%93%9C">
+          쓰레드 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">
+          알고리즘 <span>23</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EC%9C%84%EC%83%81%20%EC%A0%95%EB%A0%AC">
+          위상 정렬 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4">
+          인스턴스 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0">
+          자료구조 <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EC%9E%91%EC%97%85">
+          작업 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%EC%B5%9C%EC%86%8C%20%EC%8A%A4%ED%8C%A8%EB%8B%9D%20%ED%8A%B8%EB%A6%AC">
+          최소 스패닝 트리 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%ED%81%90">
+          큐 <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%ED%83%80%EC%9E%85">
+          타입 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%ED%88%AC%20%ED%8F%AC%EC%9D%B8%ED%84%B0">
+          투 포인터 <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/tags.html#h-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">
+          프로그래머스 <span>14</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Github Blog 2022-2023 Lee su-min</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
